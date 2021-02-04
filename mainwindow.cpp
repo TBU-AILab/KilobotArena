@@ -19,8 +19,6 @@
 // this enables us to 'talk' kilobot
 #include "ohc/packet.h"
 
-#define SINGLE_CAMERA
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -51,9 +49,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->load_calib, SIGNAL(clicked(bool)), &this->kbtracker, SLOT(SETUPloadCalibration()));
     connect(ui->cam_radio, SIGNAL(toggled(bool)), &this->kbtracker, SLOT(setSourceType(bool)));
     connect(ui->find_kb, SIGNAL(clicked(bool)), &this->kbtracker, SLOT(SETUPfindKilobots()));
-#ifndef SINGLE_CAMERA
     connect(ui->lineEdit, SIGNAL(editingFinished()), &this->kbtracker, SLOT(SETUPsetCamOrder()));
-#endif
     connect(ui->refresh, SIGNAL(clicked(bool)), &this->kbtracker,SLOT(RefreshDisplayedImage()));
 
     connect(ui->houghAcc_slider, SIGNAL(valueChanged(int)), &this->kbtracker, SLOT(setHoughAcc(int)));

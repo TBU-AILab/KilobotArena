@@ -11,8 +11,7 @@
 #include <vector>
 
 #define USE_CUDA true
-#define NUM_OF_CAMERAS 1
-#define SINGLE_CAMERA
+
 
 
 #ifndef USE_OPENCV3
@@ -27,8 +26,7 @@
 #include <opencv2/stitching/stitcher.hpp>
 #include <opencv2/opencv.hpp>
 //GPU stuff
-//#include <opencv2/gpu/gpu.hpp>
-#include <opencv2/gpu/gpumat.hpp>
+#include <opencv2/core/cuda.hpp>
 
 #ifdef USE_CUDA
     #define MAT_TYPE cuda::GpuMat
@@ -52,8 +50,6 @@ using namespace std;
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgcodecs.hpp>
-//#include <opencv2/tracking.hpp>
-//#include <opencv2/tracking/tracker.hpp>
 #include <opencv2/videoio.hpp>
 #include <opencv2/core/ocl.hpp>
 #include <opencv2/cudaarithm.hpp>
@@ -91,12 +87,6 @@ using namespace cv;
 
 // buffers and semaphores
 struct srcBuffer {
-#ifndef SINGLE_CAMERA
-    MAT_TYPE warped_image;
-    MAT_TYPE warped_mask;
-    Point corner;
-    Size size;
-#endif
     MAT_TYPE full_warped_image;
 };
 
@@ -138,12 +128,7 @@ enum experimentType {
     USER_EXP
 };
 
-#ifndef SINGLE_CAMERA
-struct circlesLocalTrackerData {
-    // mappings from the image indices to the quadrants
-    int inds[NUM_OF_CAMERAS];
-};
-#endif
+
 
 // DRAWABLES:
 
@@ -184,8 +169,8 @@ public:
     KilobotExperiment * expt;
 
     //Default tracking parameters and identification parameters
-    int kbMinSize = 11;
-    int kbMaxSize = 19;
+    int kbMinSize = 30;
+    int kbMaxSize = 35;
     int houghAcc = 12;
     int cannyThresh = 90;
     int maxIDtoCheck = 100;
@@ -250,13 +235,10 @@ public slots:
      * Find out what IDs the Kilobots have
      */
     void identifyKilobots();
-#ifndef SINGLE_CAMERA
-    /*!
-     * \brief setCamOrder
-     * If the camera order does not match the calibration order, alter
-     */
-    void SETUPsetCamOrder();
-#endif
+
+
+
+
     // drawing slots
     void drawCircle(QPointF pos, float r, QColor col, int thickness = 2, std::string text ="", bool transparent = false) {
         int r_int = r;
@@ -438,20 +420,18 @@ private:
     cuda::GpuMat finalImageB;
     cuda::GpuMat finalImageG;
     cuda::GpuMat finalImageR;
-
-    cuda::GpuMat fullImages[NUM_OF_CAMERAS][3];
-
+    cuda::GpuMat fullImages[3];
     // make thread safe
     cuda::Stream stream;
 #else
     Mat finalImage;
-    Mat fullImages[NUM_OF_CAMERAS][3];
+    Mat fullImages[3];
 #endif
 
-    vector < MAT_TYPE > warpedImages;
-    vector < MAT_TYPE > warpedMasks;
-    vector < Point > corners;
-    vector < Size > sizes;
+    MAT_TYPE warpedImages;
+    MAT_TYPE warpedMasks;
+    Point corners;
+    Size sizes;
 
     vector < Mat > Ks;
     vector < Mat > Rs;
@@ -459,11 +439,7 @@ private:
     bool haveCalibration = false;
     QTimer tick;
 
-#ifdef SINGLE_CAMERA
-    acquireThread * threads[1] = {NULL};
-#else
-    acquireThread * threads[NUM_OF_CAMERAS] = {NULL,NULL,NULL,NULL};
-#endif
+    acquireThread * threads = NULL;
 
     int time = 0;
     /*!
@@ -493,10 +469,6 @@ private:
     QVector < QVector < int > > exclusionTestsIndices;
 
     float last_time = 0.0f;
-
-#ifndef SINGLE_CAMERA
-    circlesLocalTrackerData clData;
-#endif
 
     Size fullSize;
     Point fullCorner;

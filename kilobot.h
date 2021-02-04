@@ -22,9 +22,9 @@ enum lightColour {
 typedef uint16_t kilobot_id;
 typedef unsigned char kilobot_channel_colour;
 //typedef unsigned char kilobot_message_type;
-typedef struct {            // 1 kilobot message 24 bits (in total 3 at time)
-        uint8_t type :4;    // sensor type, which information are we sending?
-        kilobot_id id :10;  // kb id of the receiver
+typedef struct {
+        uint8_t type :4;
+        kilobot_id id :10;
         uint16_t data :10;
 } kilobot_message;
 

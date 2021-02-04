@@ -191,7 +191,7 @@ void SerialConnection::clearQueue() {
 void SerialConnection::queueCommand(QByteArray cmd) {
     cmds.push_back(cmd);
     //QMetaObject::invokeMethod(this, "sendQueuedCommand", Qt::QueuedConnection);
-    //qDebug() << "Command q'd" << delay.currentTime() << "now on list we have" << cmds.size() << "msgs.";
+//    qDebug() << "Command q'd" << delay.currentTime() << "now on list we have" << cmds.size() << "msgs.";
     emit SendMsgsQueueState(true);
     this->sendQueuedCommand();
 }
