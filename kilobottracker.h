@@ -11,7 +11,8 @@
 #include <vector>
 
 #define USE_CUDA true
-
+#define NUM_OF_CAMERAS 1
+#define SINGLE_CAMERA
 
 
 #ifndef USE_OPENCV3
@@ -74,9 +75,6 @@ using namespace std;
 // allow easy addressing of OpenCV functions
 using namespace cv;
 
-
-
-
 // Qt base include
 #include <QObject>
 #include <QPoint>
@@ -93,10 +91,12 @@ using namespace cv;
 
 // buffers and semaphores
 struct srcBuffer {
+#ifndef SINGLE_CAMERA
     MAT_TYPE warped_image;
     MAT_TYPE warped_mask;
     Point corner;
     Size size;
+#endif
     MAT_TYPE full_warped_image;
 };
 
@@ -138,11 +138,12 @@ enum experimentType {
     USER_EXP
 };
 
-
+#ifndef SINGLE_CAMERA
 struct circlesLocalTrackerData {
     // mappings from the image indices to the quadrants
-    int inds[4];
+    int inds[NUM_OF_CAMERAS];
 };
+#endif
 
 // DRAWABLES:
 
@@ -249,13 +250,13 @@ public slots:
      * Find out what IDs the Kilobots have
      */
     void identifyKilobots();
-
+#ifndef SINGLE_CAMERA
     /*!
      * \brief setCamOrder
      * If the camera order does not match the calibration order, alter
      */
     void SETUPsetCamOrder();
-
+#endif
     // drawing slots
     void drawCircle(QPointF pos, float r, QColor col, int thickness = 2, std::string text ="", bool transparent = false) {
         int r_int = r;
@@ -437,12 +438,14 @@ private:
     cuda::GpuMat finalImageB;
     cuda::GpuMat finalImageG;
     cuda::GpuMat finalImageR;
-    cuda::GpuMat fullImages[4][3];
+
+    cuda::GpuMat fullImages[NUM_OF_CAMERAS][3];
+
     // make thread safe
     cuda::Stream stream;
 #else
     Mat finalImage;
-    Mat fullImages[4][3];
+    Mat fullImages[NUM_OF_CAMERAS][3];
 #endif
 
     vector < MAT_TYPE > warpedImages;
@@ -456,7 +459,11 @@ private:
     bool haveCalibration = false;
     QTimer tick;
 
-    acquireThread * threads[4] = {NULL,NULL,NULL,NULL};
+#ifdef SINGLE_CAMERA
+    acquireThread * threads[1] = {NULL};
+#else
+    acquireThread * threads[NUM_OF_CAMERAS] = {NULL,NULL,NULL,NULL};
+#endif
 
     int time = 0;
     /*!
@@ -487,7 +494,9 @@ private:
 
     float last_time = 0.0f;
 
+#ifndef SINGLE_CAMERA
     circlesLocalTrackerData clData;
+#endif
 
     Size fullSize;
     Point fullCorner;

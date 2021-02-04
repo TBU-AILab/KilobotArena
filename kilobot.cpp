@@ -28,7 +28,7 @@ void ColourBuffer::addColour(lightColour newColour){
 
 lightColour ColourBuffer::getAvgColour(){
     std::vector <int> counters;
-    counters.resize(4); // OFF, RED, GREEN, BLUE, MAGENTA
+    counters.resize(4); // OFF, RED, GREEN, BLUE
     for (int i = 0; i < buffer.size(); ++i){
         switch (buffer.at(i)) {
         case (OFF):{

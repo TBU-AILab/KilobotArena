@@ -249,8 +249,14 @@ void KilobotIDAssignment::run()
                             data[0] = (this->tempIDs[id] >> 8)&0xFF;
                             data[1] = this->tempIDs[id]&0xFF;
                             // UID to set
-                            data[2] = (id >> 8)&0xFF;
-                            data[3] = id&0xFF;
+                            // DARIO: this is where the confirm the id to the kilobots
+                            // by changing this temp id we can assign ids in batch (thus avoid to assign
+                            // 100 ids to all kilobots at the same time that usually does not work)
+                            uint shift = 0;
+                            uint16_t t_id = id + shift;
+                            data[2] = (t_id >> 8)&0xFF;
+                            data[3] = t_id&0xFF;
+                            qDebug() << " sending new id " << t_id << " to id " << id;
                             kilobot_broadcast msg;
                             msg.type = 2;
                             msg.data = data;
