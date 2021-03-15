@@ -172,7 +172,7 @@ public:
     int kbMinSize = 30;
     int kbMaxSize = 35;
     int houghAcc = 12;
-    int cannyThresh = 90;
+    int cannyThresh = 100;
     int maxIDtoCheck = 100;
     uint manualID;
     // camera parameters
