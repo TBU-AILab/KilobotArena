@@ -126,10 +126,14 @@ public:
     kilobot_id getID();
     void setID(kilobot_id);
     QPointF getPosition();
+    QPointF getOrientation();
     QPointF getVelocity();
     kilobot_colour getLedColour();
     //kilobot_colour resolveKilobotState(stateColours);
     void updateState(QPointF position, QPointF velocity, kilobot_colour colourValues);
+
+    //WARNING!! Orientation update should be included in updateState()
+    void setOrientation(QPointF);
 
     /*!
      * \brief updateHardware
@@ -162,6 +166,7 @@ private:
     kilobot_id id = UNASSIGNED_ID;
     QPointF pos = QPointF(0,0);
     QPointF vel = QPointF(1,1);
+    QPointF ori = QPointF(0,0);
     kilobot_colour col = OFF;
 
 };

@@ -342,6 +342,8 @@ public slots:
      */
     void RefreshDisplayedImage();
 
+    void setKiloHeading(Mat &display);
+
 private:
 
     // PRIVATE METHODS
@@ -462,7 +464,7 @@ private:
 
     QVector < Kilobot * > kilos;
 
-    QVector < float > kiloHeadings;
+    QVector < QPointF > kiloHeadings;
 
     QVector < QPointF > kiloOldPos;
 

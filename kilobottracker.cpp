@@ -27,6 +27,8 @@ QSemaphore srcStop;
 QSemaphore camUsage;
 
 
+int img_counter = 0;
+
 /*!
  * \brief The acquireThread class
  * This thread acquires input data from a source, applies the local warps
@@ -638,7 +640,7 @@ void KilobotTracker::SETUPfindKilobots()
         //circle( result, center, 3, Scalar(0,255,0), -1, 8, 0 );
         // draw the circle outline
         circle( display, center, radius, Scalar(0,0,255), 3, 8, 0 );
-        putText(display, this->showIDs?to_string(i):"", center, FONT_HERSHEY_PLAIN, 2.7, Scalar(0,0,255), 3);
+        putText(display, this->showIDs?to_string(i):"", center, FONT_HERSHEY_PLAIN, 4.5, Scalar(0,0,255), 3);
     }
 
     cv::resize(display,display,Size(this->smallImageSize.x()*2, this->smallImageSize.y()*2));
@@ -826,6 +828,101 @@ QString type2str(int type) {
 
     return r;
 }
+
+
+/******************************************************************************************************************************************************************************************
+ ******************************************************************************************************************************************************************************************
+ ******************************************************************************************************************************************************************************************
+                    //TEST half circle detection
+ ******************************************************************************************************************************************************************************************
+ ******************************************************************************************************************************************************************************************
+ ******************************************************************************************************************************************************************************************/
+void KilobotTracker::setKiloHeading(Mat &display)
+{
+    cv::Mat canny;
+    cv::Mat gray;
+    /// Convert it to gray
+    cv::cvtColor(display, gray, CV_BGR2GRAY);
+    // compute canny (don't blur with that image quality!!)
+    cv::Canny(display, canny, 200, 20);
+    std::vector<cv::Vec3f> circles_temp;
+    /// Apply the Hough Transform to find the circles
+    cv::HoughCircles(gray, circles_temp, CV_HOUGH_GRADIENT, 1, 30, 100, 12, 15, 20);
+
+    //compute distance transform:
+    cv::Mat dt;
+    cv::distanceTransform(255 - (canny > 0), dt, CV_DIST_L2, 3);
+    // test for semi-circles:
+    float minInlierDist = 2.0f;
+    for (int i = 0; i < this->kilos.size(); ++i) {
+        qDebug() << "Kilo: " << i <<"  Position: "<<this->kilos[i]->getPosition();
+        for(size_t k=0; k < circles_temp.size(); k++)
+        {
+            // test inlier percentage:
+            // sample the circle and check for distance to the next edge
+            unsigned int counter = 0;
+            unsigned int inlier = 0;
+            cv::Point2f center_temp((circles_temp[k][0]), (circles_temp[k][1]));
+            float radius = (circles_temp[k][2]);
+
+            float dist = cv::norm(center_temp - cv::Point2f(this->kilos[i]->getPosition().x(), this->kilos[i]->getPosition().y()));
+            if(dist > 2) continue;
+
+            qDebug() << "Circle center: " << center_temp.x << " "<< center_temp.y <<"  Dist: "<<dist;
+
+            // maximal distance of inlier might depend on the size of the circle
+            float maxInlierDist = radius/25.0f;
+            if(maxInlierDist<minInlierDist) maxInlierDist = minInlierDist;
+            // store the 2 inliers and outliers
+            std::vector<cv::Point> outliersList;
+
+            //TODO: maybe paramter incrementation might depend on circle size!
+            for(float t =0; t<2*3.14159265359f; t+= 0.1f)
+            {
+                counter++;
+                float cX = radius*cos(t) + circles_temp[i][0];
+                float cY = radius*sin(t) + circles_temp[i][1];
+
+                if(dt.at<float>(cY,cX) < maxInlierDist)
+                {
+                    inlier++;
+                    //cv::circle(display, cv::Point2i(cX,cY),2, cv::Scalar(0,255,0));
+                }
+                else
+                {
+                    //cv::circle(display, cv::Point2i(cX,cY),4, cv::Scalar(0,0,255));     //draw outliers with blue
+                    outliersList.push_back(cv::Point (cX, cY));
+                }
+            }
+            double mean_x = 0.0;
+            double mean_y = 0.0;
+            for (int j = 0; j < outliersList.size(); j++)
+            {
+                mean_x += outliersList[j].x;
+                mean_y += outliersList[j].y;
+            }
+            mean_x /= outliersList.size();
+            mean_y /= outliersList.size();
+
+            double theta = atan2(center_temp.y - mean_y, center_temp.x - mean_x);
+            double pt_x = center_temp.x - 30.0 * cos(theta);
+            double pt_y = center_temp.y - 30.0 * sin(theta);
+            qDebug() << "Center at:"<< center_temp.x << '\t' << center_temp.y;
+            qDebug() << "Direction at:"<< pt_x << '\t' << pt_y;
+
+            kilos[i]->setOrientation(QPointF(pt_x,pt_y));
+            // cv::circle(display, center_temp,5, cv::Scalar(255,0,0), -1);
+            // cv::circle(display, cv::Point2i(mean_x,mean_y),5, cv::Scalar(255,0,0), -1);
+            // cv::circle(display, cv::Point2i(pt_x, pt_y),5, cv::Scalar(255,0,0), -1);
+            // cv::line(display, center_temp, cv::Point2i(pt_x, pt_y), cv::Scalar(255, 255, 255), 5);
+
+    //        std::string new_string = std::string(5 - std::to_string(img_counter).length(), '0') + std::to_string(img_counter);
+    //        cv::imwrite("/home/laral/Desktop/immagini/houghLinesComputed_"+new_string+".png", display);
+    //        img_counter+=1;
+        }
+
+    }
+}
 void KilobotTracker::trackKilobots()
 {
 
@@ -990,32 +1087,6 @@ void KilobotTracker::trackKilobots()
 #else
                             Mat temp[3];
 #endif
-                            // switch cam/vid source depending on position...
-                            //                            if (bb.x < 2000/2 && bb.y < 2000/2) {
-                            //                                Rect bb_adj = bb;
-                            //                                bb_adj.x = bb_adj.x +100;
-                            //                                bb_adj.y = bb_adj.y +100;
-                            //                                //for (uint c = 0; c < 3; ++c) temp[c] = this->fullImages[clData.inds[0]][c](bb_adj);
-                            //                                temp = this->fullImages[clData.inds[0]][0](bb_adj);
-                            //                            } else if (bb.x > 2000/2-1 && bb.y < 2000/2) {
-                            //                                Rect bb_adj = bb;
-                            //                                bb_adj.x = bb_adj.x -900;
-                            //                                bb_adj.y = bb_adj.y +100;
-                            //                                //for (uint c = 0; c < 3; ++c) temp[c] = this->fullImages[clData.inds[1]][c](bb_adj);
-                            //                                temp = this->fullImages[clData.inds[1]][0](bb_adj);
-                            //                            } else if (bb.x < 2000/2 && bb.y > 2000/2-1) {
-                            //                                Rect bb_adj = bb;
-                            //                                bb_adj.x = bb_adj.x +100;
-                            //                                bb_adj.y = bb_adj.y -900;
-                            //                                //for (uint c = 0; c < 3; ++c) temp[c] = this->fullImages[clData.inds[2]][c](bb_adj);
-                            //                                temp = this->fullImages[clData.inds[2]][0](bb_adj);
-                            //                            } else if (bb.x > 2000/2-1 && bb.y > 2000/2-1) {
-                            //                                Rect bb_adj = bb;
-                            //                                bb_adj.x = bb_adj.x -900;
-                            //                                bb_adj.y = bb_adj.y -900;
-                            //                                //for (uint c = 0; c < 3; ++c) temp[c] = this->fullImages[clData.inds[3]][c](bb_adj);
-                            //                                temp = this->fullImages[clData.inds[3]][0](bb_adj);
-                            //                            }
                             temp = this->finalImageB(bb);
 
                             std::vector<cv::Vec3f> circles_rematch;
@@ -1207,31 +1278,11 @@ void KilobotTracker::trackKilobots()
 
                     this->kilos[i]->posBuffer.addPosition(this->kilos[i]->getPosition());
                     QPointF newVel = this->kilos[i]->posBuffer.getOrientationFromPositions();
-
-                    //                    if (this->t_type & LED || this->t_type & ADAPTIVE_LED) {
-
-                    //                        QLineF lightLine = QLineF(QPointF(0,0),QPointF(light.pos.x,light.pos.y));
-                    //                        QLineF velLine = QLineF(QPointF(0,0),newVel);
-
-                    //                        // if we have a light
-                    //                        if (light.col != OFF) {
-
-                    //                            if (velLine.length() < 1.0f) {
-                    //                                lightLine.setLength(0.9f);
-                    //                                lightLine.setAngle(lightLine.angle() + 20.0f);
-                    //                                newVel = lightLine.p2();
-                    //                            } else {
-                    //                                // combine LED and velocity estimates
-                    //                                lightLine.setLength(velLine.length());
-                    //                                // align to forward
-                    //                                lightLine.setAngle(lightLine.angle() + 20.0f);
-                    //                                newVel = (lightLine.p2() + velLine.p2())*0.5f;
-                    //                            }
-
-                    //                        }
-                    //                    }
                     kilos[i]->velocityBuffer.addOrientation(newVel);
                     kilos[i]->updateState(kilos[i]->getPosition(), kilos[i]->velocityBuffer.getAvgOrientation(), kilos[i]->getLedColour());
+
+
+
                 }
             }
 
@@ -1262,21 +1313,32 @@ void KilobotTracker::trackKilobots()
                     break;
                 }
                 }
+                //WARNING!!!!! DECOMMENT THIS LINE TO REVERT CHANGES
                 cv::circle(display,Point(kilos[i]->getPosition().x(),kilos[i]->getPosition().y()),10,rgbColor,2);
 
                 if (this->t_type & ROT){
-                    Point center(round(kilos[i]->getPosition().x()), round(kilos[i]->getPosition().y()));
-                    QLineF currVel = QLineF(QPointF(0,0),this->kilos[i]->getVelocity());
-                    currVel.setLength(currVel.length()*10.0f+20.0f);
-                    QPointF hdQpt = currVel.p2() + this->kilos[i]->getPosition();
-                    Point heading(hdQpt.x(), hdQpt.y());
-                    line(display, center, heading, rgbColor, 3);
-                }
+                    //WARNING!!!!! DECOMMENT THEESE LINES TO REVERT CHANGES...
+//                    Point center(round(kilos[i]->getPosition().x()), round(kilos[i]->getPosition().y()));
+//                    QLineF currVel = QLineF(QPointF(0,0),this->kilos[i]->getVelocity());
+//                    currVel.setLength(currVel.length()*10.0f+20.0f);
+//                    QPointF hdQpt = currVel.p2() + this->kilos[i]->getPosition();
+//                    Point heading(hdQpt.x(), hdQpt.y());
+//                    //HERE you display the orientation
+////                    line(display, center, heading, rgbColor, 3);
+///
+                    //WARNING!!!!! ...AND COMMENT THEESE
+                    //Point center(round(kilos[i]->getPosition().x()), round(kilos[i]->getPosition().y()));
+                    //setKiloHeading(display);
+                    //Point heading(kilos[i]->getOrientation().x(), kilos[i]->getOrientation().y());
+                    //line(display, center, heading, Scalar(255,255,255), 10);
 
+
+
+                }
                 //qDebug() << "Single vel is" << this->kilos[i]->getVelocity() << "AVG vel is" << this->kilos[i]->velocityBuffer.getAvgOrientation();
 
                 if (this->showIDs) {
-                    cv::putText(display, QString::number(this->kilos[i]->getID()).toStdString(), Point(kilos[i]->getPosition().x(),kilos[i]->getPosition().y()), FONT_HERSHEY_PLAIN, 2.7, rgbColor, 3);
+                    cv::putText(display, QString::number(this->kilos[i]->getID()).toStdString(), Point(kilos[i]->getPosition().x(),kilos[i]->getPosition().y()), FONT_HERSHEY_PLAIN, 4.5, rgbColor, 3);
                 }
             }
             this->drawOverlay(display);

@@ -166,9 +166,19 @@ void Kilobot::updateState(QPointF position, QPointF velocity, kilobot_colour col
 
 }
 
+void Kilobot::setOrientation(QPointF orientation)
+{
+    ori = orientation;
+}
+
 QPointF Kilobot::getPosition()
 {
     return this->pos;
+}
+
+QPointF Kilobot::getOrientation()
+{
+    return this->ori;
 }
 
 QPointF Kilobot::getVelocity()
