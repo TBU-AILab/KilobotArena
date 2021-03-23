@@ -126,10 +126,12 @@ public:
     kilobot_id getID();
     void setID(kilobot_id);
     QPointF getPosition();
+    QPointF getMarkerPosition();
     QPointF getVelocity();
     kilobot_colour getLedColour();
     //kilobot_colour resolveKilobotState(stateColours);
     void updateState(QPointF position, QPointF velocity, kilobot_colour colourValues);
+    void setMarkerPos(QPointF markerPosition){this->markerPos = markerPosition;}
 
     /*!
      * \brief updateHardware
@@ -161,6 +163,7 @@ signals:
 private:
     kilobot_id id = UNASSIGNED_ID;
     QPointF pos = QPointF(0,0);
+    QPointF markerPos = QPointF(0,0);
     QPointF vel = QPointF(1,1);
     kilobot_colour col = OFF;
 

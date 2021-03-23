@@ -171,6 +171,11 @@ QPointF Kilobot::getPosition()
     return this->pos;
 }
 
+QPointF Kilobot::getMarkerPosition()
+{
+    return this->markerPos;
+}
+
 QPointF Kilobot::getVelocity()
 {
     return this->vel;

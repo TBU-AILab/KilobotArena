@@ -171,8 +171,8 @@ public:
     //Default tracking parameters and identification parameters
     int kbMinSize = 30;
     int kbMaxSize = 35;
-    int houghAcc = 12;
-    int cannyThresh = 90;
+    int houghAcc = 10;
+    int cannyThresh = 60;
     int maxIDtoCheck = 100;
     uint manualID;
     // camera parameters
@@ -354,6 +354,12 @@ private:
     void trackKilobots();
 
     /*!
+     * \brief trackKilobotsOri
+     * The method used to contain the tracking algorithm for one timestep
+     */
+    void trackKilobotsOri();
+
+    /*!
      * \brief setupStitcher
      * Setup required after loading the calibration data
      */
@@ -487,7 +493,10 @@ private:
     QVector < drawnCircle > circsToDrawFinal;
 
 #ifdef USE_CUDA
+    // Position Hough
     Ptr<cuda::HoughCirclesDetector> hough;
+    // Orientation Hough
+    Ptr<cuda::HoughCirclesDetector> hough_ori;
     // RGB Hough
     Ptr<cuda::HoughCirclesDetector> hough2;
     cuda::GpuMat kbLocs;

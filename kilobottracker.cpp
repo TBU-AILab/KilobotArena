@@ -258,6 +258,7 @@ void KilobotTracker::LOOPstartstop(int expType)
     //this->hough = cuda::createHoughCirclesDetector(1.0,1.0,this->cannyThresh,this->houghAcc,this->kbMinSize,this->kbMaxSize,5000); // kilobot detection
     //this->hough = cuda::createHoughCirclesDetector(1.0,this->kbMinSize/1.4,this->cannyThresh,this->houghAcc,this->kbMinSize,this->kbMaxSize,3000); // kilobot detection
     this->hough = cuda::createHoughCirclesDetector(1.0,1.0,this->cannyThresh,this->houghAcc,this->kbMinSize,this->kbMaxSize,20000); // kilobot detection
+    this->hough_ori = cuda::createHoughCirclesDetector(1.0,20.0,100.0,12.0,6.0,10.0,20000); // kilobot orientation detection
     this->hough2 = cuda::createHoughCirclesDetector(1.0,1.0,this->cannyThresh,this->houghAcc,this->kbMinSize/7,this->kbMinSize*10/7,10000);// led detection
     //this->hough2 = cuda::createHoughCirclesDetector(1.0,1.0,this->cannyThresh,this->houghAcc,1,this->kbMinSize*10/7,10000);// led detection
 
@@ -638,7 +639,7 @@ void KilobotTracker::SETUPfindKilobots()
         //circle( result, center, 3, Scalar(0,255,0), -1, 8, 0 );
         // draw the circle outline
         circle( display, center, radius, Scalar(0,0,255), 3, 8, 0 );
-        putText(display, this->showIDs?to_string(i):"", center, FONT_HERSHEY_PLAIN, 2.7, Scalar(0,0,255), 3);
+        putText(display, this->showIDs?to_string(i):"", center, FONT_HERSHEY_PLAIN, 4.5, Scalar(0,0,255), 3);
     }
 
     cv::resize(display,display,Size(this->smallImageSize.x()*2, this->smallImageSize.y()*2));
@@ -826,6 +827,12 @@ QString type2str(int type) {
 
     return r;
 }
+
+void KilobotTracker::trackKilobotsOri()
+{
+
+}
+
 void KilobotTracker::trackKilobots()
 {
 
@@ -1276,7 +1283,7 @@ void KilobotTracker::trackKilobots()
                 //qDebug() << "Single vel is" << this->kilos[i]->getVelocity() << "AVG vel is" << this->kilos[i]->velocityBuffer.getAvgOrientation();
 
                 if (this->showIDs) {
-                    cv::putText(display, QString::number(this->kilos[i]->getID()).toStdString(), Point(kilos[i]->getPosition().x(),kilos[i]->getPosition().y()), FONT_HERSHEY_PLAIN, 2.7, rgbColor, 3);
+                    cv::putText(display, QString::number(this->kilos[i]->getID()).toStdString(), Point(kilos[i]->getPosition().x(),kilos[i]->getPosition().y()), FONT_HERSHEY_PLAIN, 4.5, rgbColor, 3);
                 }
             }
             this->drawOverlay(display);
