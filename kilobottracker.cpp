@@ -1238,7 +1238,7 @@ void KilobotTracker::trackKilobots()
             // we add overlay circles and orientation */
             for (int i = 0; i < this->kilos.size(); ++i) {
                 //cv::circle(display,Point(kilos[i]->getPosition().x(),kilos[i]->getPosition().y()),10,Scalar(0,255,0),2);
-                Scalar rgbColor(200,200,0);
+                Scalar rgbColor(255,255,255);
                 switch (kilos[i]->getLedColour()){
                 case OFF:{
                     break;
@@ -1267,10 +1267,10 @@ void KilobotTracker::trackKilobots()
                 if (this->t_type & ROT){
                     Point center(round(kilos[i]->getPosition().x()), round(kilos[i]->getPosition().y()));
                     QLineF currVel = QLineF(QPointF(0,0),this->kilos[i]->getVelocity());
-                    currVel.setLength(currVel.length()*10.0f+20.0f);
+                    currVel.setLength(currVel.length()*10.0f+50.0f);
                     QPointF hdQpt = currVel.p2() + this->kilos[i]->getPosition();
                     Point heading(hdQpt.x(), hdQpt.y());
-                    line(display, center, heading, rgbColor, 3);
+                    line(display, center, heading, rgbColor, 6);
                 }
 
                 //qDebug() << "Single vel is" << this->kilos[i]->getVelocity() << "AVG vel is" << this->kilos[i]->velocityBuffer.getAvgOrientation();
@@ -1671,14 +1671,14 @@ void KilobotTracker::getKiloBotLights(Mat &display) {
 
     cuda::GpuMat channelBlow;
 
-    cuda::multiply(finalImageR,0.6,channelRlow,1,-1,stream2);
-    cuda::multiply(finalImageG,0.56,channelGlow,1,-1,stream3);
-    cuda::multiply(finalImageB,0.65,channelBlow,1,-1,stream1);
+    // DARIO tune the colors here
+    cuda::multiply(finalImageR,redLThreshold,channelRlow,1,-1,stream2);
+    cuda::multiply(finalImageG,greenLThreshold,channelGlow,1,-1,stream3);
+    cuda::multiply(finalImageB,blueLThreshold,channelBlow,1,-1,stream1);
 
-    //cuda::multiply(finalImageR,0.55,channelRhigh,1,-1,stream2);
-    //cuda::multiply(finalImageG,0.70,channelGhigh,1,-1,stream3);
-    cuda::multiply(finalImageG,0.75,channelGhigh,1,-1,stream3);
-    //cuda::multiply(finalImage, 0.55,channelBhigh,1,-1,stream1);
+//    cuda::multiply(finalImageR,redHThreshold,channelRhigh,1,-1,stream2);
+    cuda::multiply(finalImageG,greenHThreshold,channelGhigh,1,-1,stream3);
+//    cuda::multiply(finalImage, blueHThreshold,channelBhigh,1,-1,stream1);
 
     cuda::GpuMat bg;
     cuda::add(channelBlow,channelGhigh,bg, cuda::GpuMat(),-1,stream1);
@@ -1703,14 +1703,17 @@ void KilobotTracker::getKiloBotLights(Mat &display) {
     //        circle( display, center, float(this->kbMaxSize)/1.4, Scalar(250,250,50), 1, 8, 0 );
     //    }
     // **********************************************************************
+//DARIO #define TESTLEDS
+// activate this to print a black and white images showing where the selected channel is seen
 #ifdef TESTLEDS
+        // generate
     cuda::GpuMat yay;
     cuda::multiply(b,3.0,yay,1,-1,stream2);
     yay.download(display);
     cv::cvtColor(display,display,CV_GRAY2RGB);
 #endif
 
-    int circlyness = 6;
+    int circlyness = 7;
 
     QVector < bool > isBlue;
     isBlue.resize(this->kilos.size());

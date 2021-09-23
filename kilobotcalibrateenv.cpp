@@ -31,15 +31,15 @@ bool KilobotCalibrateEnv::evaluateSpeed(int step, int timeInterval, double robot
     double lowTresh, veryLowTresh;
     double highTresh, veryHighTresh;
     if (motionType == LEFT || motionType == RIGHT){
-        lowTresh = robotRadius*0.70;
-        veryLowTresh = robotRadius*0.25;
-        highTresh = robotRadius*0.95;
-        veryHighTresh = robotRadius*1.5;
+        lowTresh = robotRadius*0.6;//0.5;
+        veryLowTresh = robotRadius*0.25;//0.2;
+        highTresh = robotRadius*0.7;//0.7;
+        veryHighTresh = robotRadius*0.9;//0.85;
     } else {
-        lowTresh = robotRadius*0.70;
-        veryLowTresh = robotRadius*0.25;
-        highTresh = robotRadius*1.1;
-        veryHighTresh = robotRadius*1.5;
+        lowTresh = robotRadius*0.7;//0.70;
+        veryLowTresh = robotRadius*0.25;//0.25;
+        highTresh = robotRadius*1.1;//1.1;
+        veryHighTresh = robotRadius*1.5;//1.5;
     }
 
 

@@ -172,12 +172,20 @@ public:
     int kbMinSize = 30;
     int kbMaxSize = 35;
     int houghAcc = 12;
-    int cannyThresh = 90;
+    int cannyThresh = 20;
     int maxIDtoCheck = 100;
     uint manualID;
     // camera parameters
     int height_x_adj = 10;
     int height_y_adj = 10;
+
+    //Default color threshold detection parameters
+    float redLThreshold = 0.75;     //0.6
+    float redHThreshold = 0.0;
+    float greenLThreshold = 0.56;
+    float greenHThreshold = 0.75;
+    float blueLThreshold = 0.65;
+    float blueHThreshold = 0.0;
 
 signals:
     /*!
