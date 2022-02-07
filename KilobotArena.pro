@@ -69,7 +69,7 @@ DEFINES += USE_OPENCV3
 # OpenCV 3
 #INCLUDEPATH += /opt/local/include/
 #LIBS += -L/opt/local/lib \
-INCLUDEPATH += /usr/local/include/
+INCLUDEPATH += /usr/local/include/opencv4
 LIBS += -L/usr/local/lib/ \
 #        -lopencv_ocl \
         -lopencv_core \
@@ -115,7 +115,7 @@ macx {
 CONFIG += c++11
 
 # OpenCV library setup for OSX
-INCLUDEPATH += /usr/local/include
+INCLUDEPATH += /usr/local/include/opencv4
 LIBS += -L/usr/local/lib \
      -lopencv_core \
      -lopencv_imgproc \
@@ -150,3 +150,12 @@ LIBS += -framework AVFoundation
 
 RESOURCES += \
     ressources.qrc
+
+
+pylon {
+    LIBS += -L/opt/pylon/lib -lpylonbase -lpylonutility -lGenApi_gcc_v3_1_Basler_pylon -lGCBase_gcc_v3_1_Basler_pylon
+    INCLUDEPATH += /opt/pylon/include
+    DEFINES += USE_PYLON
+    SOURCES += pylon.cpp
+    HEADERS += pylon.h
+}

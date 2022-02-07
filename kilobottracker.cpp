@@ -16,6 +16,10 @@
 #include <QtMath>
 #include <QDebug>
 
+#if USE_PYLON
+#include "pylon.h"
+#endif
+
 //#define TEST_WITHOUT_CAMERAS
 //#define TESTLEDS
 #define COLDET_V1
@@ -63,7 +67,11 @@ public:
 
     srcDataType type = CAMERA;
 
+#if USE_PYLON
+    PylonVideoSource cap;
+#else
     cv::VideoCapture cap;
+#endif
 
     //video saving
     bool savecamerasframes=false;
@@ -94,6 +102,7 @@ private:
 
         // loop
         while (keepRunning) {
+
             // check for stop signal
             if (srcStop.available()) {
                 keepRunning = false;
@@ -107,6 +116,7 @@ private:
                     image = imread((this->videoDir+QDir::toNativeSeparators("/")+QString("frame_00200_")+QString::number(index)+QString(".jpg")).toStdString());
                 }
                 else if (type == CAMERA) {
+
 #ifndef TEST_WITHOUT_CAMERAS
 
                     // Open the camera
@@ -115,9 +125,9 @@ private:
                         cap.open(0);
                         // set REZ
                         if (cap.isOpened()) {
-                            cap.set(CV_CAP_PROP_FOURCC, CV_FOURCC('M','J','P','G'));
-                            cap.set(CV_CAP_PROP_FRAME_WIDTH, IM_WIDTH);
-                            cap.set(CV_CAP_PROP_FRAME_HEIGHT, IM_HEIGHT);
+                            cap.set(CAP_PROP_FOURCC, cv::VideoWriter::fourcc('M','J','P','G'));
+                            cap.set(CAP_PROP_FRAME_WIDTH, IM_WIDTH);
+                            cap.set(CAP_PROP_FRAME_HEIGHT, IM_HEIGHT);
                         } else {
                             this->keepRunning = false;
                             continue;
@@ -136,16 +146,20 @@ private:
                         //This rect must be changed whenever the camera changes position.
                         //This captures exactly the center of the scene, in order to have only the arena region.
                         //The output image has dimensions 1400 x 1400 pixels.
-                        image = image(Rect(370,70,1400,1400));
+//                        image = image(Rect(370,70,1400,1400));
 
                         // One has to check whether it is necessary for the image to have Size 2000 x 2000 pixels.
                         // We kept only because the original ARK code prescribes this size.
-                        cv::resize(image, image, cv::Size(2000,2000), 0, 0, cv::INTER_CUBIC);
+//                        cv::resize(image, image, cv::Size(2000,2000), 0, 0, cv::INTER_CUBIC);
                         if(savecamerasframes) {
                             vector<int> compression_params;
-                            compression_params.push_back(CV_IMWRITE_JPEG_QUALITY);
+                            compression_params.push_back(IMWRITE_JPEG_QUALITY);
                             compression_params.push_back(95);
+#if 1
                             imwrite(videoframeprefix.toStdString(), image, compression_params);
+#else
+                            cv::imwrite("frame.jpg", image, compression_params);
+#endif
                             savecamerasframes=false;
                         }
                         camUsage.release();
@@ -620,7 +634,7 @@ void KilobotTracker::SETUPfindKilobots()
 #endif
 
     vector<Vec3f> circles;
-    HoughCircles(res2,circles,CV_HOUGH_GRADIENT,1.0/* rez scaling (1 = full rez, 2 = half etc)*/ \
+    HoughCircles(res2,circles,HOUGH_GRADIENT,1.0/* rez scaling (1 = full rez, 2 = half etc)*/ \
                  ,this->kbMaxSize-1/* circle distance*/ \
                  ,cannyThresh /* Canny threshold*/ \
                  ,houghAcc /*cicle algorithm accuracy*/ \
@@ -628,7 +642,7 @@ void KilobotTracker::SETUPfindKilobots()
                  ,kbMaxSize/* max circle size*/);
 
     // the *2 is an assumption - should always be true...
-    cv::cvtColor(display, display, CV_GRAY2RGB);
+    cv::cvtColor(display, display, COLOR_GRAY2RGB);
 
     for( size_t i = 0; i < circles.size(); i++ )
     {
@@ -644,10 +658,10 @@ void KilobotTracker::SETUPfindKilobots()
     cv::resize(display,display,Size(this->smallImageSize.x()*2, this->smallImageSize.y()*2));
 
     // convert to C header for easier mem ptr addressing
-    IplImage imageIpl = display;
+    Mat imageIpl = display;
 
     // create a QImage container pointing to the image data
-    QImage qimg((uchar *) imageIpl.imageData,imageIpl.width,imageIpl.height,QImage::Format_RGB888);
+    QImage qimg((uchar *) imageIpl.data,imageIpl.size().width,imageIpl.size().height,QImage::Format_RGB888);
 
     // assign to a QPixmap (may copy)
     QPixmap pix = QPixmap::fromImage(qimg);
@@ -683,10 +697,15 @@ void KilobotTracker::identifyKilobots()
 #ifdef USE_CUDA
     Mat display;
     this->finalImageB.download(display);
-    cv::cvtColor(display, display, CV_GRAY2RGB);
+    if(!display.empty()){
+        cv::cvtColor(display, display, COLOR_GRAY2RGB);
+    }else{
+        qDebug() << "No frame, skipping";
+        return;
+    }
 #else
     Mat display;
-    cv::cvtColor(this->finalImage, display, CV_GRAY2RGB);
+    cv::cvtColor(this->finalImage, display, COLOR_GRAY2RGB);
 #endif
 
     if (time == 0)
@@ -834,10 +853,13 @@ void KilobotTracker::trackKilobots()
     Mat display;
     Mat temp_for_reacquire;
     this->finalImageB.download(temp_for_reacquire);
-    cv::cvtColor(temp_for_reacquire, display, CV_GRAY2RGB);
+    if(temp_for_reacquire.empty()){
+        return;
+    }
+    cv::cvtColor(temp_for_reacquire, display, COLOR_GRAY2RGB);
 #else
     Mat display;
-    cv::cvtColor(this->finalImage, display, CV_GRAY2RGB);
+    cv::cvtColor(this->finalImage, display, COLOR_GRAY2RGB);
 #endif
 
     switch (this->trackType) {
@@ -1276,7 +1298,7 @@ void KilobotTracker::trackKilobots()
                 //qDebug() << "Single vel is" << this->kilos[i]->getVelocity() << "AVG vel is" << this->kilos[i]->velocityBuffer.getAvgOrientation();
 
                 if (this->showIDs) {
-                    cv::putText(display, QString::number(this->kilos[i]->getID()).toStdString(), Point(kilos[i]->getPosition().x(),kilos[i]->getPosition().y()-33), FONT_HERSHEY_PLAIN, 3.5, rgbColor, 3);
+                    putText(display, QString::number(this->kilos[i]->getID()).toStdString(), Point(kilos[i]->getPosition().x(),kilos[i]->getPosition().y()-33), FONT_HERSHEY_PLAIN, 3.5, rgbColor, 3);
                 }
             }
             this->drawOverlay(display);
@@ -1710,10 +1732,10 @@ void KilobotTracker::getKiloBotLights(Mat &display) {
     cuda::GpuMat yay;
     cuda::multiply(b,3.0,yay,1,-1,stream2);
     yay.download(display);
-    cv::cvtColor(display,display,CV_GRAY2RGB);
+    cv::cvtColor(display,display,COLOR_GRAY2RGB);
 #endif
 
-    int circlyness = 7;
+    int circlyness = 6;
 
     QVector < bool > isBlue;
     isBlue.resize(this->kilos.size());
@@ -1809,9 +1831,27 @@ void KilobotTracker::getKiloBotLights(Mat &display) {
                     // on the cpu
                     //                    kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->getVelocity(), col);
                     kilos[i]->colBuffer.addColour(col);
-                    kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->getVelocity(), kilos[i]->colBuffer.getAvgColour());
+                    //kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->getVelocity(), kilos[i]->colBuffer.getAvgColour());
+                    // For HONZA: the position of the detected LED should be at x = circChans[0][minLoc] and y = circChans[1][minLoc]
+                    // Here you compute the so-called Velocity (i.e. the orientation)
+                    // if (this->t_type & ROT_WITH_LED){
+                    //    newOrientation = ledPostion - kilos[i]->getPosition();
+//                    float ledX = circChansXCpu.at<float>(minLoc->y);
+//                    float ledY = circChansYCpu.at<float>(minLoc->y);
+//                    qDebug() <<  minLoc->x << ", " << minLoc->y<< endl;
+//                    qDebug() << "ledX: " << ledX << ", " << ledY<< endl;
+//                    qDebug() << kilos[i]->getPosition()<< endl;
+                    QPointF ledPos(circChansXCpu.at<float>(minLoc->y), circChansYCpu.at<float>(minLoc->y));
+                    kilos[i]->velocityBuffer.addOrientation(ledPos-kilos[i]->getPosition());
+                    kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->velocityBuffer.getAvgOrientation(), kilos[i]->colBuffer.getAvgColour());
+
                 }
             }
+            //                for (int i = 0; i < circChansXCpu.size().at<int>(0); ++i) {
+            //                    qDebug() << "circChansXCpu: " << circChansXCpu.at<int>(i);
+            //                }
+            //cout << "Mx = " << endl << " "  << circChansXCpu << endl << endl;
+            //cout << "My = " << endl << " "  << circChansYCpu << endl << endl;
 
         }
     }
@@ -1897,7 +1937,12 @@ void KilobotTracker::getKiloBotLights(Mat &display) {
                     // on the cpu
                     //                    kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->getVelocity(), col);
                     kilos[i]->colBuffer.addColour(col);
-                    kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->getVelocity(), kilos[i]->colBuffer.getAvgColour());
+                    //HONZA: this was the previous version
+                    // kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->getVelocity(), kilos[i]->colBuffer.getAvgColour());
+                    // this is the new version
+                    QPointF ledPos(circChansXCpu.at<float>(minLoc->y), circChansYCpu.at<float>(minLoc->y));
+                    kilos[i]->velocityBuffer.addOrientation(ledPos-kilos[i]->getPosition());
+                    kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->velocityBuffer.getAvgOrientation(), kilos[i]->colBuffer.getAvgColour());
                 }
             }
 
@@ -1984,7 +2029,10 @@ void KilobotTracker::getKiloBotLights(Mat &display) {
                     // on the cpu
                     //                    kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->getVelocity(), col);
                     kilos[i]->colBuffer.addColour(col);
-                    kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->getVelocity(), kilos[i]->colBuffer.getAvgColour());
+                    // HONZA: kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->getVelocity(), kilos[i]->colBuffer.getAvgColour());
+                    QPointF ledPos(circChansXCpu.at<float>(minLoc->y), circChansYCpu.at<float>(minLoc->y));
+                    kilos[i]->velocityBuffer.addOrientation(ledPos-kilos[i]->getPosition());
+                    kilos[i]->updateState(kilos[i]->getPosition(),kilos[i]->velocityBuffer.getAvgOrientation(), kilos[i]->colBuffer.getAvgColour());
 
                 }
             }
@@ -2566,10 +2614,10 @@ void KilobotTracker::showMat(Mat &display)
     //if (this->flip180) cv::flip(display, display,-1);
 
     // convert to C header for easier mem ptr addressing
-    IplImage imageIpl = display;
+    Mat imageIpl = display;
 
     // create a QImage container pointing to the image data
-    QImage qimg((uchar *) imageIpl.imageData,imageIpl.width,imageIpl.height,QImage::Format_RGB888);
+    QImage qimg((uchar *) imageIpl.data,imageIpl.size().width,imageIpl.size().height,QImage::Format_RGB888);
 
     // assign to a QPixmap (may copy)
     QPixmap pix = QPixmap::fromImage(qimg);

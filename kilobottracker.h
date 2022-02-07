@@ -169,10 +169,10 @@ public:
     KilobotExperiment * expt;
 
     //Default tracking parameters and identification parameters
-    int kbMinSize = 30;
-    int kbMaxSize = 35;
-    int houghAcc = 12;
-    int cannyThresh = 20;
+    int kbMinSize = 11;
+    int kbMaxSize = 22;
+    int houghAcc = 27;
+    int cannyThresh = 40;
     int maxIDtoCheck = 100;
     uint manualID;
     // camera parameters

@@ -213,7 +213,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_src">
      <property name="geometry">
@@ -221,7 +221,7 @@
        <x>0</x>
        <y>0</y>
        <width>321</width>
-       <height>489</height>
+       <height>485</height>
       </rect>
      </property>
      <attribute name="label">
@@ -366,7 +366,7 @@
        <x>0</x>
        <y>0</y>
        <width>321</width>
-       <height>489</height>
+       <height>485</height>
       </rect>
      </property>
      <attribute name="label">
@@ -751,7 +751,7 @@
          <x>20</x>
          <y>200</y>
          <width>251</width>
-         <height>29</height>
+         <height>30</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -789,7 +789,7 @@
          <x>20</x>
          <y>170</y>
          <width>261</width>
-         <height>29</height>
+         <height>30</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -871,7 +871,7 @@
         <x>10</x>
         <y>0</y>
         <width>291</width>
-        <height>229</height>
+        <height>236</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -1014,7 +1014,7 @@
        <x>0</x>
        <y>0</y>
        <width>321</width>
-       <height>489</height>
+       <height>485</height>
       </rect>
      </property>
      <attribute name="label">
@@ -1120,7 +1120,7 @@
        <x>0</x>
        <y>0</y>
        <width>321</width>
-       <height>489</height>
+       <height>485</height>
       </rect>
      </property>
      <attribute name="label">
@@ -1430,7 +1430,7 @@
      <x>0</x>
      <y>0</y>
      <width>972</width>
-     <height>24</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

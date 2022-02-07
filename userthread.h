@@ -125,6 +125,7 @@ public slots:
             case CALIBRATION:
                 if (exptLoaded()) this->currExpt->deleteLater();
                 this->currExpt = new KilobotCalibrate( (this->kbtracker->kbMinSize+this->kbtracker->kbMaxSize)/2.0 );
+                //this->currExpt = new KilobotCalibrate( this->kbtracker->kbMaxSize );
                 break;
             default:
                 break;
