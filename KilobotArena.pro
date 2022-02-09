@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     ohc/serialwin.cpp \
     kilobotidassignment.cpp \
     kilobotcalibrate.cpp \
-    kilobotcalibrateenv.cpp
+    kilobotcalibrateenv.cpp \
+    userthread.cpp
 
 HEADERS  += mainwindow.h \
     clicksignalqlabel.h \
