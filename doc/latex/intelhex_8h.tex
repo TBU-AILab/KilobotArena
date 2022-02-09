@@ -1,0 +1,53 @@
+\hypertarget{intelhex_8h}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/ohc/intelhex.h File Reference}
+\label{intelhex_8h}\index{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/intelhex.h@{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/intelhex.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structintelhex_1_1hex__data}{intelhex\+::hex\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceintelhex}{intelhex}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{intelhex_8h_acd810115e5a0df970333281e7a3fb4b1}{HEX\+\_\+\+FORMAT\+\_\+\+INHX8M}}~0x01
+\item 
+\#define \mbox{\hyperlink{intelhex_8h_a000b815975d100579e2aaca012007242}{HEX\+\_\+\+FORMAT\+\_\+\+INHX32}}~0x02
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef hex\+\_\+data \mbox{\hyperlink{namespaceintelhex_afefef439fde18ec24f17127072354c36}{intelhex\+::container}}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{intelhex\+::address\+\_\+type}}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{intelhex\+::value\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceintelhex_af9c6ed625eac363125f00a5f5a4565b4}{intelhex\+::compare}} (hex\+\_\+data \&hex1, hex\+\_\+data \&hex2, value\+\_\+type mask, address\+\_\+type begin, address\+\_\+type end)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{intelhex_8h_a000b815975d100579e2aaca012007242}\label{intelhex_8h_a000b815975d100579e2aaca012007242}} 
+\index{intelhex.h@{intelhex.h}!HEX\_FORMAT\_INHX32@{HEX\_FORMAT\_INHX32}}
+\index{HEX\_FORMAT\_INHX32@{HEX\_FORMAT\_INHX32}!intelhex.h@{intelhex.h}}
+\doxysubsubsection{\texorpdfstring{HEX\_FORMAT\_INHX32}{HEX\_FORMAT\_INHX32}}
+{\footnotesize\ttfamily \#define HEX\+\_\+\+FORMAT\+\_\+\+INHX32~0x02}
+
+\mbox{\Hypertarget{intelhex_8h_acd810115e5a0df970333281e7a3fb4b1}\label{intelhex_8h_acd810115e5a0df970333281e7a3fb4b1}} 
+\index{intelhex.h@{intelhex.h}!HEX\_FORMAT\_INHX8M@{HEX\_FORMAT\_INHX8M}}
+\index{HEX\_FORMAT\_INHX8M@{HEX\_FORMAT\_INHX8M}!intelhex.h@{intelhex.h}}
+\doxysubsubsection{\texorpdfstring{HEX\_FORMAT\_INHX8M}{HEX\_FORMAT\_INHX8M}}
+{\footnotesize\ttfamily \#define HEX\+\_\+\+FORMAT\+\_\+\+INHX8M~0x01}
+

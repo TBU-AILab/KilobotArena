@@ -1,0 +1,93 @@
+\hypertarget{kilobottracker_8cpp}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobottracker.cpp File Reference}
+\label{kilobottracker_8cpp}\index{/Users/peterjanku/SourcesCpp/KilobotArena/kilobottracker.cpp@{/Users/peterjanku/SourcesCpp/KilobotArena/kilobottracker.cpp}}
+{\ttfamily \#include \char`\"{}kilobottracker.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}kilobotexperiment.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QImage$>$}\newline
+{\ttfamily \#include $<$QThread$>$}\newline
+{\ttfamily \#include $<$QLine\+Edit$>$}\newline
+{\ttfamily \#include $<$QDir$>$}\newline
+{\ttfamily \#include $<$QSettings$>$}\newline
+{\ttfamily \#include $<$QFile\+Dialog$>$}\newline
+{\ttfamily \#include $<$Qt\+Math$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classacquire_thread}{acquire\+Thread}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classacquire_thread}{acquire\+Thread}} class This thread acquires input data from a source, applies the local warps to the data, and then places the data in a circular buffer for use by the main thread, which operates on a QTimer to allow UI responsivity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{kilobottracker_8cpp_a13dfe34c305ab0b7f4daef05235f02c7}{COLDET\+\_\+\+V1}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{kilobottracker_8cpp_a1db414b6a89ba07eb23641564dea6d5c}{type2str}} (int type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+QSemaphore \mbox{\hyperlink{kilobottracker_8cpp_af579fd67711d9d166643357840007a2b}{src\+Free}}
+\item 
+QSemaphore \mbox{\hyperlink{kilobottracker_8cpp_ac789e89269fab438e2182877f144f481}{src\+Used}}
+\item 
+\mbox{\hyperlink{structsrc_buffer}{src\+Buffer}} \mbox{\hyperlink{kilobottracker_8cpp_ab9f2f7b3991f6c177f30da765d67cc91}{src\+Buff}} \mbox{[}\mbox{\hyperlink{kilobottracker_8h_a6c7cd32e1bac137f05e4a752b4ad10af}{BUFF\+\_\+\+SIZE}}\mbox{]}
+\item 
+QSemaphore \mbox{\hyperlink{kilobottracker_8cpp_a563aaa4c6508364dcbb455f5da861bdd}{src\+Stop}}
+\item 
+QSemaphore \mbox{\hyperlink{kilobottracker_8cpp_a9d37f6fd6caea1c6ecfc96ed3c00f515}{cam\+Usage}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{kilobottracker_8cpp_a13dfe34c305ab0b7f4daef05235f02c7}\label{kilobottracker_8cpp_a13dfe34c305ab0b7f4daef05235f02c7}} 
+\index{kilobottracker.cpp@{kilobottracker.cpp}!COLDET\_V1@{COLDET\_V1}}
+\index{COLDET\_V1@{COLDET\_V1}!kilobottracker.cpp@{kilobottracker.cpp}}
+\doxysubsubsection{\texorpdfstring{COLDET\_V1}{COLDET\_V1}}
+{\footnotesize\ttfamily \#define COLDET\+\_\+\+V1}
+
+\mbox{\hyperlink{kilobottracker_8cpp}{Kilobottracker.\+cpp}}
+
+Created on\+: 3 Oct 2016 Author\+: Alex Cope 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kilobottracker_8cpp_a1db414b6a89ba07eb23641564dea6d5c}\label{kilobottracker_8cpp_a1db414b6a89ba07eb23641564dea6d5c}} 
+\index{kilobottracker.cpp@{kilobottracker.cpp}!type2str@{type2str}}
+\index{type2str@{type2str}!kilobottracker.cpp@{kilobottracker.cpp}}
+\doxysubsubsection{\texorpdfstring{type2str()}{type2str()}}
+{\footnotesize\ttfamily QString type2str (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{kilobottracker_8cpp_a9d37f6fd6caea1c6ecfc96ed3c00f515}\label{kilobottracker_8cpp_a9d37f6fd6caea1c6ecfc96ed3c00f515}} 
+\index{kilobottracker.cpp@{kilobottracker.cpp}!camUsage@{camUsage}}
+\index{camUsage@{camUsage}!kilobottracker.cpp@{kilobottracker.cpp}}
+\doxysubsubsection{\texorpdfstring{camUsage}{camUsage}}
+{\footnotesize\ttfamily QSemaphore cam\+Usage}
+
+\mbox{\Hypertarget{kilobottracker_8cpp_ab9f2f7b3991f6c177f30da765d67cc91}\label{kilobottracker_8cpp_ab9f2f7b3991f6c177f30da765d67cc91}} 
+\index{kilobottracker.cpp@{kilobottracker.cpp}!srcBuff@{srcBuff}}
+\index{srcBuff@{srcBuff}!kilobottracker.cpp@{kilobottracker.cpp}}
+\doxysubsubsection{\texorpdfstring{srcBuff}{srcBuff}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsrc_buffer}{src\+Buffer}} src\+Buff\mbox{[}\mbox{\hyperlink{kilobottracker_8h_a6c7cd32e1bac137f05e4a752b4ad10af}{BUFF\+\_\+\+SIZE}}\mbox{]}}
+
+\mbox{\Hypertarget{kilobottracker_8cpp_af579fd67711d9d166643357840007a2b}\label{kilobottracker_8cpp_af579fd67711d9d166643357840007a2b}} 
+\index{kilobottracker.cpp@{kilobottracker.cpp}!srcFree@{srcFree}}
+\index{srcFree@{srcFree}!kilobottracker.cpp@{kilobottracker.cpp}}
+\doxysubsubsection{\texorpdfstring{srcFree}{srcFree}}
+{\footnotesize\ttfamily QSemaphore src\+Free}
+
+\mbox{\Hypertarget{kilobottracker_8cpp_a563aaa4c6508364dcbb455f5da861bdd}\label{kilobottracker_8cpp_a563aaa4c6508364dcbb455f5da861bdd}} 
+\index{kilobottracker.cpp@{kilobottracker.cpp}!srcStop@{srcStop}}
+\index{srcStop@{srcStop}!kilobottracker.cpp@{kilobottracker.cpp}}
+\doxysubsubsection{\texorpdfstring{srcStop}{srcStop}}
+{\footnotesize\ttfamily QSemaphore src\+Stop}
+
+\mbox{\Hypertarget{kilobottracker_8cpp_ac789e89269fab438e2182877f144f481}\label{kilobottracker_8cpp_ac789e89269fab438e2182877f144f481}} 
+\index{kilobottracker.cpp@{kilobottracker.cpp}!srcUsed@{srcUsed}}
+\index{srcUsed@{srcUsed}!kilobottracker.cpp@{kilobottracker.cpp}}
+\doxysubsubsection{\texorpdfstring{srcUsed}{srcUsed}}
+{\footnotesize\ttfamily QSemaphore src\+Used}
+

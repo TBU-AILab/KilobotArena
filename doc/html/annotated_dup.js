@@ -1,0 +1,35 @@
+var annotated_dup =
+[
+    [ "intelhex", "namespaceintelhex.html", [
+      [ "hex_data", "structintelhex_1_1hex__data.html", "structintelhex_1_1hex__data" ]
+    ] ],
+    [ "acquireThread", "classacquire_thread.html", "classacquire_thread" ],
+    [ "CalibWindow", "class_calib_window.html", "class_calib_window" ],
+    [ "clickSignalQLabel", "classclick_signal_q_label.html", "classclick_signal_q_label" ],
+    [ "ColourBuffer", "class_colour_buffer.html", "class_colour_buffer" ],
+    [ "dragZoomQLabel", "classdrag_zoom_q_label.html", "classdrag_zoom_q_label" ],
+    [ "drawnCircle", "structdrawn_circle.html", "structdrawn_circle" ],
+    [ "drawnLine", "structdrawn_line.html", "structdrawn_line" ],
+    [ "indexPair", "structindex_pair.html", "structindex_pair" ],
+    [ "kilo_cmd_t", "structkilo__cmd__t.html", "structkilo__cmd__t" ],
+    [ "Kilobot", "class_kilobot.html", "class_kilobot" ],
+    [ "kilobot_broadcast", "structkilobot__broadcast.html", "structkilobot__broadcast" ],
+    [ "kilobot_message", "structkilobot__message.html", "structkilobot__message" ],
+    [ "KilobotCalibrate", "class_kilobot_calibrate.html", "class_kilobot_calibrate" ],
+    [ "KilobotCalibrateEnv", "class_kilobot_calibrate_env.html", "class_kilobot_calibrate_env" ],
+    [ "KilobotEnvironment", "class_kilobot_environment.html", "class_kilobot_environment" ],
+    [ "KilobotExperiment", "class_kilobot_experiment.html", "class_kilobot_experiment" ],
+    [ "KilobotIDAssignment", "class_kilobot_i_d_assignment.html", "class_kilobot_i_d_assignment" ],
+    [ "KilobotOverheadController", "class_kilobot_overhead_controller.html", "class_kilobot_overhead_controller" ],
+    [ "KilobotTracker", "class_kilobot_tracker.html", "class_kilobot_tracker" ],
+    [ "kiloLight", "structkilo_light.html", "structkilo_light" ],
+    [ "KiloLog", "class_kilo_log.html", "class_kilo_log" ],
+    [ "MainWindow", "class_main_window.html", "class_main_window" ],
+    [ "OrientationBuffer", "class_orientation_buffer.html", "class_orientation_buffer" ],
+    [ "PositionBuffer", "class_position_buffer.html", "class_position_buffer" ],
+    [ "PylonVideoSource", "class_pylon_video_source.html", "class_pylon_video_source" ],
+    [ "SerialConnection", "class_serial_connection.html", "class_serial_connection" ],
+    [ "SerialWindow", "class_serial_window.html", "class_serial_window" ],
+    [ "srcBuffer", "structsrc_buffer.html", "structsrc_buffer" ],
+    [ "UserThread", "class_user_thread.html", "class_user_thread" ]
+];

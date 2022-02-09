@@ -1,0 +1,40 @@
+\hypertarget{serialconn_8cpp}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/ohc/serialconn.cpp File Reference}
+\label{serialconn_8cpp}\index{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/serialconn.cpp@{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/serialconn.cpp}}
+{\ttfamily \#include \char`\"{}serialconn.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}packet.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QDir$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5af81b467c1f5e20f847402b03925c0d12}{MODE\+\_\+\+NORMAL}} = 0
+, \mbox{\hyperlink{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5a0dae34373845b77a8ea07b40358d0419}{MODE\+\_\+\+UPLOAD}} = 0x01
+, \mbox{\hyperlink{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5a0db3363e5bebc9f00f39ef810517381c}{MODE\+\_\+\+DOWNLOAD}} = 0x02
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5}\label{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODE\_NORMAL@{MODE\_NORMAL}!serialconn.cpp@{serialconn.cpp}}\index{serialconn.cpp@{serialconn.cpp}!MODE\_NORMAL@{MODE\_NORMAL}}}\mbox{\Hypertarget{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5af81b467c1f5e20f847402b03925c0d12}\label{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5af81b467c1f5e20f847402b03925c0d12}} 
+MODE\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODE\_UPLOAD@{MODE\_UPLOAD}!serialconn.cpp@{serialconn.cpp}}\index{serialconn.cpp@{serialconn.cpp}!MODE\_UPLOAD@{MODE\_UPLOAD}}}\mbox{\Hypertarget{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5a0dae34373845b77a8ea07b40358d0419}\label{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5a0dae34373845b77a8ea07b40358d0419}} 
+MODE\+\_\+\+UPLOAD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODE\_DOWNLOAD@{MODE\_DOWNLOAD}!serialconn.cpp@{serialconn.cpp}}\index{serialconn.cpp@{serialconn.cpp}!MODE\_DOWNLOAD@{MODE\_DOWNLOAD}}}\mbox{\Hypertarget{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5a0db3363e5bebc9f00f39ef810517381c}\label{serialconn_8cpp_a99fb83031ce9923c84392b4e92f956b5a0db3363e5bebc9f00f39ef810517381c}} 
+MODE\+\_\+\+DOWNLOAD&\\
+\hline
+
+\end{DoxyEnumFields}
