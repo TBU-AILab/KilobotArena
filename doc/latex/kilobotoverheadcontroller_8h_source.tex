@@ -1,0 +1,94 @@
+\hypertarget{kilobotoverheadcontroller_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobotoverheadcontroller.h}
+\mbox{\hyperlink{kilobotoverheadcontroller_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef KILOBOTOVERHEADCONTROLLER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define KILOBOTOVERHEADCONTROLLER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobot_8h}{kilobot.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QList>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <QPushButton>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include<QTimer>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// Include for communication with the OHC}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{serialwin_8h}{ohc/serialwin.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{serialconn_8h}{ohc/serialconn.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{calibrate_8h}{ohc/calibrate.h}}"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_kilobot_overhead_controller}{KilobotOverheadController}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     Q\_OBJECT}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_kilobot_overhead_controller_ae44d8f79974e9900d6e6212538f3e5e3}{KilobotOverheadController}}(QObject *parent = 0);}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_kilobot_overhead_controller_aced08aca8105c45cdd0195fd87498bc4}{\string~KilobotOverheadController}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 signals:}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a99be14dabb0a2007b0959417035eae21}{errorMessage}}(QString);}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a2924799a797d50a6ce4d986f35f42466}{setStopButton}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_ae42b1bd7a418ee2561edcb29b9180fef}{SignalMsgsQueueState}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a1aeb28de37563f88d6274ade34d7fff2}{identifyKilobot}}(uint8\_t \textcolor{keywordtype}{id});}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a9dc858f988e81dc7f0fba09d00279941}{broadcastMessage}}(\mbox{\hyperlink{structkilobot__broadcast}{kilobot\_broadcast}});}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_af96c29dda0b0a1fe45bb8564313bd607}{signalKilobot}}(\mbox{\hyperlink{structkilobot__message}{kilobot\_message}});}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a63e3aad7044ffd54bad806c1109d5838}{serialUpdateStatus}}(QString);}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a8adc9fda68a16ccc8dbec3cdf4268faf}{showError}}(QString);}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a849c8b456f9f693c360f64da66b2f468}{SendMsgsQueueState}}(\textcolor{keywordtype}{bool} state)\{emit \mbox{\hyperlink{class_kilobot_overhead_controller_ae42b1bd7a418ee2561edcb29b9180fef}{SignalMsgsQueueState}}(state);\}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a3bd3044f38d13aa00d3f1a6a145eeb47}{clearMsgQueue}}()\{this-\/>serial\_conn-\/>\mbox{\hyperlink{class_serial_connection_a4cb1c606e737bde969c7c985c5bbe352}{clearQueue}}();\}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{// connect / disconnect}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a7a499ea2da7bdeef42c2fefee45c204c}{toggleConnection}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{comment}{// access the build in kilobot commands for all kilobots}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a440f34b685f3119e4546dcf0bd70a1df}{resetKilobots}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a7f82a3698cabea823517d3b16e22fdfe}{sleepKilobots}}();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_abdd37a814090c694f49b5e7d0ecd2590}{runKilobots}}();}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_acc943a335ae75882880dbf55aa841672}{stopSending}}();}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a1e518508755bf564e77fba84df69ffbf}{checkVoltage}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{comment}{// program loading}}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_ac9d1c74b4273f4c9908cadd195e53b6a}{chooseProgramFile}}();}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a29a659d5a40eddcb9bc0bd50364bcd56}{uploadProgram}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// timed messages}}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_overhead_controller_a23da5b9ed961f1bf03e4e3bc22ff6c38}{sendBatch}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{private}:}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{// PRIVATE MEMBERS}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{int} device;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{bool} sending;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{bool} connected;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \mbox{\hyperlink{class_serial_connection}{SerialConnection}} *serial\_conn;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     QString serial\_status;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     QString program\_file;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{comment}{// PRIVATE METHODS}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} updateStatus();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} sendMessage(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} sendDataMessage(uint8\_t *, uint8\_t);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     QVector < kilobot\_message > message\_q;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     QTimer timer;}
+\DoxyCodeLine{84     QTime lastMsgTime;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// KILOBOTOVERHEADCONTROLLER\_H}}
+
+\end{DoxyCode}

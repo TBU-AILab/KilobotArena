@@ -1,0 +1,125 @@
+\hypertarget{kilobotidassignment_8h}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobotidassignment.h File Reference}
+\label{kilobotidassignment_8h}\index{/Users/peterjanku/SourcesCpp/KilobotArena/kilobotidassignment.h@{/Users/peterjanku/SourcesCpp/KilobotArena/kilobotidassignment.h}}
+{\ttfamily \#include \char`\"{}kilobotexperiment.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QElapsed\+Timer$>$}\newline
+{\ttfamily \#include $<$QFile$>$}\newline
+{\ttfamily \#include \char`\"{}kilobot.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_kilo_log}{Kilo\+Log}}
+\item 
+class \mbox{\hyperlink{class_kilobot_i_d_assignment}{Kilobot\+IDAssignment}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{kilobotidassignment_8h_a2f2df79539bea58683da43170847feba}{DUPE}}~UINT16\+\_\+\+MAX
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646}{assign\+Stage}} \{ \newline
+\mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a13d000b4d7dc70d90239b7430d1eb6b2}{START}}
+, \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a67be7a5f47004345047b32fff72a2230}{SEND}}
+, \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646ab2f0cd22b1963becef8b91d29d567fe8}{TEST}}
+, \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a8547ec939211e497427e395b924a77f1}{CONFIRM}}
+, \newline
+\mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a76d44342c42b85edbde0cae33f14c5de}{RETRY}}
+, \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a00a900c9df90c74f75004b3dc04f173d}{COMPLETE}}
+ \}
+\item 
+enum \mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61}{assignmethod}} \{ \mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61aecafbc1299672a8c1521cc0d5f1ae986}{BINARY}}
+, \mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61a6add28f749f6a94df2c1b715a029f5b4}{BASETHREE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{kilobotidassignment_8h_a49a6472f3f6400d4921fd685822afb10}{base\+Four\+Multipliers}} \mbox{[}6\mbox{]} = \{1,4,16,64,256,1024\}
+\item 
+const int \mbox{\hyperlink{kilobotidassignment_8h_afca2adaf9c4c3ba2fd718be8d89be155}{binary\+Multipliers}} \mbox{[}11\mbox{]} = \{1,2,4,8,16,32,64,128,256,512,1024\}
+\item 
+const int \mbox{\hyperlink{kilobotidassignment_8h_aa32dffbbf401642f29802c45253a64cf}{base\+Three\+Multipliers}} \mbox{[}8\mbox{]} = \{1,3,9,27,81,243,729,2187\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{kilobotidassignment_8h_a2f2df79539bea58683da43170847feba}\label{kilobotidassignment_8h_a2f2df79539bea58683da43170847feba}} 
+\index{kilobotidassignment.h@{kilobotidassignment.h}!DUPE@{DUPE}}
+\index{DUPE@{DUPE}!kilobotidassignment.h@{kilobotidassignment.h}}
+\doxysubsubsection{\texorpdfstring{DUPE}{DUPE}}
+{\footnotesize\ttfamily \#define DUPE~UINT16\+\_\+\+MAX}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61}\label{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61}} 
+\index{kilobotidassignment.h@{kilobotidassignment.h}!assignmethod@{assignmethod}}
+\index{assignmethod@{assignmethod}!kilobotidassignment.h@{kilobotidassignment.h}}
+\doxysubsubsection{\texorpdfstring{assignmethod}{assignmethod}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61}{assignmethod}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BINARY@{BINARY}!kilobotidassignment.h@{kilobotidassignment.h}}\index{kilobotidassignment.h@{kilobotidassignment.h}!BINARY@{BINARY}}}\mbox{\Hypertarget{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61aecafbc1299672a8c1521cc0d5f1ae986}\label{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61aecafbc1299672a8c1521cc0d5f1ae986}} 
+BINARY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BASETHREE@{BASETHREE}!kilobotidassignment.h@{kilobotidassignment.h}}\index{kilobotidassignment.h@{kilobotidassignment.h}!BASETHREE@{BASETHREE}}}\mbox{\Hypertarget{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61a6add28f749f6a94df2c1b715a029f5b4}\label{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61a6add28f749f6a94df2c1b715a029f5b4}} 
+BASETHREE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646}\label{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646}} 
+\index{kilobotidassignment.h@{kilobotidassignment.h}!assignStage@{assignStage}}
+\index{assignStage@{assignStage}!kilobotidassignment.h@{kilobotidassignment.h}}
+\doxysubsubsection{\texorpdfstring{assignStage}{assignStage}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646}{assign\+Stage}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START@{START}!kilobotidassignment.h@{kilobotidassignment.h}}\index{kilobotidassignment.h@{kilobotidassignment.h}!START@{START}}}\mbox{\Hypertarget{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a13d000b4d7dc70d90239b7430d1eb6b2}\label{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a13d000b4d7dc70d90239b7430d1eb6b2}} 
+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEND@{SEND}!kilobotidassignment.h@{kilobotidassignment.h}}\index{kilobotidassignment.h@{kilobotidassignment.h}!SEND@{SEND}}}\mbox{\Hypertarget{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a67be7a5f47004345047b32fff72a2230}\label{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a67be7a5f47004345047b32fff72a2230}} 
+SEND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST@{TEST}!kilobotidassignment.h@{kilobotidassignment.h}}\index{kilobotidassignment.h@{kilobotidassignment.h}!TEST@{TEST}}}\mbox{\Hypertarget{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646ab2f0cd22b1963becef8b91d29d567fe8}\label{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646ab2f0cd22b1963becef8b91d29d567fe8}} 
+TEST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONFIRM@{CONFIRM}!kilobotidassignment.h@{kilobotidassignment.h}}\index{kilobotidassignment.h@{kilobotidassignment.h}!CONFIRM@{CONFIRM}}}\mbox{\Hypertarget{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a8547ec939211e497427e395b924a77f1}\label{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a8547ec939211e497427e395b924a77f1}} 
+CONFIRM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RETRY@{RETRY}!kilobotidassignment.h@{kilobotidassignment.h}}\index{kilobotidassignment.h@{kilobotidassignment.h}!RETRY@{RETRY}}}\mbox{\Hypertarget{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a76d44342c42b85edbde0cae33f14c5de}\label{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a76d44342c42b85edbde0cae33f14c5de}} 
+RETRY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPLETE@{COMPLETE}!kilobotidassignment.h@{kilobotidassignment.h}}\index{kilobotidassignment.h@{kilobotidassignment.h}!COMPLETE@{COMPLETE}}}\mbox{\Hypertarget{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a00a900c9df90c74f75004b3dc04f173d}\label{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a00a900c9df90c74f75004b3dc04f173d}} 
+COMPLETE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{kilobotidassignment_8h_a49a6472f3f6400d4921fd685822afb10}\label{kilobotidassignment_8h_a49a6472f3f6400d4921fd685822afb10}} 
+\index{kilobotidassignment.h@{kilobotidassignment.h}!baseFourMultipliers@{baseFourMultipliers}}
+\index{baseFourMultipliers@{baseFourMultipliers}!kilobotidassignment.h@{kilobotidassignment.h}}
+\doxysubsubsection{\texorpdfstring{baseFourMultipliers}{baseFourMultipliers}}
+{\footnotesize\ttfamily const int base\+Four\+Multipliers\mbox{[}6\mbox{]} = \{1,4,16,64,256,1024\}}
+
+\mbox{\Hypertarget{kilobotidassignment_8h_aa32dffbbf401642f29802c45253a64cf}\label{kilobotidassignment_8h_aa32dffbbf401642f29802c45253a64cf}} 
+\index{kilobotidassignment.h@{kilobotidassignment.h}!baseThreeMultipliers@{baseThreeMultipliers}}
+\index{baseThreeMultipliers@{baseThreeMultipliers}!kilobotidassignment.h@{kilobotidassignment.h}}
+\doxysubsubsection{\texorpdfstring{baseThreeMultipliers}{baseThreeMultipliers}}
+{\footnotesize\ttfamily const int base\+Three\+Multipliers\mbox{[}8\mbox{]} = \{1,3,9,27,81,243,729,2187\}}
+
+\mbox{\Hypertarget{kilobotidassignment_8h_afca2adaf9c4c3ba2fd718be8d89be155}\label{kilobotidassignment_8h_afca2adaf9c4c3ba2fd718be8d89be155}} 
+\index{kilobotidassignment.h@{kilobotidassignment.h}!binaryMultipliers@{binaryMultipliers}}
+\index{binaryMultipliers@{binaryMultipliers}!kilobotidassignment.h@{kilobotidassignment.h}}
+\doxysubsubsection{\texorpdfstring{binaryMultipliers}{binaryMultipliers}}
+{\footnotesize\ttfamily const int binary\+Multipliers\mbox{[}11\mbox{]} = \{1,2,4,8,16,32,64,128,256,512,1024\}}
+

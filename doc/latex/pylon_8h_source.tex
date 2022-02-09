@@ -1,0 +1,31 @@
+\hypertarget{pylon_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/pylon.h}
+\mbox{\hyperlink{pylon_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_PYLON\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_PYLON\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <opencv4/opencv2/videoio.hpp>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <pylon/InstantCamera.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <pylon/ImageFormatConverter.h>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_pylon_video_source}{PylonVideoSource}} : \textcolor{keyword}{public} cv::VideoCapture \{}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     std::shared\_ptr<Pylon::CInstantCamera> mCamera;}
+\DoxyCodeLine{11     \textcolor{keywordtype}{bool} mOpened = \textcolor{keyword}{false};}
+\DoxyCodeLine{12     Pylon::CGrabResultPtr mGrabResult;}
+\DoxyCodeLine{13     Pylon::CImageFormatConverter mImgFormater;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{comment}{// VideoCapture interface}}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_pylon_video_source_a474fb9aee9931604e4e79b46b91ee6f7}{PylonVideoSource}}();}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_pylon_video_source_ae9f13f9d26bf331398836d9e478e1d48}{\string~PylonVideoSource}}();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_pylon_video_source_a0a5e38a46bdd1d92f3d353d2afcaa258}{isOpened}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_pylon_video_source_a8c1b8813f884891b8481706bfca5a5a1}{release}}();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_pylon_video_source_ae4a79e2e7f1442b03bc6a3e84ba7ec4c}{retrieve}}(cv::OutputArray image, \textcolor{keywordtype}{int} flag = 0);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_pylon_video_source_a32ba6d91fe91a588652e09706c988b7a}{open}}(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{int} apiPreference = cv::CAP\_ANY );}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

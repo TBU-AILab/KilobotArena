@@ -1,0 +1,322 @@
+\hypertarget{class_kilobot_experiment}{}\doxysection{Kilobot\+Experiment Class Reference}
+\label{class_kilobot_experiment}\index{KilobotExperiment@{KilobotExperiment}}
+
+
+{\ttfamily \#include $<$kilobotexperiment.\+h$>$}
+
+Inheritance diagram for Kilobot\+Experiment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_kilobot_experiment}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_kilobot_experiment_a44b426a454d32fc7ea2c9b952e88e14a}{initialise}} (bool)=0
+\item 
+virtual void \mbox{\hyperlink{class_kilobot_experiment_a03bdc4030e09fd0fd89fa46bd8b6498a}{stop\+Experiment}} ()
+\item 
+virtual void \mbox{\hyperlink{class_kilobot_experiment_aa6fbb3f8fe56eaac268264d040fe8d27}{run}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_afa9db851b14b2363c1afc7075117161a}{set\+Runtime\+Identification\+Lock}} (bool lock)
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_aa8f0b4888e5e4ee50a75ca68e82d6786}{Get\+Msgs\+Queue\+State}} (bool state)
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a657bacdae085e0bfd79ae28ec4e979b2}{update\+State\+Required\+Code}} (\mbox{\hyperlink{class_kilobot}{Kilobot}} $\ast$kilobot, \mbox{\hyperlink{class_kilobot}{Kilobot}} kilobot\+Copy)
+\begin{DoxyCompactList}\small\item\em update\+State\+Required\+Code \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a127225308081a41f51f7124c0f71f965}{setup\+Initial\+State\+Required\+Code}} (\mbox{\hyperlink{class_kilobot}{Kilobot}} $\ast$kilobot, \mbox{\hyperlink{class_kilobot}{Kilobot}} kilobot\+Copy)
+\begin{DoxyCompactList}\small\item\em setup\+Initial\+State\+Required\+Code \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_experiment_acd1a2e959ff20963d084af066e7b9c7f}{signal\+Kilobot\+Expt}} (\mbox{\hyperlink{structkilobot__message}{kilobot\+\_\+message}} msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a52d4d4c639ff26a90b0f9fd3fda59aa6}{update\+Kilobot\+States}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a9af0858fe48c5570c79768b65ca912f6}{get\+Initial\+Kilobot\+States}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_ac4a56cc7730910837a26696cb87fdd66}{experiment\+Complete}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a1313e1527fc2b99e1a01a28e87df276a}{save\+Image}} (QString)
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a1c1f32950e244c1c87f25d0b0006df30}{save\+Video\+Frames}} (QString, unsigned int)
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a3e66bf1b4887400ebe9063c762d2e3f0}{signal\+Kilobot}} (\mbox{\hyperlink{structkilobot__message}{kilobot\+\_\+message}})
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a194f42044aba491b64dc9ee9f459c814}{broadcast\+Message}} (\mbox{\hyperlink{structkilobot__broadcast}{kilobot\+\_\+broadcast}})
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a79c769a8ab1653d762b5cd0ff739e2be}{set\+Tracking\+Type}} (int)
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_aa2c5182f1fdfb604a469c23ab610ad00}{send\+Broadcasting\+State}} (bool)
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a8b3027234b7a6504edd2cff6d5deb796}{draw\+Circle}} (QPointF pos, float r, QColor col, int thickness, std\+::string text, bool transparent=false)
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_aff0ed78458d646c5bddb37a9628c8157}{draw\+Line}} (std\+::vector$<$ cv\+::\+Point $>$ pos, QColor col, int thickness, std\+::string text, bool transparent)
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a217b91dfb778a50d9a1f52c1ffa6ae4a}{clear\+Drawings}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_ac66762ad0f6112d60fdc4dbebfaa0e44}{draw\+Circle\+On\+Recorded\+Image}} (QPointF pos, float r, QColor col, int thickness, std\+::string text)
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a39786f332b978aff9a04d56808af2eb5}{clear\+Drawings\+On\+Recorded\+Image}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_kilobot_experiment_a6f01bc03edf71f07bd121ed5717fc513}{Kilobot\+Experiment}} ()
+\item 
+virtual \mbox{\hyperlink{class_kilobot_experiment_a7c812fa4a0ee309919628d990d80d76b}{$\sim$\+Kilobot\+Experiment}} ()
+\item 
+virtual QWidget $\ast$ \mbox{\hyperlink{class_kilobot_experiment_a5aed39899d0b5279631390bf9e04578d}{create\+GUI}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_kilobot_experiment_a74ad953b3997811b57d9e45f79f1c93f}{service\+Interval}} = 100
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_kilobot_experiment_a08d02eb2f1364c72418f563f920f053e}{set\+Current\+Kilobot\+Environment}} (\mbox{\hyperlink{class_kilobot_environment}{Kilobot\+Environment}} $\ast$environment)
+\item 
+virtual void \mbox{\hyperlink{class_kilobot_experiment_a6fa9408634cf63adffeecd54e08fe80c}{update\+Kilobot\+State}} (\mbox{\hyperlink{class_kilobot}{Kilobot}})
+\item 
+virtual void \mbox{\hyperlink{class_kilobot_experiment_a1c12923e0554cb2c0b2736522b833b3b}{setup\+Initial\+Kilobot\+State}} (\mbox{\hyperlink{class_kilobot}{Kilobot}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_kilobot_experiment_abea4a83a161e402ccdbca8645b12351f}{time}}
+\item 
+bool \mbox{\hyperlink{class_kilobot_experiment_aa5bb35c7c12e4863be4794a90fc54026}{runtime\+Identification\+Lock}} = false
+\item 
+bool \mbox{\hyperlink{class_kilobot_experiment_ac972a3ba2c2a7943f8e0096526985329}{There\+Is\+Msgs\+To\+Send}} =false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_kilobot_experiment_a6f01bc03edf71f07bd121ed5717fc513}\label{class_kilobot_experiment_a6f01bc03edf71f07bd121ed5717fc513}} 
+\index{KilobotExperiment@{KilobotExperiment}!KilobotExperiment@{KilobotExperiment}}
+\index{KilobotExperiment@{KilobotExperiment}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{KilobotExperiment()}{KilobotExperiment()}}
+{\footnotesize\ttfamily Kilobot\+Experiment\+::\+Kilobot\+Experiment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a7c812fa4a0ee309919628d990d80d76b}\label{class_kilobot_experiment_a7c812fa4a0ee309919628d990d80d76b}} 
+\index{KilobotExperiment@{KilobotExperiment}!````~KilobotExperiment@{$\sim$KilobotExperiment}}
+\index{````~KilobotExperiment@{$\sim$KilobotExperiment}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{$\sim$KilobotExperiment()}{~KilobotExperiment()}}
+{\footnotesize\ttfamily virtual Kilobot\+Experiment\+::$\sim$\+Kilobot\+Experiment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_kilobot_experiment_a194f42044aba491b64dc9ee9f459c814}\label{class_kilobot_experiment_a194f42044aba491b64dc9ee9f459c814}} 
+\index{KilobotExperiment@{KilobotExperiment}!broadcastMessage@{broadcastMessage}}
+\index{broadcastMessage@{broadcastMessage}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{broadcastMessage}{broadcastMessage}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::broadcast\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structkilobot__broadcast}{kilobot\+\_\+broadcast}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a217b91dfb778a50d9a1f52c1ffa6ae4a}\label{class_kilobot_experiment_a217b91dfb778a50d9a1f52c1ffa6ae4a}} 
+\index{KilobotExperiment@{KilobotExperiment}!clearDrawings@{clearDrawings}}
+\index{clearDrawings@{clearDrawings}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{clearDrawings}{clearDrawings}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::clear\+Drawings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a39786f332b978aff9a04d56808af2eb5}\label{class_kilobot_experiment_a39786f332b978aff9a04d56808af2eb5}} 
+\index{KilobotExperiment@{KilobotExperiment}!clearDrawingsOnRecordedImage@{clearDrawingsOnRecordedImage}}
+\index{clearDrawingsOnRecordedImage@{clearDrawingsOnRecordedImage}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{clearDrawingsOnRecordedImage}{clearDrawingsOnRecordedImage}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::clear\+Drawings\+On\+Recorded\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a5aed39899d0b5279631390bf9e04578d}\label{class_kilobot_experiment_a5aed39899d0b5279631390bf9e04578d}} 
+\index{KilobotExperiment@{KilobotExperiment}!createGUI@{createGUI}}
+\index{createGUI@{createGUI}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{createGUI()}{createGUI()}}
+{\footnotesize\ttfamily virtual QWidget $\ast$ Kilobot\+Experiment\+::create\+GUI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a8b3027234b7a6504edd2cff6d5deb796}\label{class_kilobot_experiment_a8b3027234b7a6504edd2cff6d5deb796}} 
+\index{KilobotExperiment@{KilobotExperiment}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{drawCircle}{drawCircle}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::draw\+Circle (\begin{DoxyParamCaption}\item[{QPointF}]{pos,  }\item[{float}]{r,  }\item[{QColor}]{col,  }\item[{int}]{thickness,  }\item[{std\+::string}]{text,  }\item[{bool}]{transparent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_ac66762ad0f6112d60fdc4dbebfaa0e44}\label{class_kilobot_experiment_ac66762ad0f6112d60fdc4dbebfaa0e44}} 
+\index{KilobotExperiment@{KilobotExperiment}!drawCircleOnRecordedImage@{drawCircleOnRecordedImage}}
+\index{drawCircleOnRecordedImage@{drawCircleOnRecordedImage}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{drawCircleOnRecordedImage}{drawCircleOnRecordedImage}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::draw\+Circle\+On\+Recorded\+Image (\begin{DoxyParamCaption}\item[{QPointF}]{pos,  }\item[{float}]{r,  }\item[{QColor}]{col,  }\item[{int}]{thickness,  }\item[{std\+::string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_aff0ed78458d646c5bddb37a9628c8157}\label{class_kilobot_experiment_aff0ed78458d646c5bddb37a9628c8157}} 
+\index{KilobotExperiment@{KilobotExperiment}!drawLine@{drawLine}}
+\index{drawLine@{drawLine}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{drawLine}{drawLine}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::draw\+Line (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Point $>$}]{pos,  }\item[{QColor}]{col,  }\item[{int}]{thickness,  }\item[{std\+::string}]{text,  }\item[{bool}]{transparent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_ac4a56cc7730910837a26696cb87fdd66}\label{class_kilobot_experiment_ac4a56cc7730910837a26696cb87fdd66}} 
+\index{KilobotExperiment@{KilobotExperiment}!experimentComplete@{experimentComplete}}
+\index{experimentComplete@{experimentComplete}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{experimentComplete}{experimentComplete}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::experiment\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a9af0858fe48c5570c79768b65ca912f6}\label{class_kilobot_experiment_a9af0858fe48c5570c79768b65ca912f6}} 
+\index{KilobotExperiment@{KilobotExperiment}!getInitialKilobotStates@{getInitialKilobotStates}}
+\index{getInitialKilobotStates@{getInitialKilobotStates}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{getInitialKilobotStates}{getInitialKilobotStates}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::get\+Initial\+Kilobot\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_aa8f0b4888e5e4ee50a75ca68e82d6786}\label{class_kilobot_experiment_aa8f0b4888e5e4ee50a75ca68e82d6786}} 
+\index{KilobotExperiment@{KilobotExperiment}!GetMsgsQueueState@{GetMsgsQueueState}}
+\index{GetMsgsQueueState@{GetMsgsQueueState}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{GetMsgsQueueState}{GetMsgsQueueState}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::\+Get\+Msgs\+Queue\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a44b426a454d32fc7ea2c9b952e88e14a}\label{class_kilobot_experiment_a44b426a454d32fc7ea2c9b952e88e14a}} 
+\index{KilobotExperiment@{KilobotExperiment}!initialise@{initialise}}
+\index{initialise@{initialise}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{initialise}{initialise}}
+{\footnotesize\ttfamily virtual void Kilobot\+Experiment\+::initialise (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_aa6fbb3f8fe56eaac268264d040fe8d27}\label{class_kilobot_experiment_aa6fbb3f8fe56eaac268264d040fe8d27}} 
+\index{KilobotExperiment@{KilobotExperiment}!run@{run}}
+\index{run@{run}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{run}{run}}
+{\footnotesize\ttfamily virtual void Kilobot\+Experiment\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a1313e1527fc2b99e1a01a28e87df276a}\label{class_kilobot_experiment_a1313e1527fc2b99e1a01a28e87df276a}} 
+\index{KilobotExperiment@{KilobotExperiment}!saveImage@{saveImage}}
+\index{saveImage@{saveImage}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{saveImage}{saveImage}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::save\+Image (\begin{DoxyParamCaption}\item[{QString}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a1c1f32950e244c1c87f25d0b0006df30}\label{class_kilobot_experiment_a1c1f32950e244c1c87f25d0b0006df30}} 
+\index{KilobotExperiment@{KilobotExperiment}!saveVideoFrames@{saveVideoFrames}}
+\index{saveVideoFrames@{saveVideoFrames}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{saveVideoFrames}{saveVideoFrames}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::save\+Video\+Frames (\begin{DoxyParamCaption}\item[{QString}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_aa2c5182f1fdfb604a469c23ab610ad00}\label{class_kilobot_experiment_aa2c5182f1fdfb604a469c23ab610ad00}} 
+\index{KilobotExperiment@{KilobotExperiment}!sendBroadcastingState@{sendBroadcastingState}}
+\index{sendBroadcastingState@{sendBroadcastingState}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{sendBroadcastingState}{sendBroadcastingState}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::send\+Broadcasting\+State (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a08d02eb2f1364c72418f563f920f053e}\label{class_kilobot_experiment_a08d02eb2f1364c72418f563f920f053e}} 
+\index{KilobotExperiment@{KilobotExperiment}!setCurrentKilobotEnvironment@{setCurrentKilobotEnvironment}}
+\index{setCurrentKilobotEnvironment@{setCurrentKilobotEnvironment}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{setCurrentKilobotEnvironment()}{setCurrentKilobotEnvironment()}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::set\+Current\+Kilobot\+Environment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kilobot_environment}{Kilobot\+Environment}} $\ast$}]{environment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_afa9db851b14b2363c1afc7075117161a}\label{class_kilobot_experiment_afa9db851b14b2363c1afc7075117161a}} 
+\index{KilobotExperiment@{KilobotExperiment}!setRuntimeIdentificationLock@{setRuntimeIdentificationLock}}
+\index{setRuntimeIdentificationLock@{setRuntimeIdentificationLock}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{setRuntimeIdentificationLock}{setRuntimeIdentificationLock}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::set\+Runtime\+Identification\+Lock (\begin{DoxyParamCaption}\item[{bool}]{lock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a79c769a8ab1653d762b5cd0ff739e2be}\label{class_kilobot_experiment_a79c769a8ab1653d762b5cd0ff739e2be}} 
+\index{KilobotExperiment@{KilobotExperiment}!setTrackingType@{setTrackingType}}
+\index{setTrackingType@{setTrackingType}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{setTrackingType}{setTrackingType}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::set\+Tracking\+Type (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a1c12923e0554cb2c0b2736522b833b3b}\label{class_kilobot_experiment_a1c12923e0554cb2c0b2736522b833b3b}} 
+\index{KilobotExperiment@{KilobotExperiment}!setupInitialKilobotState@{setupInitialKilobotState}}
+\index{setupInitialKilobotState@{setupInitialKilobotState}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{setupInitialKilobotState()}{setupInitialKilobotState()}}
+{\footnotesize\ttfamily virtual void Kilobot\+Experiment\+::setup\+Initial\+Kilobot\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a127225308081a41f51f7124c0f71f965}\label{class_kilobot_experiment_a127225308081a41f51f7124c0f71f965}} 
+\index{KilobotExperiment@{KilobotExperiment}!setupInitialStateRequiredCode@{setupInitialStateRequiredCode}}
+\index{setupInitialStateRequiredCode@{setupInitialStateRequiredCode}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{setupInitialStateRequiredCode}{setupInitialStateRequiredCode}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::setup\+Initial\+State\+Required\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}} $\ast$}]{kilobot,  }\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}}}]{kilobot\+Copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+
+
+setup\+Initial\+State\+Required\+Code 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kilobot} & \\
+\hline
+{\em kilobot\+Copy} & \\
+\hline
+\end{DoxyParams}
+Slot that makes sure that some code is run BEFORE the derived function \mbox{\Hypertarget{class_kilobot_experiment_a3e66bf1b4887400ebe9063c762d2e3f0}\label{class_kilobot_experiment_a3e66bf1b4887400ebe9063c762d2e3f0}} 
+\index{KilobotExperiment@{KilobotExperiment}!signalKilobot@{signalKilobot}}
+\index{signalKilobot@{signalKilobot}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{signalKilobot}{signalKilobot}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::signal\+Kilobot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structkilobot__message}{kilobot\+\_\+message}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_acd1a2e959ff20963d084af066e7b9c7f}\label{class_kilobot_experiment_acd1a2e959ff20963d084af066e7b9c7f}} 
+\index{KilobotExperiment@{KilobotExperiment}!signalKilobotExpt@{signalKilobotExpt}}
+\index{signalKilobotExpt@{signalKilobotExpt}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{signalKilobotExpt}{signalKilobotExpt}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::signal\+Kilobot\+Expt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structkilobot__message}{kilobot\+\_\+message}}}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a03bdc4030e09fd0fd89fa46bd8b6498a}\label{class_kilobot_experiment_a03bdc4030e09fd0fd89fa46bd8b6498a}} 
+\index{KilobotExperiment@{KilobotExperiment}!stopExperiment@{stopExperiment}}
+\index{stopExperiment@{stopExperiment}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{stopExperiment}{stopExperiment}}
+{\footnotesize\ttfamily virtual void Kilobot\+Experiment\+::stop\+Experiment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a6fa9408634cf63adffeecd54e08fe80c}\label{class_kilobot_experiment_a6fa9408634cf63adffeecd54e08fe80c}} 
+\index{KilobotExperiment@{KilobotExperiment}!updateKilobotState@{updateKilobotState}}
+\index{updateKilobotState@{updateKilobotState}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{updateKilobotState()}{updateKilobotState()}}
+{\footnotesize\ttfamily virtual void Kilobot\+Experiment\+::update\+Kilobot\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a52d4d4c639ff26a90b0f9fd3fda59aa6}\label{class_kilobot_experiment_a52d4d4c639ff26a90b0f9fd3fda59aa6}} 
+\index{KilobotExperiment@{KilobotExperiment}!updateKilobotStates@{updateKilobotStates}}
+\index{updateKilobotStates@{updateKilobotStates}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{updateKilobotStates}{updateKilobotStates}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::update\+Kilobot\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a657bacdae085e0bfd79ae28ec4e979b2}\label{class_kilobot_experiment_a657bacdae085e0bfd79ae28ec4e979b2}} 
+\index{KilobotExperiment@{KilobotExperiment}!updateStateRequiredCode@{updateStateRequiredCode}}
+\index{updateStateRequiredCode@{updateStateRequiredCode}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{updateStateRequiredCode}{updateStateRequiredCode}}
+{\footnotesize\ttfamily void Kilobot\+Experiment\+::update\+State\+Required\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}} $\ast$}]{kilobot,  }\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}}}]{kilobot\+Copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+
+
+update\+State\+Required\+Code 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kilobot} & \\
+\hline
+{\em kilobot\+Copy} & \\
+\hline
+\end{DoxyParams}
+Slot that makes sure that some code is run BEFORE the derived function 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_kilobot_experiment_aa5bb35c7c12e4863be4794a90fc54026}\label{class_kilobot_experiment_aa5bb35c7c12e4863be4794a90fc54026}} 
+\index{KilobotExperiment@{KilobotExperiment}!runtimeIdentificationLock@{runtimeIdentificationLock}}
+\index{runtimeIdentificationLock@{runtimeIdentificationLock}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{runtimeIdentificationLock}{runtimeIdentificationLock}}
+{\footnotesize\ttfamily bool Kilobot\+Experiment\+::runtime\+Identification\+Lock = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_a74ad953b3997811b57d9e45f79f1c93f}\label{class_kilobot_experiment_a74ad953b3997811b57d9e45f79f1c93f}} 
+\index{KilobotExperiment@{KilobotExperiment}!serviceInterval@{serviceInterval}}
+\index{serviceInterval@{serviceInterval}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{serviceInterval}{serviceInterval}}
+{\footnotesize\ttfamily int Kilobot\+Experiment\+::service\+Interval = 100}
+
+\mbox{\Hypertarget{class_kilobot_experiment_ac972a3ba2c2a7943f8e0096526985329}\label{class_kilobot_experiment_ac972a3ba2c2a7943f8e0096526985329}} 
+\index{KilobotExperiment@{KilobotExperiment}!ThereIsMsgsToSend@{ThereIsMsgsToSend}}
+\index{ThereIsMsgsToSend@{ThereIsMsgsToSend}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{ThereIsMsgsToSend}{ThereIsMsgsToSend}}
+{\footnotesize\ttfamily bool Kilobot\+Experiment\+::\+There\+Is\+Msgs\+To\+Send =false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kilobot_experiment_abea4a83a161e402ccdbca8645b12351f}\label{class_kilobot_experiment_abea4a83a161e402ccdbca8645b12351f}} 
+\index{KilobotExperiment@{KilobotExperiment}!time@{time}}
+\index{time@{time}!KilobotExperiment@{KilobotExperiment}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily double Kilobot\+Experiment\+::time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/\mbox{\hyperlink{kilobotexperiment_8h}{kilobotexperiment.\+h}}\end{DoxyCompactItemize}

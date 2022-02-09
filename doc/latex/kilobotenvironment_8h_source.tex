@@ -1,0 +1,31 @@
+\hypertarget{kilobotenvironment_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobotenvironment.h}
+\mbox{\hyperlink{kilobotenvironment_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef KILOBOTENVIRONMENT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define KILOBOTENVIRONMENT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QVector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobot_8h}{kilobot.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_kilobot_environment}{KilobotEnvironment}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     Q\_OBJECT}
+\DoxyCodeLine{11 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_kilobot_environment_abf403f0a18a43cbcef9dfd525b037268}{KilobotEnvironment}}(QObject *) \{\}}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_kilobot_environment_ac54799db3589c016d57a3a50f990db37}{KilobotEnvironment}}() \{\}}
+\DoxyCodeLine{14 \textcolor{comment}{//    virtual QVector <uint8\_t> getEnvironmentValue(QPointF) \{ QVector <uint8\_t> temp; return temp;\} // Don't need?}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 signals:}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_environment_a098e748ca3fb134668692bf1e6d2ec77}{transmitKiloState}}(\mbox{\hyperlink{structkilobot__message}{kilobot\_message}});}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_environment_af3e59c4546c2e2b32434299b9585a3bc}{update}}() \{\}}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_environment_ab6ca4918e8e64c412da9c36bb2bbd666}{updateVirtualSensor}}(\mbox{\hyperlink{class_kilobot}{Kilobot}}) \{\} \textcolor{comment}{// Call this updateVirtualSensor(...)}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// KILOBOTENVIRONMENT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,98 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/mainwindow.h}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MAINWINDOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MAINWINDOW\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <ios>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef USE\_OPENCV3}}
+\DoxyCodeLine{6 \textcolor{comment}{// OpenCV includes}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <opencv2/core/core.hpp>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <opencv2/highgui/highgui.hpp>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <opencv2/video/video.hpp>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <opencv2/imgproc/imgproc.hpp>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <opencv2/videostab/videostab.hpp>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <opencv2/features2d/features2d.hpp>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <opencv2/stitching/stitcher.hpp>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{// OpenCV 3:}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <opencv2/core.hpp>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <opencv2/highgui.hpp>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <opencv2/video.hpp>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <opencv2/imgproc.hpp>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <opencv2/videostab.hpp>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <opencv2/features2d.hpp>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <opencv2/stitching.hpp>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{using namespace }cv;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// Project includes}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobottracker_8h}{kilobottracker.h}}"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotoverheadcontroller_8h}{kilobotoverheadcontroller.h}}"{}}}
+\DoxyCodeLine{35 \textcolor{comment}{//\#include "{}kilobotexperiment.h"{}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{class_user_thread}{UserThread}};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_ui}{Ui}} \{}
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{41 \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     Q\_OBJECT}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{MainWindow}}(QWidget *parent = 0);}
+\DoxyCodeLine{49     \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ab63afd079212a9d84a440f57ebf517b3}{setVideoSource}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a2704af3b5416f4c71b5575f09350cd71}{getExperiment}}();}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_af346105b6a1fd583bdd2c42340c7c325}{assignIDs}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ae57026160b9e4934e2a9849df5be4984}{calibrate}}();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_aadcc3b82196f11704783c5197a4d23c8}{identify}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a770a0940efb3ce5b4e4ebca49f330e31}{toggleRunButton}}(\textcolor{keywordtype}{int} expTypeInt);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a62fb439ac20c149cc76fa150f7b91cfa}{activateExpButtons}}(\textcolor{keywordtype}{int} swarmSize);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a5894b6090106dcb60333d276034f8c50}{rotate\_pos}}();}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a9a1e6440fb72b50a0a5c44d37c864531}{rotate\_neg}}();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a3041fd172a18fb86c27c52a3402708ac}{runExpt}}();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a9065cda8cf9bac6e205d946b50a30062}{setGUILayout}}(QWidget *);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a4c14086b9d55a28f88f5314d2fb735c6}{left}}();}
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_af9c233503d675f67dda93eceb295987e}{right}}();}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a009b8a396b8965fd819fe22ad1912d15}{straight}}();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ac602553a24cd027850764f9537848330}{test\_id}}();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     Ui::MainWindow *ui;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \mbox{\hyperlink{class_kilobot_tracker}{KilobotTracker}} kbtracker;}
+\DoxyCodeLine{89     \mbox{\hyperlink{class_kilobot_overhead_controller}{KilobotOverheadController}} ohc;}
+\DoxyCodeLine{90     \mbox{\hyperlink{class_user_thread}{UserThread}} * thread = NULL;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keywordtype}{int} robcomm[3] = \{3,3,3\};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     QString userExpt;}
+\DoxyCodeLine{95 \};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MAINWINDOW\_H}}
+
+\end{DoxyCode}

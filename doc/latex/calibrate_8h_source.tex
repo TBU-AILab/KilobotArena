@@ -1,0 +1,37 @@
+\hypertarget{calibrate_8h_source}{}\doxysection{calibrate.\+h}
+\label{calibrate_8h_source}\index{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/calibrate.h@{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/calibrate.h}}
+\mbox{\hyperlink{calibrate_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CALIBWINDOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CALIBWINDOW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QSpinBox>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_calib_window}{CalibWindow}}: \textcolor{keyword}{public} QWidget \{}
+\DoxyCodeLine{9     Q\_OBJECT}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_calib_window_a1c7886f367fac610ddd26fe5513a3a4d}{CalibWindow}}(QString title, QWidget *parent = 0);}
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_calib_window_aba7ba125609acae63901f3a2c98eaf40}{closeEvent}}(QCloseEvent *);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 signals:}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_calib_window_a26bf81990b9be1bad6ec87c26c3396f3}{calibUID}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_calib_window_ab0e7cb6592a99cb725c095da4a5fa1cd}{calibLeft}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_calib_window_a4a2f2a687e60d276cef1d6ae4d160b8e}{calibRight}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_calib_window_a08135ebe0f892f6a05b1dd6a6877713a}{calibStraight}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_calib_window_a748910e8ddaabe9e5408bed3de4a7b94}{calibSave}}();}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_calib_window_a2adc94565403b24bc4ca556cf9464634}{calibStop}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_calib_window_ad6aaeba2d542b225c8f68d1a8e685e50}{updateCalib}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_calib_window_a5f381bd81fa673a02ada4d54125d7100}{save}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{private}:}
+\DoxyCodeLine{28     QSpinBox *values[5];    }
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//CALIBWINDOW\_H}}
+
+\end{DoxyCode}

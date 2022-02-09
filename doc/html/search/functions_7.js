@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['get_0',['get',['../structintelhex_1_1hex__data.html#aa10f473d363c7c3f29e322743ff3465a',1,'intelhex::hex_data']]],
+  ['getavgcolour_1',['getAvgColour',['../class_colour_buffer.html#af89ec6033ceab9f8698828ecba943443',1,'ColourBuffer']]],
+  ['getavgorientation_2',['getAvgOrientation',['../class_orientation_buffer.html#aff243aa079ec35296512eadb5081a4be',1,'OrientationBuffer']]],
+  ['getexperiment_3',['getExperiment',['../class_main_window.html#a2704af3b5416f4c71b5575f09350cd71',1,'MainWindow']]],
+  ['getexperimentpointer_4',['getExperimentPointer',['../class_user_thread.html#a3b887eb709e73f3aaa279efd9922f594',1,'UserThread']]],
+  ['getid_5',['getID',['../class_kilobot.html#a338105da2e8c82c44e272351a904b6cf',1,'Kilobot']]],
+  ['getinitialkilobotstates_6',['getInitialKilobotStates',['../class_kilobot_experiment.html#a9af0858fe48c5570c79768b65ca912f6',1,'KilobotExperiment::getInitialKilobotStates()'],['../class_kilobot_tracker.html#a7c585a8db2d42f9fd4388e0da24a6402',1,'KilobotTracker::getInitialKilobotStates()']]],
+  ['getlastcolour_7',['getLastColour',['../class_colour_buffer.html#a1cc83825588418b4b9465951045075b1',1,'ColourBuffer']]],
+  ['getlastorientation_8',['getLastOrientation',['../class_orientation_buffer.html#a3d6c63f5bb17287d59242d7f5efb9b1f',1,'OrientationBuffer']]],
+  ['getlastposition_9',['getLastPosition',['../class_position_buffer.html#a573a8204b4a0129cd1d9ada969d991c4',1,'PositionBuffer']]],
+  ['getledcolour_10',['getLedColour',['../class_kilobot.html#a508f8dcbafaa9cf2dec6dcc2bf631c1e',1,'Kilobot']]],
+  ['getmsgsqueuestate_11',['GetMsgsQueueState',['../class_kilobot_experiment.html#aa8f0b4888e5e4ee50a75ca68e82d6786',1,'KilobotExperiment']]],
+  ['getorientationfrompositions_12',['getOrientationFromPositions',['../class_position_buffer.html#acfc211fb3425ba28e973cc43f3fd6743',1,'PositionBuffer']]],
+  ['getport_13',['getPort',['../class_serial_connection.html#a350d5c08089ff9a2033f571350336a3d',1,'SerialConnection']]],
+  ['getposition_14',['getPosition',['../class_kilobot.html#ac0841f5c540bb6b265cf4ade7a02261a',1,'Kilobot']]],
+  ['getvelocity_15',['getVelocity',['../class_kilobot.html#ab3e523e14d8dc9c89bc3dd91fa002741',1,'Kilobot']]]
+];
