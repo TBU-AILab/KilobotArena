@@ -4,8 +4,8 @@
 #include <QObject>
 #include <QDebug>
 #include <QLayout>
-#include <kilobotenvironment.h>
-#include <kilobot.h>
+#include "kilobotenvironment.h"
+#include "kilobot.h"
 #include <QColor>
 #include <opencv2/core/core.hpp>
 

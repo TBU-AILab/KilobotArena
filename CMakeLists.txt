@@ -1,0 +1,71 @@
+cmake_minimum_required(VERSION 3.1.0 )
+
+project(KilobotArena VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+
+if(CMAKE_VERSION VERSION_LESS "3.7.0")
+    set(CMAKE_INCLUDE_CURRENT_DIR ON)
+endif()
+
+
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package( OpenCV REQUIRED )
+
+include_directories( ${OpenCV_INCLUDE_DIRS} ./)
+
+# Print some message showing some of them
+message(STATUS "OpenCV library status:")
+message(STATUS "    config: ${OpenCV_DIR}")
+message(STATUS "    version: ${OpenCV_VERSION}")
+message(STATUS "    libraries: ${OpenCV_LIBS}")
+message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
+
+set(SOURCES
+        main.cpp
+        main.cpp
+        mainwindow.cpp
+        clicksignalqlabel.cpp
+        dragzoomqlabel.cpp
+        kilobottracker.cpp
+        kilobot.cpp
+        kilobotoverheadcontroller.cpp
+        ohc/calibrate.cpp
+        ohc/intelhex.cpp
+        ohc/serialconn.cpp
+        ohc/serialwin.cpp
+        kilobotidassignment.cpp
+        kilobotcalibrate.cpp
+        kilobotcalibrateenv.cpp
+        mainwindow.h
+        clicksignalqlabel.h
+        dragzoomqlabel.h
+        kilobottracker.h
+        kilobot.h
+        kilobotoverheadcontroller.h
+        ohc/calibrate.h
+        ohc/intelhex.h
+        ohc/packet.h
+        ohc/serialconn.h
+        ohc/serialwin.h
+        kilobotenvironment.h
+        kilobotexperiment.h
+        userthread.h
+        kilobotidassignment.h
+        kilobotcalibrate.h
+        kilobotcalibrateenv.h
+        )
+
+qt5_add_resources(SOURCES ressources.qrc)
+qt5_wrap_ui(SOURCES mainwindow.ui)
+
+add_executable(KilobotArena ${SOURCES})
+target_compile_definitions(KilobotArena PUBLIC USE_OPENCV3)
+target_link_libraries(KilobotArena Qt5::Widgets)
+target_link_libraries (KilobotArena ${OpenCV_LIBS})
