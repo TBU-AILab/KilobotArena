@@ -29,6 +29,10 @@ If you use or adapt ARK in order to generate experimental results, please cite t
 
 * Reina A., Cope A.J., Nikolaidis E., Marshall J.A.R., Sabo C. (2017) ARK: Augmented reality for Kilobots. *IEEE Robotics and Automation Letters* **2, 1755-1761**.
 
+### Contribution
+
+Please follow the rules defined in CONTRIBUTION.md
+
 ### See Also
 
 * ARK makes use of a redesigned overhead controller: [ARK_OHC](https://github.com/DiODeProject/ARK_OHC)
