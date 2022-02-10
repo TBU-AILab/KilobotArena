@@ -1,10 +1,10 @@
 #ifndef KILOBOTIDASSIGNMENT_H
 #define KILOBOTIDASSIGNMENT_H
 
-#include "kilobotexperiment.h"
+#include "toolchain/kilobotexperiment.h"
 #include <QElapsedTimer>
 #include <QFile>
-#include "kilobot.h"
+#include "toolchain/kilobot.h"
 
 enum assignStage {
     START,

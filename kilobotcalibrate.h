@@ -1,7 +1,7 @@
 #ifndef KILOBOTCALIBRATE_H
 #define KILOBOTCALIBRATE_H
 
-#include "kilobotexperiment.h"
+#include "toolchain/kilobotexperiment.h"
 #include "kilobotcalibrateenv.h"
 
 

@@ -38,7 +38,7 @@ set(SOURCES
         clicksignalqlabel.cpp
         dragzoomqlabel.cpp
         kilobottracker.cpp
-        kilobot.cpp
+        toolchain/kilobot.cpp
         kilobotoverheadcontroller.cpp
         ohc/calibrate.cpp
         ohc/intelhex.cpp
@@ -52,15 +52,15 @@ set(SOURCES
         clicksignalqlabel.h
         dragzoomqlabel.h
         kilobottracker.h
-        kilobot.h
+        toolchain/kilobot.h
         kilobotoverheadcontroller.h
         ohc/calibrate.h
         ohc/intelhex.h
         ohc/packet.h
         ohc/serialconn.h
         ohc/serialwin.h
-        kilobotenvironment.h
-        kilobotexperiment.h
+        toolchain/kilobotenvironment.h
+        toolchain/kilobotexperiment.h
         userthread.h
         kilobotidassignment.h
         kilobotcalibrate.h

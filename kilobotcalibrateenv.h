@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QPointF>
 #include <QVector>
-#include <kilobotenvironment.h>
+#include "toolchain/kilobotenvironment.h"
 #include <QTime>
 #include <QColor>
 

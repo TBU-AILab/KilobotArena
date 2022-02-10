@@ -1,7 +1,5 @@
 #include "userthread.h"
 
-
-
 /**
  * Default constructor
  * @param kbtracker pointer to a tracker, which is used for tracking the kilobots

@@ -83,7 +83,7 @@ using namespace cv;
 //#include <QColor>
 #include <QDebug>
 
-#include "kilobot.h"
+#include "toolchain/kilobot.h"
 
 // buffers and semaphores
 struct srcBuffer {
