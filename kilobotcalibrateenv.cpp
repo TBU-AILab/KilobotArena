@@ -5,7 +5,7 @@
 
 
 
-#include "kilobot.h"
+#include "toolchain/kilobot.h"
 
 KilobotCalibrateEnv::KilobotCalibrateEnv(QObject *parent) : KilobotEnvironment(parent)
 {

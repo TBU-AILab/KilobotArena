@@ -8,7 +8,7 @@
 
 //#define USEREXPERIMENT mykilobotexperiment //user edit
 //#include "mykilobotexperiment.h" //user edit
-#include "kilobotexperiment.h"
+#include "toolchain/kilobotexperiment.h"
 #include "kilobotidassignment.h"
 #include "kilobotcalibrate.h"
 

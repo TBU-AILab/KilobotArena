@@ -6,7 +6,7 @@
  */
 
 #include "kilobottracker.h"
-#include "kilobotexperiment.h"
+#include "toolchain/kilobotexperiment.h"
 #include <QImage>
 #include <QThread>
 #include <QLineEdit>
