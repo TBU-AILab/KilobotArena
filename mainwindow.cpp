@@ -50,7 +50,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->cam_radio, SIGNAL(toggled(bool)), &this->kbtracker, SLOT(setSourceType(bool)));
     connect(ui->find_kb, SIGNAL(clicked(bool)), &this->kbtracker, SLOT(SETUPfindKilobots()));
 //    connect(ui->lineEdit, SIGNAL(editingFinished()), &this->kbtracker, SLOT(SETUPsetCamOrder()));
-    connect(ui->refresh, SIGNAL(clicked(bool)), &this->kbtracker,SLOT(RefreshDisplayedImage()));
+    connect(ui->actionRefresh, SIGNAL(triggered()), &this->kbtracker,SLOT(RefreshDisplayedImage()));
 
     connect(ui->houghAcc_slider, SIGNAL(valueChanged(int)), &this->kbtracker, SLOT(setHoughAcc(int)));
     connect(ui->cannyThresh_slider, SIGNAL(valueChanged(int)), &this->kbtracker, SLOT(setCannyThresh(int)));
@@ -67,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->blue_checkBox, SIGNAL(toggled(bool)), &this->kbtracker, SLOT(detectblue(bool)));
     connect(ui->runtime_ids_ckbx, SIGNAL(toggled(bool)), &this->kbtracker, SLOT(enableRuntimeIdentification(bool)));
 
-    connect(ui->clicksignallabel, SIGNAL(clicked(QPoint)), &this->kbtracker, SLOT(manuallyassignID(QPoint)));
+    connect(ui->result_final, SIGNAL(clicked(QPoint)), &this->kbtracker, SLOT(manuallyassignID(QPoint)));
     connect(ui->maxIDtoTry_input, SIGNAL(textChanged(QString)), &this->kbtracker, SLOT(maxIDtoTry(QString)));
     connect(ui->manualIDinput, SIGNAL(textChanged(QString)), &this->kbtracker, SLOT(setManualID(QString)));
     connect(ui->ManualIDenable, SIGNAL(toggled(bool)), &this->kbtracker, SLOT(manualIDassignment(bool)));
@@ -116,8 +116,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->assignIDs, SIGNAL(clicked(bool)), this, SLOT(assignIDs()));
     connect(ui->calibrate, SIGNAL(clicked(bool)), this, SLOT(calibrate()));
     connect(ui->identify , SIGNAL(clicked(bool)), this, SLOT(identify()));
-    connect(ui->rotate_pos , SIGNAL(clicked(bool)), this, SLOT(rotate_pos()));
-    connect(ui->rotate_neg , SIGNAL(clicked(bool)), this, SLOT(rotate_neg()));
+    connect(ui->actionRotatePos , SIGNAL(triggered()), this, SLOT(rotate_pos()));
+    connect(ui->actionRotateNeg , SIGNAL(triggered()), this, SLOT(rotate_neg()));
 
     // TESTING
     connect(ui->left, SIGNAL(clicked(bool)), this, SLOT(left()));

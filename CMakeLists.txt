@@ -34,7 +34,6 @@ message(STATUS "    include path: ${Qt5_INCLUDE_DIRS}")
 set(SOURCES
         main.cpp
         mainwindow.cpp
-        clicksignalqlabel.cpp
         dragzoomqlabel.cpp
         kilobottracker.cpp
         toolchain/kilobot.cpp
@@ -48,7 +47,6 @@ set(SOURCES
         kilobotcalibrateenv.cpp
         userthread.cpp
         mainwindow.h
-        clicksignalqlabel.h
         dragzoomqlabel.h
         kilobottracker.h
         toolchain/kilobot.h
