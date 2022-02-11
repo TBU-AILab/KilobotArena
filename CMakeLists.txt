@@ -33,7 +33,6 @@ message(STATUS "    include path: ${Qt5_INCLUDE_DIRS}")
 
 set(SOURCES
         main.cpp
-        main.cpp
         mainwindow.cpp
         clicksignalqlabel.cpp
         dragzoomqlabel.cpp
