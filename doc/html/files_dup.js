@@ -1,28 +1,23 @@
 var files_dup =
 [
+    [ "external", "dir_397d9aeee4af8edecac90968d93b57df.html", "dir_397d9aeee4af8edecac90968d93b57df" ],
     [ "ohc", "dir_6a713f9a9f6f448407dd300347ecc78a.html", "dir_6a713f9a9f6f448407dd300347ecc78a" ],
-    [ "clicksignalqlabel.cpp", "clicksignalqlabel_8cpp.html", null ],
-    [ "clicksignalqlabel.h", "clicksignalqlabel_8h.html", [
-      [ "clickSignalQLabel", "classclick_signal_q_label.html", "classclick_signal_q_label" ]
-    ] ],
+    [ "tests", "dir_59425e443f801f1f2fd8bbe4959a3ccf.html", "dir_59425e443f801f1f2fd8bbe4959a3ccf" ],
+    [ "toolchain", "dir_368b2940e6ce6a65d61c99c6cf8c0b3b.html", "dir_368b2940e6ce6a65d61c99c6cf8c0b3b" ],
     [ "dragzoomqlabel.cpp", "dragzoomqlabel_8cpp.html", null ],
     [ "dragzoomqlabel.h", "dragzoomqlabel_8h.html", [
       [ "dragZoomQLabel", "classdrag_zoom_q_label.html", "classdrag_zoom_q_label" ]
     ] ],
-    [ "kilobot.cpp", "kilobot_8cpp.html", null ],
-    [ "kilobot.h", "kilobot_8h.html", "kilobot_8h" ],
+    [ "ImageBuffer.cpp", "_image_buffer_8cpp.html", null ],
+    [ "ImageBuffer.h", "_image_buffer_8h.html", [
+      [ "ImageBuffer< T, size >", "class_image_buffer.html", "class_image_buffer" ]
+    ] ],
     [ "kilobotcalibrate.cpp", "kilobotcalibrate_8cpp.html", null ],
     [ "kilobotcalibrate.h", "kilobotcalibrate_8h.html", [
       [ "KilobotCalibrate", "class_kilobot_calibrate.html", "class_kilobot_calibrate" ]
     ] ],
     [ "kilobotcalibrateenv.cpp", "kilobotcalibrateenv_8cpp.html", null ],
     [ "kilobotcalibrateenv.h", "kilobotcalibrateenv_8h.html", "kilobotcalibrateenv_8h" ],
-    [ "kilobotenvironment.h", "kilobotenvironment_8h.html", [
-      [ "KilobotEnvironment", "class_kilobot_environment.html", "class_kilobot_environment" ]
-    ] ],
-    [ "kilobotexperiment.h", "kilobotexperiment_8h.html", [
-      [ "KilobotExperiment", "class_kilobot_experiment.html", "class_kilobot_experiment" ]
-    ] ],
     [ "kilobotidassignment.cpp", "kilobotidassignment_8cpp.html", null ],
     [ "kilobotidassignment.h", "kilobotidassignment_8h.html", "kilobotidassignment_8h" ],
     [ "kilobotoverheadcontroller.cpp", "kilobotoverheadcontroller_8cpp.html", "kilobotoverheadcontroller_8cpp" ],
