@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('kilobottracker_8cpp.html',''); initRes
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="kilobottracker_8h_source.html">kilobottracker.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="kilobotexperiment_8h_source.html">kilobotexperiment.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kilobotexperiment_8h_source.html">toolchain/kilobotexperiment.h</a>&quot;</code><br />
 <code>#include &lt;QImage&gt;</code><br />
 <code>#include &lt;QThread&gt;</code><br />
 <code>#include &lt;QLineEdit&gt;</code><br />
@@ -103,8 +103,8 @@ $(document).ready(function(){initNavTree('kilobottracker_8cpp.html',''); initRes
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classacquire_thread.html">acquireThread</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classacquire_thread.html" title="The acquireThread class This thread acquires input data from a source, applies the local warps to the...">acquireThread</a> class This thread acquires input data from a source, applies the local warps to the data, and then places the data in a circular buffer for use by the main thread, which operates on a QTimer to allow UI responsivity.  <a href="classacquire_thread.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_acquire_thread.html">AcquireThread</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_acquire_thread.html" title="The AcquireThread class This thread acquires input data from a source, applies the local warps to the...">AcquireThread</a> class This thread acquires input data from a source, applies the local warps to the data, and then places the data in a circular buffer for use by the main thread, which operates on a QTimer to allow UI responsivity.  <a href="class_acquire_thread.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -192,6 +192,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Circular buffer of source images <br  />
+ </p>
 
 </div>
 </div>
@@ -206,6 +208,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Free space in buffer </p>
 
 </div>
 </div>
@@ -234,6 +237,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Number of available source images (amount of images in buffer) </p>
 
 </div>
 </div>

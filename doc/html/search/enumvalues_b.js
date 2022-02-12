@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['packet_5fbootpage_0',['PACKET_BOOTPAGE',['../packet_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba4f34da9f6e8bc0e4176b67eb378b4748',1,'packet.h']]],
-  ['packet_5fforwardmsg_1',['PACKET_FORWARDMSG',['../packet_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba88e577e15d3e242145ae569904acabe6',1,'packet.h']]],
-  ['packet_5fforwardrawmsg_2',['PACKET_FORWARDRAWMSG',['../packet_8h.html#a06fc87d81c62e9abb8790b6e5713c55baa12ba511d6ae52e07b572f5e611d5b89',1,'packet.h']]],
-  ['packet_5fledtoggle_3',['PACKET_LEDTOGGLE',['../packet_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba443050f9948affe281a3d750663510c5',1,'packet.h']]],
-  ['packet_5fstop_4',['PACKET_STOP',['../packet_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba16d8c37a6fa23920d43f84da10d2da3c',1,'packet.h']]],
-  ['pos_5',['POS',['../kilobot_8h.html#a8810be9e45f032edb9314e71674e829ba91743bc3932693c4b8a6ca984e8a8437',1,'kilobot.h']]]
+  ['no_5ftrack_0',['NO_TRACK',['../kilobottracker_8h.html#a523d41827bc34c2ff910616ed38cef56ace7ab759f3c61783d330fed6e160f2a7',1,'kilobottracker.h']]],
+  ['nonfatal_5ffailure_1',['NONFATAL_FAILURE',['../class_expect_failure_test.html#aad05da10bb15d21a434eba3b37011406aeabdbecc0c4550d4f46cd44ac62fb92b',1,'ExpectFailureTest']]],
+  ['normal_2',['NORMAL',['../packet_8h.html#a78b97fef55da786a15a849fd9d7e557ca50d1448013c6f17125caee18aa418af7',1,'packet.h']]]
 ];

@@ -1,7 +1,7 @@
 \hypertarget{kilobottracker_8cpp}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobottracker.cpp File Reference}
 \label{kilobottracker_8cpp}\index{/Users/peterjanku/SourcesCpp/KilobotArena/kilobottracker.cpp@{/Users/peterjanku/SourcesCpp/KilobotArena/kilobottracker.cpp}}
 {\ttfamily \#include \char`\"{}kilobottracker.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}kilobotexperiment.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}toolchain/kilobotexperiment.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$QImage$>$}\newline
 {\ttfamily \#include $<$QThread$>$}\newline
 {\ttfamily \#include $<$QLine\+Edit$>$}\newline
@@ -13,8 +13,8 @@
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classacquire_thread}{acquire\+Thread}}
-\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classacquire_thread}{acquire\+Thread}} class This thread acquires input data from a source, applies the local warps to the data, and then places the data in a circular buffer for use by the main thread, which operates on a QTimer to allow UI responsivity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{class_acquire_thread}{Acquire\+Thread}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_acquire_thread}{Acquire\+Thread}} class This thread acquires input data from a source, applies the local warps to the data, and then places the data in a circular buffer for use by the main thread, which operates on a QTimer to allow UI responsivity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -73,13 +73,14 @@ Created on\+: 3 Oct 2016 Author\+: Alex Cope
 \doxysubsubsection{\texorpdfstring{srcBuff}{srcBuff}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structsrc_buffer}{src\+Buffer}} src\+Buff\mbox{[}\mbox{\hyperlink{kilobottracker_8h_a6c7cd32e1bac137f05e4a752b4ad10af}{BUFF\+\_\+\+SIZE}}\mbox{]}}
 
-\mbox{\Hypertarget{kilobottracker_8cpp_af579fd67711d9d166643357840007a2b}\label{kilobottracker_8cpp_af579fd67711d9d166643357840007a2b}} 
+Circular buffer of source images ~\newline
+ \mbox{\Hypertarget{kilobottracker_8cpp_af579fd67711d9d166643357840007a2b}\label{kilobottracker_8cpp_af579fd67711d9d166643357840007a2b}} 
 \index{kilobottracker.cpp@{kilobottracker.cpp}!srcFree@{srcFree}}
 \index{srcFree@{srcFree}!kilobottracker.cpp@{kilobottracker.cpp}}
 \doxysubsubsection{\texorpdfstring{srcFree}{srcFree}}
 {\footnotesize\ttfamily QSemaphore src\+Free}
 
-\mbox{\Hypertarget{kilobottracker_8cpp_a563aaa4c6508364dcbb455f5da861bdd}\label{kilobottracker_8cpp_a563aaa4c6508364dcbb455f5da861bdd}} 
+Free space in buffer \mbox{\Hypertarget{kilobottracker_8cpp_a563aaa4c6508364dcbb455f5da861bdd}\label{kilobottracker_8cpp_a563aaa4c6508364dcbb455f5da861bdd}} 
 \index{kilobottracker.cpp@{kilobottracker.cpp}!srcStop@{srcStop}}
 \index{srcStop@{srcStop}!kilobottracker.cpp@{kilobottracker.cpp}}
 \doxysubsubsection{\texorpdfstring{srcStop}{srcStop}}
@@ -91,3 +92,4 @@ Created on\+: 3 Oct 2016 Author\+: Alex Cope
 \doxysubsubsection{\texorpdfstring{srcUsed}{srcUsed}}
 {\footnotesize\ttfamily QSemaphore src\+Used}
 
+Number of available source images (amount of images in buffer) 
