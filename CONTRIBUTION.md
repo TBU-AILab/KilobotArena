@@ -1,4 +1,4 @@
-Contributing to Esri Open Source Projects
+Contributing to KilobotArena project
 =========================================
 
 Every contribution to this project is welcome. In order to keep this project clean and easy to maintain, please follow the rules and recommendations described in this document.
