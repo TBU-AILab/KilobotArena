@@ -1,6 +1,6 @@
 var kilobottracker_8cpp =
 [
-    [ "acquireThread", "classacquire_thread.html", "classacquire_thread" ],
+    [ "AcquireThread", "class_acquire_thread.html", "class_acquire_thread" ],
     [ "COLDET_V1", "kilobottracker_8cpp.html#a13dfe34c305ab0b7f4daef05235f02c7", null ],
     [ "type2str", "kilobottracker_8cpp.html#a1db414b6a89ba07eb23641564dea6d5c", null ],
     [ "camUsage", "kilobottracker_8cpp.html#a9d37f6fd6caea1c6ecfc96ed3c00f515", null ],
