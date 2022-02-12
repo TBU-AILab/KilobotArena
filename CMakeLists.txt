@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1.0 )
+cmake_minimum_required(VERSION 3.10.0 )
 
 project(KilobotArena VERSION 1.0.0 LANGUAGES CXX)
 
@@ -13,6 +13,12 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+option(PACKAGE_TESTS "Build the tests")
+if(PACKAGE_TESTS)
+    enable_testing()
+    include(GoogleTest)
+    add_subdirectory(tests)
+endif()
 
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
@@ -62,7 +68,7 @@ set(SOURCES
         kilobotidassignment.h
         kilobotcalibrate.h
         kilobotcalibrateenv.h
-        )
+        ImageBuffer.cpp ImageBuffer.h)
 
 qt5_add_resources(SOURCES ressources.qrc)
 qt5_wrap_ui(SOURCES mainwindow.ui)
@@ -73,3 +79,4 @@ target_compile_definitions(KilobotArena PUBLIC USE_OPENCV3)
 
 target_link_libraries(KilobotArena Qt5::Widgets)
 target_link_libraries (KilobotArena ${OpenCV_LIBS})
+
