@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lightcolour_0',['lightColour',['../kilobot_8h.html#a5ae27081b74f814ca7bfc5182aa9f283',1,'kilobot.h']]]
+  ['failuremode_0',['FailureMode',['../class_expect_failure_test.html#aad05da10bb15d21a434eba3b37011406',1,'ExpectFailureTest']]],
+  ['failuretype_1',['FailureType',['../classtesting_1_1internal_1_1_failure_reporter_interface.html#aba34db997df0aefbfdc9d199d7d2ab5e',1,'testing::internal::FailureReporterInterface']]]
 ];

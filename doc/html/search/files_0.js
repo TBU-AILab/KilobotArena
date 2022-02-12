@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['calibrate_2ecpp_0',['calibrate.cpp',['../calibrate_8cpp.html',1,'']]],
-  ['calibrate_2eh_1',['calibrate.h',['../calibrate_8h.html',1,'']]],
-  ['clicksignalqlabel_2ecpp_2',['clicksignalqlabel.cpp',['../clicksignalqlabel_8cpp.html',1,'']]],
-  ['clicksignalqlabel_2eh_3',['clicksignalqlabel.h',['../clicksignalqlabel_8h.html',1,'']]]
+  ['_5f_5finit_5f_5f_2epy_0',['__init__.py',['../____init_____8py.html',1,'']]]
 ];
