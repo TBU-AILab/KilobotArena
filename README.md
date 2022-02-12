@@ -16,6 +16,12 @@ QtCreator will run the Makefile for you - from the command line you'll have to d
 
 You also need to install the calibration program to generate calibrated camera maps: [KilobotArenaCalibration](https://github.com/DiODeProject/KilobotArenaCalibration).
 
+### Alternative compile tool
+
+Even if now the original project was composed by QMake, the alternative way of compiling by CMake is available. The CMake files should correspond to the QMake configuratin.
+
+In case of CMake usage together with QtCreator, the **"release"** or **"release with debug symbols"** configuration need to be selected.
+
 ### User permission
 In order to operate the Kilobot's OHC, the user needs to be part of the dialout group. Therefore, add the user to the group `dialout` with command
 
@@ -31,7 +37,21 @@ If you use or adapt ARK in order to generate experimental results, please cite t
 
 ### Contribution
 
-Please follow the rules defined in CONTRIBUTION.md
+Please follow the rules defined in [CONTRIBUTION.md](CONTRIBUTION.md)
+
+### Unit tests
+
+The unit tests are based on [GTest](https://google.github.io/googletest/) testing framework. 
+
+The framework sources are added as a git submodule. In order to download it run following command from the project root after cloning of the KilobotArena repository:
+
+```
+git submodule init
+git submodule update
+```
+Moreover, in order to clone the tests, the CMake project tool need to be used and the **PACKAGE_TESTS** parameter need to be set to ON.
+
+The unit tests are place in "test" folder, where each unit has their own file. 
 
 ### See Also
 

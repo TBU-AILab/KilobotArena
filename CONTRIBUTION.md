@@ -32,3 +32,4 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
   - keep comments meaningful
   - if it is possible place comments into .cpp files
 - when you create a pull request describe the changed is pullrequest comment    
+- **if it is possible create unit test for each new unit**
