@@ -1,0 +1,73 @@
+1. install ubuntu 20.04 LTS
+
+2. update everything: 				sudo apt-get update && sudo apt-get upgrade
+	and run SW updater
+3. install latest qt:				sudo apt-get install qtcreator
+4. install git:					sudo apt-get git
+
+---------------------------------------
+GPU computing setup
+---------------------------------------
+
+5. install nvidia driver
+
+	a) purge everything nvidia related: 	sudo apt purge nvidia-*
+	b) add repository:			sudo add-apt-repository ppa:graphics/ppa
+	c) update:				sudo apt-get update
+	d) install driver:			sudo apt-get install nvidia-470
+
+6. reboot
+
+7. install openCV
+
+	a) download openCV 4.5.5 from: https://github.com/opencv/opencv/archive/refs/tags/4.5.5.tar.gz
+	b) create folder for ARK and cd:	mkdir ~/ARK_project && cd ~/ARK_project
+	c) untar downloaded openCV:		tar -xcf ~/Downloads/opencv-4.5.5.tar.gz opencv-4.5.5
+	d) download openCV contrib tools:	git clone https://github.com/opencv/opencv_contrib.git
+
+	install prequsities:
+		
+		a) sudo apt install --assume-yes build-essential cmake git pkg-config unzip ffmpeg qtbase5-dev python-dev python3-dev python-numpy python3-numpy
+		b) sudo apt install libhdf5-dev
+		c) sudo apt install --assume-yes libgtk-3-dev libdc1394-22 libdc1394-22-dev libjpeg-dev libpng-dev libtiff5-dev
+		d) sudo apt install --assume-yes libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+		e) sudo apt install --assume-yes libv4l-dev libtbb-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev
+		f) sudo apt install --assume-yes libvorbis-dev libxvidcore-dev v4l-utils	
+	
+	configure cmake:
+
+		a) cd ~/ARK_project/opencv-4.5.5
+		b) mkdir build
+		c) cd build
+		d) cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_CUDA=ON -D WITH_CUBLAS=ON -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON -D BUILD_PERF_TESTS=OFF -D BUILD_TESTS=OFF -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES" -DOPENCV_EXTRA_MODULES_PATH=~/ARK_project/opencv_contrib/modules -DCMAKE_SHARED_LINKER_FLAGS='-latomic' ..
+		
+
+			(*optional) if there are errors in compilation - use older version of gcc and g++
+
+				a) install different versions:		sudo apt -y install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
+				b) update system alternatives:		sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 7
+									sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 8
+									sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9
+									sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 7
+									sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 8
+									sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 9¨
+				c) switch to gcc-7			sudo update-alternatives --config gcc
+					You need to manualy select the gcc-7
+				d) switch to g++-7			sudo update-alternatives --config g++
+					You need to manualy select the g++-7	
+
+		e) make -j $(($(nproc) + 1))
+	e) sudo make install		
+8. compile kilobot arena
+
+		a) cd to the ARK project directory			cd ~/ARK_project
+		b) clone the AILAB TBU fork				git clone https://github.com/TBU-AILab/KilobotArena.git
+		c) make sure the correct branch is selected		git checkout AILAB_TBU
+		d) open QT creator
+		e) open project and select CMakeList.txt (or .pro file) in the cloned directory of KilobotArena
+		f) build
+		g) run
+
+9. enjoy
+
+
