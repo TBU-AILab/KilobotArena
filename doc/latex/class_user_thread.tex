@@ -1,0 +1,151 @@
+\hypertarget{class_user_thread}{}\doxysection{User\+Thread Class Reference}
+\label{class_user_thread}\index{UserThread@{UserThread}}
+
+
+{\ttfamily \#include $<$userthread.\+h$>$}
+
+Inheritance diagram for User\+Thread\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_user_thread}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_user_thread_a26e1c2ea3dc49057d8f3241c03238152}{choose\+Internal\+Experiments}} (\mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}{experiment\+Type}} exp\+Type, int opt=0)
+\item 
+bool \mbox{\hyperlink{class_user_thread_a01efeb32fa48db1c7ecfb536872ac657}{load\+Library}} (const QString \&filename)
+\item 
+bool \mbox{\hyperlink{class_user_thread_ad887f520b5ed9630677dd2a3d3b614d7}{expt\+Loaded}} ()
+\begin{DoxyCompactList}\small\item\em Check if the experiment is loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_thread_a05fe89d13b0f6a6cda704063f9d5dc58}{set\+Lib\+Name}} (QString)
+\item 
+void \mbox{\hyperlink{class_user_thread_ad2b674b5d201a42470238ca0df8c5605}{set\+GUILayout}} (QWidget $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_thread_a5b14a669fca9fbf7d82e2722d98cfafd}{User\+Thread}} (\mbox{\hyperlink{class_kilobot_tracker}{Kilobot\+Tracker}} $\ast$kbtracker, \mbox{\hyperlink{class_kilobot_overhead_controller}{Kilobot\+Overhead\+Controller}} $\ast$ohc, QObject $\ast$parent=0)
+\item 
+\mbox{\hyperlink{class_kilobot_experiment}{Kilobot\+Experiment}} $\ast$ \mbox{\hyperlink{class_user_thread_a3b887eb709e73f3aaa279efd9922f594}{get\+Experiment\+Pointer}} ()
+\begin{DoxyCompactList}\small\item\em Getter for a pointer to the experiment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_thread_ade11befa43d6904a248c459d62fc2798}{connect\+Expt}} (int exp\+Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class takes care about whole experiment. Loads the experiment components in separate tread, composed the control UI and run the whole experiment. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_thread_a5b14a669fca9fbf7d82e2722d98cfafd}\label{class_user_thread_a5b14a669fca9fbf7d82e2722d98cfafd}} 
+\index{UserThread@{UserThread}!UserThread@{UserThread}}
+\index{UserThread@{UserThread}!UserThread@{UserThread}}
+\doxysubsubsection{\texorpdfstring{UserThread()}{UserThread()}}
+{\footnotesize\ttfamily User\+Thread\+::\+User\+Thread (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kilobot_tracker}{Kilobot\+Tracker}} $\ast$}]{kbtracker,  }\item[{\mbox{\hyperlink{class_kilobot_overhead_controller}{Kilobot\+Overhead\+Controller}} $\ast$}]{ohc,  }\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Default constructor 
+\begin{DoxyParams}{Parameters}
+{\em kbtracker} & pointer to a tracker, which is used for tracking the kilobots \\
+\hline
+{\em ohc} & pointer to a overhead communication class \\
+\hline
+{\em parent} & Object parent \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_thread_a26e1c2ea3dc49057d8f3241c03238152}\label{class_user_thread_a26e1c2ea3dc49057d8f3241c03238152}} 
+\index{UserThread@{UserThread}!chooseInternalExperiments@{chooseInternalExperiments}}
+\index{chooseInternalExperiments@{chooseInternalExperiments}!UserThread@{UserThread}}
+\doxysubsubsection{\texorpdfstring{chooseInternalExperiments}{chooseInternalExperiments}}
+{\footnotesize\ttfamily bool User\+Thread\+::choose\+Internal\+Experiments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}{experiment\+Type}}}]{exp\+Type,  }\item[{int}]{opt = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Load some predefined experiment
+
+
+\begin{DoxyParams}{Parameters}
+{\em exp\+Type} & Type of the experiment \\
+\hline
+{\em opt} & Set some options for the experiment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true in case of correct experiment initialization, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_thread_ade11befa43d6904a248c459d62fc2798}\label{class_user_thread_ade11befa43d6904a248c459d62fc2798}} 
+\index{UserThread@{UserThread}!connectExpt@{connectExpt}}
+\index{connectExpt@{connectExpt}!UserThread@{UserThread}}
+\doxysubsubsection{\texorpdfstring{connectExpt()}{connectExpt()}}
+{\footnotesize\ttfamily void User\+Thread\+::connect\+Expt (\begin{DoxyParamCaption}\item[{int}]{exp\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Create connection between slots and signals of newly loaded library. Signals and slots are used as the only one communication chanel between experiment and the application to provide safe-\/thread function. 
+\begin{DoxyParams}{Parameters}
+{\em exp\+Type} & Type of the experiment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_user_thread_ad887f520b5ed9630677dd2a3d3b614d7}\label{class_user_thread_ad887f520b5ed9630677dd2a3d3b614d7}} 
+\index{UserThread@{UserThread}!exptLoaded@{exptLoaded}}
+\index{exptLoaded@{exptLoaded}!UserThread@{UserThread}}
+\doxysubsubsection{\texorpdfstring{exptLoaded}{exptLoaded}}
+{\footnotesize\ttfamily bool User\+Thread\+::expt\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Check if the experiment is loaded. 
+
+\begin{DoxyReturn}{Returns}
+tru if some experiment is loaded 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_thread_a3b887eb709e73f3aaa279efd9922f594}\label{class_user_thread_a3b887eb709e73f3aaa279efd9922f594}} 
+\index{UserThread@{UserThread}!getExperimentPointer@{getExperimentPointer}}
+\index{getExperimentPointer@{getExperimentPointer}!UserThread@{UserThread}}
+\doxysubsubsection{\texorpdfstring{getExperimentPointer()}{getExperimentPointer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_kilobot_experiment}{Kilobot\+Experiment}} $\ast$ User\+Thread\+::get\+Experiment\+Pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for a pointer to the experiment. 
+
+\begin{DoxyReturn}{Returns}
+pointer to a current experiment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_thread_a01efeb32fa48db1c7ecfb536872ac657}\label{class_user_thread_a01efeb32fa48db1c7ecfb536872ac657}} 
+\index{UserThread@{UserThread}!loadLibrary@{loadLibrary}}
+\index{loadLibrary@{loadLibrary}!UserThread@{UserThread}}
+\doxysubsubsection{\texorpdfstring{loadLibrary}{loadLibrary}}
+{\footnotesize\ttfamily bool User\+Thread\+::load\+Library (\begin{DoxyParamCaption}\item[{const QString \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Load the experiment in form of dynamic linked library based on the file name. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Absolute or relative path to the library \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if experiment correctly loaded, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_user_thread_ad2b674b5d201a42470238ca0df8c5605}\label{class_user_thread_ad2b674b5d201a42470238ca0df8c5605}} 
+\index{UserThread@{UserThread}!setGUILayout@{setGUILayout}}
+\index{setGUILayout@{setGUILayout}!UserThread@{UserThread}}
+\doxysubsubsection{\texorpdfstring{setGUILayout}{setGUILayout}}
+{\footnotesize\ttfamily void User\+Thread\+::set\+GUILayout (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_user_thread_a05fe89d13b0f6a6cda704063f9d5dc58}\label{class_user_thread_a05fe89d13b0f6a6cda704063f9d5dc58}} 
+\index{UserThread@{UserThread}!setLibName@{setLibName}}
+\index{setLibName@{setLibName}!UserThread@{UserThread}}
+\doxysubsubsection{\texorpdfstring{setLibName}{setLibName}}
+{\footnotesize\ttfamily void User\+Thread\+::set\+Lib\+Name (\begin{DoxyParamCaption}\item[{QString}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/\mbox{\hyperlink{userthread_8h}{userthread.\+h}}\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/\mbox{\hyperlink{userthread_8cpp}{userthread.\+cpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-Contributing to Esri Open Source Projects
+Contributing to KilobotArena project
 =========================================
 
 Every contribution to this project is welcome. In order to keep this project clean and easy to maintain, please follow the rules and recommendations described in this document.
@@ -32,3 +32,4 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
   - keep comments meaningful
   - if it is possible place comments into .cpp files
 - when you create a pull request describe the changed is pullrequest comment    
+- **if it is possible create unit test for each new unit**

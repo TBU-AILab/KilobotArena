@@ -1,0 +1,135 @@
+\hypertarget{class_kilobot_calibrate_env}{}\doxysection{Kilobot\+Calibrate\+Env Class Reference}
+\label{class_kilobot_calibrate_env}\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+
+
+{\ttfamily \#include $<$kilobotcalibrateenv.\+h$>$}
+
+Inheritance diagram for Kilobot\+Calibrate\+Env\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_kilobot_calibrate_env}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_kilobot_calibrate_env_a9c0d4d8383e726a223f02eae01ce4c10}{update}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_calibrate_env_a3c7101580add4d453f723d54897f998c}{update\+Virtual\+Sensor}} (\mbox{\hyperlink{class_kilobot}{Kilobot}} kilobot)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_kilobot_calibrate_env_ac2e520365014bbce39c1960db6d6acbc}{draw\+Line}} (std\+::vector$<$ cv\+::\+Point $>$ pos, QColor col, int thickness, std\+::string text, bool transparent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_kilobot_calibrate_env_ab11e448d3a0bd12bb1d91ceef507565e}{Kilobot\+Calibrate\+Env}} (QObject $\ast$parent=0)
+\item 
+void \mbox{\hyperlink{class_kilobot_calibrate_env_a8f4cd2c1e8092f34d6d65a4cfba08690}{set\+Kilobot\+Radius}} (double kilobot\+\_\+radius)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_kilobot_calibrate_env_a170c8ee5289b74d37ccd726f1e5b1f42}{rot\+Done}} = false
+\item 
+bool \mbox{\hyperlink{class_kilobot_calibrate_env_ac22a98c55e8514524041ebc75f8246e6}{str\+Done}} = false
+\item 
+double \mbox{\hyperlink{class_kilobot_calibrate_env_a610b32086935b55b81575d8086ea7b46}{kilobot\+Radius}}
+\item 
+QVector$<$ \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231d}{command}} $>$ \mbox{\hyperlink{class_kilobot_calibrate_env_a8c2cd5d6160b8b13d8d27024ac5dcd5f}{command\+Log}}
+\item 
+QVector$<$ QPointF $>$ \mbox{\hyperlink{class_kilobot_calibrate_env_a5b836549668ade3ba55c054da883a106}{velocity\+Log}}
+\item 
+QVector$<$ QVector$<$ QPointF $>$ $>$ \mbox{\hyperlink{class_kilobot_calibrate_env_afe7478a33dda38090a78d593c42f68ae}{pos\+Log}}
+\item 
+QVector$<$ QVector$<$ int $>$ $>$ \mbox{\hyperlink{class_kilobot_calibrate_env_a5d17430e5f9026896252d85173ee3b6a}{pos\+Log\+Times}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_kilobot_calibrate_env_ab11e448d3a0bd12bb1d91ceef507565e}\label{class_kilobot_calibrate_env_ab11e448d3a0bd12bb1d91ceef507565e}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{KilobotCalibrateEnv()}{KilobotCalibrateEnv()}}
+{\footnotesize\ttfamily Kilobot\+Calibrate\+Env\+::\+Kilobot\+Calibrate\+Env (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_kilobot_calibrate_env_ac2e520365014bbce39c1960db6d6acbc}\label{class_kilobot_calibrate_env_ac2e520365014bbce39c1960db6d6acbc}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!drawLine@{drawLine}}
+\index{drawLine@{drawLine}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{drawLine}{drawLine}}
+{\footnotesize\ttfamily void Kilobot\+Calibrate\+Env\+::draw\+Line (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Point $>$}]{pos,  }\item[{QColor}]{col,  }\item[{int}]{thickness,  }\item[{std\+::string}]{text,  }\item[{bool}]{transparent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_calibrate_env_a8f4cd2c1e8092f34d6d65a4cfba08690}\label{class_kilobot_calibrate_env_a8f4cd2c1e8092f34d6d65a4cfba08690}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!setKilobotRadius@{setKilobotRadius}}
+\index{setKilobotRadius@{setKilobotRadius}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{setKilobotRadius()}{setKilobotRadius()}}
+{\footnotesize\ttfamily void Kilobot\+Calibrate\+Env\+::set\+Kilobot\+Radius (\begin{DoxyParamCaption}\item[{double}]{kilobot\+\_\+radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_kilobot_calibrate_env_a9c0d4d8383e726a223f02eae01ce4c10}\label{class_kilobot_calibrate_env_a9c0d4d8383e726a223f02eae01ce4c10}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!update@{update}}
+\index{update@{update}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{update}{update}}
+{\footnotesize\ttfamily void Kilobot\+Calibrate\+Env\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_calibrate_env_a3c7101580add4d453f723d54897f998c}\label{class_kilobot_calibrate_env_a3c7101580add4d453f723d54897f998c}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!updateVirtualSensor@{updateVirtualSensor}}
+\index{updateVirtualSensor@{updateVirtualSensor}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{updateVirtualSensor}{updateVirtualSensor}}
+{\footnotesize\ttfamily void Kilobot\+Calibrate\+Env\+::update\+Virtual\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}}}]{kilobot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_kilobot_calibrate_env_a8c2cd5d6160b8b13d8d27024ac5dcd5f}\label{class_kilobot_calibrate_env_a8c2cd5d6160b8b13d8d27024ac5dcd5f}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!commandLog@{commandLog}}
+\index{commandLog@{commandLog}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{commandLog}{commandLog}}
+{\footnotesize\ttfamily QVector$<$ \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231d}{command}} $>$ Kilobot\+Calibrate\+Env\+::command\+Log}
+
+\mbox{\Hypertarget{class_kilobot_calibrate_env_a610b32086935b55b81575d8086ea7b46}\label{class_kilobot_calibrate_env_a610b32086935b55b81575d8086ea7b46}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!kilobotRadius@{kilobotRadius}}
+\index{kilobotRadius@{kilobotRadius}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{kilobotRadius}{kilobotRadius}}
+{\footnotesize\ttfamily double Kilobot\+Calibrate\+Env\+::kilobot\+Radius}
+
+\mbox{\Hypertarget{class_kilobot_calibrate_env_afe7478a33dda38090a78d593c42f68ae}\label{class_kilobot_calibrate_env_afe7478a33dda38090a78d593c42f68ae}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!posLog@{posLog}}
+\index{posLog@{posLog}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{posLog}{posLog}}
+{\footnotesize\ttfamily QVector$<$ QVector $<$ QPointF $>$ $>$ Kilobot\+Calibrate\+Env\+::pos\+Log}
+
+\mbox{\Hypertarget{class_kilobot_calibrate_env_a5d17430e5f9026896252d85173ee3b6a}\label{class_kilobot_calibrate_env_a5d17430e5f9026896252d85173ee3b6a}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!posLogTimes@{posLogTimes}}
+\index{posLogTimes@{posLogTimes}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{posLogTimes}{posLogTimes}}
+{\footnotesize\ttfamily QVector$<$ QVector $<$ int $>$ $>$ Kilobot\+Calibrate\+Env\+::pos\+Log\+Times}
+
+\mbox{\Hypertarget{class_kilobot_calibrate_env_a170c8ee5289b74d37ccd726f1e5b1f42}\label{class_kilobot_calibrate_env_a170c8ee5289b74d37ccd726f1e5b1f42}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!rotDone@{rotDone}}
+\index{rotDone@{rotDone}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{rotDone}{rotDone}}
+{\footnotesize\ttfamily bool Kilobot\+Calibrate\+Env\+::rot\+Done = false}
+
+\mbox{\Hypertarget{class_kilobot_calibrate_env_ac22a98c55e8514524041ebc75f8246e6}\label{class_kilobot_calibrate_env_ac22a98c55e8514524041ebc75f8246e6}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!strDone@{strDone}}
+\index{strDone@{strDone}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{strDone}{strDone}}
+{\footnotesize\ttfamily bool Kilobot\+Calibrate\+Env\+::str\+Done = false}
+
+\mbox{\Hypertarget{class_kilobot_calibrate_env_a5b836549668ade3ba55c054da883a106}\label{class_kilobot_calibrate_env_a5b836549668ade3ba55c054da883a106}} 
+\index{KilobotCalibrateEnv@{KilobotCalibrateEnv}!velocityLog@{velocityLog}}
+\index{velocityLog@{velocityLog}!KilobotCalibrateEnv@{KilobotCalibrateEnv}}
+\doxysubsubsection{\texorpdfstring{velocityLog}{velocityLog}}
+{\footnotesize\ttfamily QVector$<$ QPointF $>$ Kilobot\+Calibrate\+Env\+::velocity\+Log}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/\mbox{\hyperlink{kilobotcalibrateenv_8h}{kilobotcalibrateenv.\+h}}\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/\mbox{\hyperlink{kilobotcalibrateenv_8cpp}{kilobotcalibrateenv.\+cpp}}\end{DoxyCompactItemize}

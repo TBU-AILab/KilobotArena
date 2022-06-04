@@ -1,0 +1,36 @@
+\hypertarget{kilobotcalibrate_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobotcalibrate.h}
+\mbox{\hyperlink{kilobotcalibrate_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef KILOBOTCALIBRATE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define KILOBOTCALIBRATE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotexperiment_8h}{toolchain/kilobotexperiment.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotcalibrateenv_8h}{kilobotcalibrateenv.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_kilobot_calibrate}{KilobotCalibrate}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_kilobot_experiment}{KilobotExperiment}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     Q\_OBJECT}
+\DoxyCodeLine{11 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_kilobot_calibrate_ab5b3ffe99d43041c6f09f33c5928f0cc}{KilobotCalibrate}}(\textcolor{keywordtype}{double} kilobot\_radius);}
+\DoxyCodeLine{13     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_kilobot_calibrate_a198d7e3219c866b141e32a57d9f588be}{\string~KilobotCalibrate}}() \{\}}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_kilobot_calibrate_env}{KilobotCalibrateEnv}} \mbox{\hyperlink{class_kilobot_calibrate_a2c6e47bb04b7aad245a90f5ec1625108}{calibEnvironment}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{17         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_calibrate_af71dd46083d49015c94246f2b6bb27b6}{initialise}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{18         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_calibrate_a55558e119dc5a22a0129289d0b080c3d}{run}}();}
+\DoxyCodeLine{19         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_calibrate_a9412dcecea95b7e79ce9d37c1a5433e0}{drawLineFromEnv}}(std::vector<cv::Point> pos, QColor col, \textcolor{keywordtype}{int} thickness, std::string text, \textcolor{keywordtype}{bool} transparent)\{}
+\DoxyCodeLine{20             emit \mbox{\hyperlink{class_kilobot_experiment_aff0ed78458d646c5bddb37a9628c8157}{drawLine}}(pos,col,thickness,text,transparent);}
+\DoxyCodeLine{21         \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{private}:}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} updateKilobotState(\mbox{\hyperlink{class_kilobot}{Kilobot}} kilobotCopy);}
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} setupInitialKilobotState(\mbox{\hyperlink{class_kilobot}{Kilobot}} kilobotCopy);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// TESTLIB\_H}}
+
+\end{DoxyCode}

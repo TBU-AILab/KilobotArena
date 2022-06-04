@@ -1,0 +1,448 @@
+\hypertarget{kilobottracker_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobottracker.h}
+\mbox{\hyperlink{kilobottracker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef CALIBRATEARENA\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define CALIBRATEARENA\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <ios>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define USE\_CUDA true}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef USE\_OPENCV3}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// OpenCV 2 includes}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <opencv2/highgui/highgui.hpp>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <opencv2/video/video.hpp>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <opencv2/imgproc/imgproc.hpp>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <opencv2/videostab/videostab.hpp>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <opencv2/features2d/features2d.hpp>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <opencv2/stitching/stitcher.hpp>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <opencv2/opencv.hpp>}}
+\DoxyCodeLine{28 \textcolor{comment}{//GPU stuff}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <opencv2/core/cuda.hpp>}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifdef USE\_CUDA}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{    \#define MAT\_TYPE cuda::GpuMat}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{    \#define CV\_NS cv::cuda::}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{    \#define MAT\_TYPE Mat}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{    \#define CV\_NS cv::}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacestd}{std}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{// OpenCV 3 :}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include <opencv2/highgui.hpp>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <opencv2/video.hpp>}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <opencv2/imgproc.hpp>}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <opencv2/videostab.hpp>}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <opencv2/features2d.hpp>}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <opencv2/stitching.hpp>}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <opencv2/opencv.hpp>}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <opencv2/core/core.hpp>}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <opencv2/imgcodecs.hpp>}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <opencv2/videoio.hpp>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <opencv2/core/ocl.hpp>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <opencv2/cudaarithm.hpp>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <opencv2/cudaimgproc.hpp>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <opencv2/cudafilters.hpp>}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <opencv2/cudafeatures2d.hpp>}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include <opencv2/cudawarping.hpp>}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifdef USE\_CUDA}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define MAT\_TYPE cuda::GpuMat}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define CV\_NS cv::cuda::}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define MAT\_TYPE UMat}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define CV\_NS cv::}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{comment}{// allow easy addressing of OpenCV functions}}
+\DoxyCodeLine{72 \textcolor{keyword}{using namespace }cv;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{// Qt base include}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#include <QPoint>}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#include <QPixmap>}}
+\DoxyCodeLine{78 \textcolor{comment}{// for thread buffer communication}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#include <QSemaphore>}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#include <QTimer>}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#include <QElapsedTimer>}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#include <QTime>}}
+\DoxyCodeLine{83 \textcolor{comment}{//\#include <QColor>}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#include <QDebug>}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobot_8h}{toolchain/kilobot.h}}"{}}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{91 \textcolor{keyword}{struct }\mbox{\hyperlink{structsrc_buffer}{srcBuffer}} \{}
+\DoxyCodeLine{92     \mbox{\hyperlink{kilobottracker_8h_ac8b5de4ce26103dd0313f31622db1dfb}{MAT\_TYPE}} \mbox{\hyperlink{structsrc_buffer_a7cf4fa49bf620656d6bf5e64994c4d0d}{full\_warped\_image}}; }
+\DoxyCodeLine{93 \};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define BUFF\_SIZE 2}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define IM\_WIDTH 2048}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define IM\_HEIGHT 1536}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define IDENTIFY\_TIMEOUT 10}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{keyword}{enum} \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115}{srcDataType}} \{}
+\DoxyCodeLine{104     \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115a2fe34064fc47ee403438f534678f104d}{IMAGES}},}
+\DoxyCodeLine{105     \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115a0e1e918a80f84992ae08463f076d5dc8}{VIDEO}},}
+\DoxyCodeLine{106     \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115ada31f516cdf218b68b790fb31e8a6956}{CAMERA}}}
+\DoxyCodeLine{107 \};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keyword}{enum} \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56}{trackerType}} \{}
+\DoxyCodeLine{110     \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56ace7ab759f3c61783d330fed6e160f2a7}{NO\_TRACK}},}
+\DoxyCodeLine{111     \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56afcbc6d873375c3429a65f35b8fd6834a}{CIRCLES\_NAIVE}},}
+\DoxyCodeLine{112     \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56aeb95bef4b68912dacf8f11c64bf337cd}{CIRCLES\_LOCAL}},}
+\DoxyCodeLine{113     \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56a14cbf8257a07205853487d035108c187}{MY\_HAPPY\_OTHER\_TRACKER}},}
+\DoxyCodeLine{114 \};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{keyword}{struct }\mbox{\hyperlink{structindex_pair}{indexPair}} \{}
+\DoxyCodeLine{117     \textcolor{keywordtype}{int} \mbox{\hyperlink{structindex_pair_a7b455253bad23cdc6c3394d3a8fe95b2}{a}};}
+\DoxyCodeLine{118     \textcolor{keywordtype}{int} \mbox{\hyperlink{structindex_pair_ad568579f50968ead7891d430d1643e2d}{b}};}
+\DoxyCodeLine{119 \};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keyword}{struct }\mbox{\hyperlink{structkilo_light}{kiloLight}} \{}
+\DoxyCodeLine{122     \mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{lightColour}} \mbox{\hyperlink{structkilo_light_a906c9f6d406d977a304042a02f609749}{col}};}
+\DoxyCodeLine{123     Point \mbox{\hyperlink{structkilo_light_a7f47efdb899bfdbb8c907f61cceccdb9}{pos}};}
+\DoxyCodeLine{124 \};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keyword}{enum} \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}{experimentType}} \{}
+\DoxyCodeLine{127     \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca3b53675250beaefa566e7ff804d9f5d6}{IDENTIFY}},}
+\DoxyCodeLine{128     \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca4f73689d55b70c63c31472aa6f115111}{ID\_ASSIGNMENT}},}
+\DoxyCodeLine{129     \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca03940d78fb7ee5fc71b49ca87cfdfb1c}{CALIBRATION}},}
+\DoxyCodeLine{130     \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8cadd165898b2521416620b9f979c9ecd8a}{USER\_EXP}}}
+\DoxyCodeLine{131 \};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{comment}{// DRAWABLES:}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{struct }\mbox{\hyperlink{structdrawn_circle}{drawnCircle}} \{}
+\DoxyCodeLine{138     Point \mbox{\hyperlink{structdrawn_circle_ada2866b348331bde439deb722d4f9244}{pos}};}
+\DoxyCodeLine{139     \textcolor{keywordtype}{int} \mbox{\hyperlink{structdrawn_circle_abb2e9ee24dd632a7e49df2779464eaf3}{r}};}
+\DoxyCodeLine{140     QColor \mbox{\hyperlink{structdrawn_circle_a55b26893f231e312238b899720efe126}{col}};}
+\DoxyCodeLine{141     \textcolor{keywordtype}{int} \mbox{\hyperlink{structdrawn_circle_ad01787befe6fc06443f243dc04f8b31d}{thickness}};}
+\DoxyCodeLine{142     std::string \mbox{\hyperlink{structdrawn_circle_a2af12a863b0e41e156af5dfb421d6a6c}{text}};}
+\DoxyCodeLine{143     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structdrawn_circle_aed54658f89359d48f7c6e207a10c1eb7}{transparent}};}
+\DoxyCodeLine{144 \};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{keyword}{struct }\mbox{\hyperlink{structdrawn_line}{drawnLine}} \{}
+\DoxyCodeLine{147     std::vector<Point> \mbox{\hyperlink{structdrawn_line_aec7492177aeea3a1d1079ec6184a5a3e}{pos}};}
+\DoxyCodeLine{148     QColor \mbox{\hyperlink{structdrawn_line_aaae5786fcc95f97a49e2ea954e397d22}{col}};}
+\DoxyCodeLine{149     \textcolor{keywordtype}{int} \mbox{\hyperlink{structdrawn_line_aec5a6db30c0d7e238ae46fe726013361}{thickness}};}
+\DoxyCodeLine{150     std::string \mbox{\hyperlink{structdrawn_line_ad55b4cb4077a0ced46539976aedb2d1e}{text}};}
+\DoxyCodeLine{151     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structdrawn_line_a2d1898495156dd4c20063d3b8ecddff1}{transparent}};}
+\DoxyCodeLine{152 \};}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{keyword}{class }\mbox{\hyperlink{class_acquire_thread}{AcquireThread}};}
+\DoxyCodeLine{155 \textcolor{keyword}{class }\mbox{\hyperlink{class_kilobot_experiment}{KilobotExperiment}};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{163 \textcolor{keyword}{class }\mbox{\hyperlink{class_kilobot_tracker}{KilobotTracker}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{164 \{}
+\DoxyCodeLine{165     Q\_OBJECT}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{keyword}{public}:}
+\DoxyCodeLine{168     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_kilobot_tracker_a05d0dc4c6713a422df1872c4e78febb8}{KilobotTracker}}(QPoint smallImageSize = QPoint(300,300), QObject *parent = 0);}
+\DoxyCodeLine{169     \mbox{\hyperlink{class_kilobot_tracker_afcfc53e172f4fc75bde96cbf2408c7ee}{\string~KilobotTracker}}();}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     \mbox{\hyperlink{class_kilobot_experiment}{KilobotExperiment}} * \mbox{\hyperlink{class_kilobot_tracker_ac3ee1af9cc09960d343864024779f5d3}{expt}};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{comment}{//Default tracking parameters and identification parameters}}
+\DoxyCodeLine{174     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_kilobot_tracker_acd6a7eb6c33635addc7da18c9c890553}{kbMinSize}} = 11;}
+\DoxyCodeLine{175     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_kilobot_tracker_af44263d3b5b1eee2aa3bae3d047f5127}{kbMaxSize}} = 22;}
+\DoxyCodeLine{176     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_kilobot_tracker_a4ad470bf947d23a3835d91d93ed4a209}{houghAcc}} = 27;}
+\DoxyCodeLine{177     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_kilobot_tracker_aa65ac3f6351b1e884db50dd3bf0618f9}{cannyThresh}} = 40;}
+\DoxyCodeLine{178     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_kilobot_tracker_a2bc1e34af8e3024229ecde80ab905735}{maxIDtoCheck}} = 100;}
+\DoxyCodeLine{179     uint \mbox{\hyperlink{class_kilobot_tracker_a9cdc0c66db4ad4c9b92d66e9d167b4ec}{manualID}};}
+\DoxyCodeLine{180     \textcolor{comment}{// camera parameters}}
+\DoxyCodeLine{181     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_kilobot_tracker_a41879399228f4dd5bc029588157bad14}{height\_x\_adj}} = 10;}
+\DoxyCodeLine{182     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_kilobot_tracker_a43110eed41dc8d604130bc41f0c2a5d6}{height\_y\_adj}} = 10;}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     \textcolor{comment}{//Default color threshold detection parameters}}
+\DoxyCodeLine{185     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_kilobot_tracker_a302bd68c77c006e158fe72bd1b42ea36}{redLThreshold}} = 0.75;     \textcolor{comment}{//0.6}}
+\DoxyCodeLine{186     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_kilobot_tracker_adca5ae38d7544adf678850e570772692}{redHThreshold}} = 0.0;}
+\DoxyCodeLine{187     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_kilobot_tracker_a4dc2a64d03150ae1404820bcabfa2a14}{greenLThreshold}} = 0.56;}
+\DoxyCodeLine{188     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_kilobot_tracker_a7daa3cf75ebfe43ccb2d1e3c94c5ac1e}{greenHThreshold}} = 0.75;}
+\DoxyCodeLine{189     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_kilobot_tracker_a9c965874d11490c9f5ed878ac44a10a7}{blueLThreshold}} = 0.65;}
+\DoxyCodeLine{190     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_kilobot_tracker_aef97f2adb10a60596b288b5094239cd2}{blueHThreshold}} = 0.0;}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 signals:}
+\DoxyCodeLine{197     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a34bcaf1ebafe7de68949d53de9769c7f}{errorMessage}}(QString);}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_abb27478d2eea0a5e69c88d8aae0fe8fb}{setStitchedImage}}(QPixmap);}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a20445867b1115e3c1419ecc36552af8d}{identifyKilo}}(uint8\_t);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_aedf43e3cc9c4ac2bc110e78eb08a0c7b}{broadcastMessage}}(\mbox{\hyperlink{structkilobot__broadcast}{kilobot\_broadcast}});}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a87cec6a11aa912b717652342d0a990c2}{clearMsgQueue}}();}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_ae8a89772e3da889690baaeac2eba0f7b}{startExperiment}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_ac3549b575a12dc07cc7119864e43a215}{stopExperiment}}();}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_abf69a4aac9ecba4290d370e0e37cb7fd}{toggleExpButton}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_af74ef91eb26f556ff62d3e17fc8928bf}{activateExpButtons}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a5f00c9fe37df5e84d8baef8d2ba60962}{setRuntimeIdentificationLock}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{223     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a7dcabe716c187806537a614bedd38111}{LOOPstartstop}}(\textcolor{keywordtype}{int} stage);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{229     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a6b074fa6378f1896d5ad4ae7b5623a71}{LOOPiterate}}();}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{235     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a073e9a11d9ca05afb39364f4426f69dc}{SETUPloadCalibration}}();}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{241     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_add0f8bc09487bf46a44f2b403335baf8}{SETUPfindKilobots}}();}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{247     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_ad2b465ec7e5b8cda4bb7d60b02c2eddf}{identifyKilobots}}();}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252     \textcolor{comment}{// drawing slots}}
+\DoxyCodeLine{253     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a45f3b52fe56dd453708ddedd3d669bac}{drawCircle}}(QPointF pos, \textcolor{keywordtype}{float} r, QColor col, \textcolor{keywordtype}{int} thickness = 2, std::string text =\textcolor{stringliteral}{"{}"{}}, \textcolor{keywordtype}{bool} transparent = \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{254         \textcolor{keywordtype}{int} r\_int = r;}
+\DoxyCodeLine{255         this-\/>circsToDraw.push\_back(\mbox{\hyperlink{structdrawn_circle}{drawnCircle}} \{Point(pos.x(),pos.y()), r\_int, col, thickness, text, transparent\});}
+\DoxyCodeLine{256     \}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_af882bf241a6a96f75bc8dbf5bce790eb}{drawLine}}(std::vector<cv::Point> pos, QColor col, \textcolor{keywordtype}{int} thickness = 2, std::string text =\textcolor{stringliteral}{"{}"{}}, \textcolor{keywordtype}{bool} transparent = \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{259         this-\/>linesToDraw.push\_back(\mbox{\hyperlink{structdrawn_line}{drawnLine}} \{pos, col, thickness, text, transparent\});}
+\DoxyCodeLine{260     \}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a45d0eb19ab8581b341c56c06914aeede}{clearDrawings}}() \{}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264         this-\/>circsToDraw.clear();}
+\DoxyCodeLine{265         this-\/>linesToDraw.clear();}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267     \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a95156f9a1ae1990da84948f71b89761e}{drawCircleOnRecordedImage}}(QPointF pos, \textcolor{keywordtype}{float} r, QColor col, \textcolor{keywordtype}{int} thickness = 2, std::string text = \textcolor{stringliteral}{"{}"{}}) \{}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271         \textcolor{keywordtype}{int} r\_int = r;}
+\DoxyCodeLine{272         this-\/>circsToDrawFinal.push\_back(\mbox{\hyperlink{structdrawn_circle}{drawnCircle}} \{Point(pos.x(),pos.y()), r\_int, col, thickness, text\});}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     \}}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a0b39683c90645ebf5f5c1a693a9c3c6d}{clearDrawingsOnRecordedImage}}() \{}
+\DoxyCodeLine{277         this-\/>circsToDrawFinal.clear();}
+\DoxyCodeLine{278     \}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_ab9a4422b9f4d213227bdccc2d0762266}{saveImage}}(QString file) \{}
+\DoxyCodeLine{281         \textcolor{keywordflow}{if} (!finalImageCol.empty()) \{}
+\DoxyCodeLine{282             \textcolor{comment}{// before saving I draw what I need to draw on the FinalImage}}
+\DoxyCodeLine{283             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{gmock-matchers__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}} = 0; \mbox{\hyperlink{gmock-matchers__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}} < this-\/>circsToDrawFinal.size(); ++\mbox{\hyperlink{gmock-matchers__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}) \{}
+\DoxyCodeLine{284                 cv::circle(finalImageCol,this-\/>circsToDrawFinal[\mbox{\hyperlink{gmock-matchers__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].pos, this-\/>circsToDrawFinal[\mbox{\hyperlink{gmock-matchers__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].r,}
+\DoxyCodeLine{285                            Scalar(this-\/>circsToDrawFinal[\mbox{\hyperlink{gmock-matchers__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].col.blue(),this-\/>circsToDrawFinal[\mbox{\hyperlink{gmock-matchers__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].col.green(),this-\/>circsToDrawFinal[\mbox{\hyperlink{gmock-matchers__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].col.red(),0.5),}
+\DoxyCodeLine{286                            this-\/>circsToDrawFinal[\mbox{\hyperlink{gmock-matchers__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].thickness);}
+\DoxyCodeLine{287             \}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289             cv::imwrite(file.toStdString(),finalImageCol);}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291         \}}
+\DoxyCodeLine{292     \}}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a09f4599f1c06d61abce4acd721f6752e}{saveVideoFrames}}(QString file, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numofframes) \{}
+\DoxyCodeLine{295         savecamerasframes = \textcolor{keyword}{true};}
+\DoxyCodeLine{296         savecamerasframesdir=file;}
+\DoxyCodeLine{297         numberofframes=numofframes;}
+\DoxyCodeLine{298     \}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303     \textcolor{comment}{// accessors -\/ docs not required??}}
+\DoxyCodeLine{304     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_ac65a2b32327d6af29a380467dc6bdb79}{setSourceType}}(\textcolor{keywordtype}{bool} val) \{\textcolor{keywordflow}{if} (val) this-\/>srcType = \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115ada31f516cdf218b68b790fb31e8a6956}{CAMERA}}; \textcolor{keywordflow}{else} this-\/>srcType = \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115a0e1e918a80f84992ae08463f076d5dc8}{VIDEO}};\}}
+\DoxyCodeLine{305     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a9c1b9abff28e448859c30a61f922d904}{setKbMin}}(\textcolor{keywordtype}{int} val)\{this-\/>kbMinSize = val;\}}
+\DoxyCodeLine{306     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a7381eae4946632339f893afaf1e2ee3a}{setKbMax}}(\textcolor{keywordtype}{int} val) \{this-\/>kbMaxSize = val;\}}
+\DoxyCodeLine{307     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a1594c73c327bdc61616b2de29472a8fa}{setCannyThresh}}(\textcolor{keywordtype}{int} val) \{this-\/>cannyThresh = val;\}}
+\DoxyCodeLine{308     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_abfd44326612b1c39cc2a1175f81f9cf8}{setHoughAcc}}(\textcolor{keywordtype}{int} val) \{this-\/>houghAcc = val;\}}
+\DoxyCodeLine{309     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_ab09c029645d35c9b6bab5c2ad8e0cb9e}{setHeightXSlider}}(\textcolor{keywordtype}{int} val) \{this-\/>height\_x\_adj = val;\}}
+\DoxyCodeLine{310     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_ab5ea9b391bd9516587c1cd69337b5032}{setHeightYSlider}}(\textcolor{keywordtype}{int} val) \{this-\/>height\_y\_adj = val;\}}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a0cc4f44526baaf70189a55a7d7dc4758}{manuallyassignID}}(QPoint position);}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{319     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a95d6edd070f9b0a0ef3f3c04ed09b898}{setVideoDir}}(QString dir) \{this-\/>videoPath = dir;\}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a14107750dfe6b260301c1fe115a5e8c5}{updateKilobotStates}}();}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a7c585a8db2d42f9fd4388e0da24a6402}{getInitialKilobotStates}}();}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a2deed064ea035cb9d9f8012e1c1d8963}{setTrackingType}}(\textcolor{keywordtype}{int} t\_type) \{this-\/>t\_type = t\_type;\}}
+\DoxyCodeLine{326     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a6b30061f2ae833dc53f5662d012c5943}{updateExperimentBroadcastingState}}(\textcolor{keywordtype}{bool} BroadcastingState)}
+\DoxyCodeLine{327     \{}
+\DoxyCodeLine{328         experimentIsBroadcasting=BroadcastingState;}
+\DoxyCodeLine{329     \}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{337     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a2abc5181ee91714cddf2348b36e3ed7f}{showIds}}(\textcolor{keywordtype}{bool} toggle) \{this-\/>showIDs = toggle;\}}
+\DoxyCodeLine{338     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a275a77bd2cd66fb5b5a88db27a2d2702}{detectred}}(\textcolor{keywordtype}{bool} toggle) \{this-\/>m\_detectred = toggle;\}}
+\DoxyCodeLine{339     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a08a995e41bdb294f3e3b0cd1ebc8b383}{detectgreen}}(\textcolor{keywordtype}{bool} toggle) \{this-\/>m\_detectgreen = toggle;\}}
+\DoxyCodeLine{340     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a0f24268c1c436dfd58d737724c2d186a}{detectblue}}(\textcolor{keywordtype}{bool} toggle) \{this-\/>m\_detectblue = toggle;\}}
+\DoxyCodeLine{341     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a6ae3a099ffad6bb8cc529e0c7eda19bc}{manualIDassignment}}(\textcolor{keywordtype}{bool} toggle) \{this-\/>m\_assignIDmanually = toggle;\}}
+\DoxyCodeLine{342     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a47e3fc4dec5a66dc640bdf4e1b4a4295}{enableRuntimeIdentification}}(\textcolor{keywordtype}{bool} toggle) \{this-\/>m\_runtimeIDenabled = toggle;\}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_aa671e7eeb2960efa2862880f25a136b6}{maxIDtoTry}}(QString maxIdStr) \{this-\/>maxIDtoCheck = maxIdStr.toInt();\}}
+\DoxyCodeLine{346     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a531c42e02ac4eddaf45e2bcecf75ba7a}{setManualID}}(QString manID) \{this-\/>manualID = manID.toUInt();\}}
+\DoxyCodeLine{347     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a2ffdf1845cf3d5923c36ccee3edb8c2e}{setFlipangle}}(\textcolor{keywordtype}{double} angle);}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{353     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_tracker_a8d658556b55241a1bcc36203f01bcef1}{RefreshDisplayedImage}}();}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 \textcolor{keyword}{private}:}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357     \textcolor{comment}{// PRIVATE METHODS}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 }
+\DoxyCodeLine{364     \textcolor{keywordtype}{void} trackKilobots();}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{370     \textcolor{keywordtype}{void} SETUPstitcher();}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{376     \textcolor{keywordtype}{void} showMat(Mat \&);}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#ifdef USE\_CUDA}}
+\DoxyCodeLine{387     \mbox{\hyperlink{structkilo_light}{kiloLight}} getKiloBotLight(cuda::GpuMat  channels[3], Point centreOfBox, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{388     \mbox{\hyperlink{structkilo_light}{kiloLight}} getKiloBotLightAdaptive(cuda::GpuMat  channels[3], Point centreOfBox, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{389     \textcolor{keywordtype}{void} getKiloBotLights(Mat \&display);}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{391     \mbox{\hyperlink{structkilo_light}{kiloLight}} getKiloBotLight(Mat channels[3], Point centreOfBox, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{392     \mbox{\hyperlink{structkilo_light}{kiloLight}} getKiloBotLightAdaptive(Mat channels[3], Point centreOfBox, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{403     Rect getKiloBotBoundingBox(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{float} scale);}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{409     \textcolor{keywordtype}{void} THREADSlaunch();}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411     \textcolor{keywordtype}{void} THREADSstop();}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413     \textcolor{keywordtype}{void} identifyKilobot(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{414     \textcolor{keywordtype}{void} identifyKilobot(\textcolor{keywordtype}{int},\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416     \textcolor{keywordtype}{void} runtimeIdentify();}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418     \textcolor{keywordtype}{void} drawOverlay(Mat \&);}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420 }
+\DoxyCodeLine{421     \textcolor{comment}{// INTERNAL VARIABLES}}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423     \textcolor{keywordtype}{int} t\_type = \mbox{\hyperlink{kilobot_8h_a8810be9e45f032edb9314e71674e829ba91743bc3932693c4b8a6ca984e8a8437}{POS}} | \mbox{\hyperlink{kilobot_8h_a8810be9e45f032edb9314e71674e829ba2f6f259dba1a383748771becb45639ef}{ADAPTIVE\_LED}} | \mbox{\hyperlink{kilobot_8h_a8810be9e45f032edb9314e71674e829ba59b0dd0d260e722b287c37c6099128b8}{ROT}};}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425     \textcolor{keywordtype}{bool} experimentIsBroadcasting=\textcolor{keyword}{false};}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427     Mat finalImageCol;}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#ifdef USE\_CUDA}}
+\DoxyCodeLine{430     cuda::GpuMat finalImageB;}
+\DoxyCodeLine{431     cuda::GpuMat finalImageG;}
+\DoxyCodeLine{432     cuda::GpuMat finalImageR;}
+\DoxyCodeLine{433     cuda::GpuMat fullImages[3];}
+\DoxyCodeLine{434     \textcolor{comment}{// make thread safe}}
+\DoxyCodeLine{435     cuda::Stream stream;}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{437     Mat finalImage;}
+\DoxyCodeLine{438     Mat fullImages[3];}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441     \mbox{\hyperlink{kilobottracker_8h_ac8b5de4ce26103dd0313f31622db1dfb}{MAT\_TYPE}} warpedImages;}
+\DoxyCodeLine{442     \mbox{\hyperlink{kilobottracker_8h_ac8b5de4ce26103dd0313f31622db1dfb}{MAT\_TYPE}} warpedMasks;}
+\DoxyCodeLine{443     Point corners;}
+\DoxyCodeLine{444     Size sizes;}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446     vector < Mat > Ks;}
+\DoxyCodeLine{447     vector < Mat > Rs;}
+\DoxyCodeLine{448     Point2f arenaCorners[4];}
+\DoxyCodeLine{449     \textcolor{keywordtype}{bool} haveCalibration = \textcolor{keyword}{false};}
+\DoxyCodeLine{450     QTimer tick; }
+\DoxyCodeLine{452     \mbox{\hyperlink{class_acquire_thread}{AcquireThread}} * threads = NULL;}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454     \textcolor{keywordtype}{int} time = 0;}
+\DoxyCodeLine{459     QPoint smallImageSize;}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461     Ptr<detail::ExposureCompensator> compensator;}
+\DoxyCodeLine{462     Ptr<detail::Blender> blender;}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464     QElapsedTimer timer;}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466     \textcolor{keywordtype}{bool} loadFirstIm = \textcolor{keyword}{false};}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{468     \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115}{srcDataType}} srcType = \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115ada31f516cdf218b68b790fb31e8a6956}{CAMERA}};}
+\DoxyCodeLine{469     QString videoPath;}
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471     \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56}{trackerType}} trackType = \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56afcbc6d873375c3429a65f35b8fd6834a}{CIRCLES\_NAIVE}};\textcolor{comment}{//CIRCLES\_LOCAL;}}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473     QVector < Kilobot * > kilos;}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475     QVector < float > kiloHeadings;}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477     QVector < QPointF > kiloOldPos;}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479     QVector < QVector < int > > exclusionTestsIndices;}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481     \textcolor{keywordtype}{float} last\_time = 0.0f;}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483     Size fullSize;}
+\DoxyCodeLine{484     Point fullCorner;}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486     \textcolor{keywordtype}{int} currentID = 0;}
+\DoxyCodeLine{487     uint found = \mbox{\hyperlink{kilobottracker_8h_ad4f24fa30082fd81530b2025b162f7dc}{IDENTIFY\_TIMEOUT}};}
+\DoxyCodeLine{488     QVector < uint > foundIDs;}
+\DoxyCodeLine{489     QVector < int > assignedCircles;}
+\DoxyCodeLine{490 }
+\DoxyCodeLine{491     \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}{experimentType}} expType = \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8cadd165898b2521416620b9f979c9ecd8a}{USER\_EXP}};}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493     Mat testAdap;}
+\DoxyCodeLine{494 }
+\DoxyCodeLine{495     QVector < drawnCircle > circsToDraw;}
+\DoxyCodeLine{496     QVector < drawnLine > linesToDraw;}
+\DoxyCodeLine{497     QVector < drawnCircle > circsToDrawFinal;}
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#ifdef USE\_CUDA}}
+\DoxyCodeLine{500     Ptr<cuda::HoughCirclesDetector> hough;}
+\DoxyCodeLine{501     \textcolor{comment}{// RGB Hough}}
+\DoxyCodeLine{502     Ptr<cuda::HoughCirclesDetector> hough2;}
+\DoxyCodeLine{503     cuda::GpuMat kbLocs;}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505     Ptr<cuda::CLAHE> clahe;}
+\DoxyCodeLine{506     Mat element = cv::getStructuringElement(MORPH\_ELLIPSE,Size(7,7));}
+\DoxyCodeLine{507     Ptr<cuda::Filter> dilateFilter;}
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510     \textcolor{keywordtype}{bool} showIDs = \textcolor{keyword}{true};}
+\DoxyCodeLine{511     \textcolor{keywordtype}{int} flipangle = 0;}
+\DoxyCodeLine{512     \textcolor{keywordtype}{bool} m\_detectred=\textcolor{keyword}{true};}
+\DoxyCodeLine{513     \textcolor{keywordtype}{bool} m\_detectgreen=\textcolor{keyword}{true};}
+\DoxyCodeLine{514     \textcolor{keywordtype}{bool} m\_detectblue=\textcolor{keyword}{true};}
+\DoxyCodeLine{515     \textcolor{keywordtype}{bool} m\_assignIDmanually=\textcolor{keyword}{false};}
+\DoxyCodeLine{516     \textcolor{keywordtype}{bool} m\_runtimeIDenabled=\textcolor{keyword}{true};}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518     QVector <int> lost\_count;}
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520     \textcolor{keywordtype}{int} m\_runtimeIdentificationTimer = 0;}
+\DoxyCodeLine{521     \textcolor{keywordtype}{bool} m\_ongoingRuntimeIdentification = \textcolor{keyword}{false};}
+\DoxyCodeLine{522     QVector <int> pendingRuntimeIdentification;}
+\DoxyCodeLine{523     QElapsedTimer runtimeIDtimer;}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525     \textcolor{comment}{//video saving}}
+\DoxyCodeLine{526     \textcolor{keywordtype}{bool} savecamerasframes=\textcolor{keyword}{false};}
+\DoxyCodeLine{527     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numberofframes;}
+\DoxyCodeLine{528     QString savecamerasframesdir;}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{530 }
+\DoxyCodeLine{531 \};}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534 }
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CALIBRATEARENA\_H}}
+
+\end{DoxyCode}

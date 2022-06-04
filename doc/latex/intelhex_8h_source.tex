@@ -1,0 +1,87 @@
+\hypertarget{intelhex_8h_source}{}\doxysection{intelhex.\+h}
+\label{intelhex_8h_source}\index{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/intelhex.h@{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/intelhex.h}}
+\mbox{\hyperlink{intelhex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*  Routines for reading/writing Intel INHX8M and INHX32 files}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{    Copyright 2002 Brandon Fosdick (BSD License)}}
+\DoxyCodeLine{4 \textcolor{comment}{*/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef INTELHEXH}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define INTELHEXH}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceintelhex}{intelhex}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{    \#define HEX\_FORMAT\_INHX8M   0x01}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{    \#define HEX\_FORMAT\_INHX32   0x02}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{struct }hex\_data;}
+\DoxyCodeLine{22     \textcolor{keyword}{typedef} \mbox{\hyperlink{structintelhex_1_1hex__data}{hex\_data}} \mbox{\hyperlink{namespaceintelhex_afefef439fde18ec24f17127072354c36}{container}};}
+\DoxyCodeLine{23     \textcolor{keyword}{typedef} uint32\_t \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}};}
+\DoxyCodeLine{24     \textcolor{keyword}{typedef} uint8\_t \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\_type}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{//The data set that results from parsing a hex file}}
+\DoxyCodeLine{27     \textcolor{keyword}{struct }\mbox{\hyperlink{structintelhex_1_1hex__data}{hex\_data}}}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29     \textcolor{comment}{//Each line of the hex file generates a block of memory at a particular address}}
+\DoxyCodeLine{30     \textcolor{keyword}{typedef} std::vector<value\_type> \mbox{\hyperlink{structintelhex_1_1hex__data_a9134369690ee19c1ed22dfe0c08228fe}{data\_container}};       \textcolor{comment}{//Element container}}
+\DoxyCodeLine{31     \textcolor{keyword}{typedef} std::map<address\_type, data\_container> \mbox{\hyperlink{structintelhex_1_1hex__data_abb3aedc79d5cb7323b755648c13ffb22}{container}};   \textcolor{comment}{//List of data blocks}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{typedef} \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{container::iterator}}  \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{iterator}};}
+\DoxyCodeLine{34     \textcolor{keyword}{typedef} \mbox{\hyperlink{structintelhex_1_1hex__data_a911f7934f56ed5c2f45ccf70460dbb65}{container::reverse\_iterator}}  \mbox{\hyperlink{structintelhex_1_1hex__data_a911f7934f56ed5c2f45ccf70460dbb65}{reverse\_iterator}};}
+\DoxyCodeLine{35     \textcolor{keyword}{typedef} data\_container::size\_type   \mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\_type}};}
+\DoxyCodeLine{36     \textcolor{keyword}{private}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\_type}}  \_fill;        \textcolor{comment}{// Value returned for unset addresses}}
+\DoxyCodeLine{38     \textcolor{keywordtype}{char}    format;             \textcolor{comment}{//Format of the parsed file (necessary?)}}
+\DoxyCodeLine{39     \textcolor{keywordtype}{bool}    segment\_addr\_rec;       \textcolor{comment}{// Uses/Has a segment address record}}
+\DoxyCodeLine{40     \textcolor{keywordtype}{bool}    linear\_addr\_rec;        \textcolor{comment}{// Uses/Has a linear address record}}
+\DoxyCodeLine{41     \mbox{\hyperlink{structintelhex_1_1hex__data_abb3aedc79d5cb7323b755648c13ffb22}{container}}   blocks;            \textcolor{comment}{// List of data blocks}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     \mbox{\hyperlink{structintelhex_1_1hex__data_abecf4dcc20721618a956d9676d0d5354}{hex\_data}}() : \_fill(0), segment\_addr\_rec(false), linear\_addr\_rec(false) \{\}}
+\DoxyCodeLine{45     \mbox{\hyperlink{structintelhex_1_1hex__data_a2f92d1a30967551e557c2dd56df5d980}{hex\_data}}(\textcolor{keyword}{const} std::string \&s) : \_fill(0), segment\_addr\_rec(false), linear\_addr\_rec(false)}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         \mbox{\hyperlink{structintelhex_1_1hex__data_a9ba09eb40b09c5b040d3f95c60f334f5}{load}}(s);}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49     \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{iterator}}    \mbox{\hyperlink{structintelhex_1_1hex__data_ac0c1f2d8332365cf526a4d98f2cd15f8}{begin}}() \{ \textcolor{keywordflow}{return} blocks.begin(); \}}
+\DoxyCodeLine{50     \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{iterator}}    \mbox{\hyperlink{structintelhex_1_1hex__data_a45f7627b822fb4d1434105fa9d22857e}{end}}() \{ \textcolor{keywordflow}{return} blocks.end(); \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_a670879174184c10ff7c0f2e02dd1cded}{compact}}();       \textcolor{comment}{// Merge adjacent blocks}}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_a9014b1f32380cd117bfc791f6e472f5f}{clear}}();       \textcolor{comment}{//Delete everything}}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_a317d72631615756b85ac6fbae71595d7}{erase}}(\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}});   \textcolor{comment}{// Erase a single element}}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_a317d72631615756b85ac6fbae71595d7}{erase}}(\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}} first, \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}} last);  \textcolor{comment}{// Erase [first, last]}}
+\DoxyCodeLine{56     \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\_type}}  \mbox{\hyperlink{structintelhex_1_1hex__data_a7c17385eae24d917d940df43ca0ca026}{fill}}()  \{ \textcolor{keywordflow}{return} \_fill; \}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void}        \mbox{\hyperlink{structintelhex_1_1hex__data_aaa03d7ef897c826b0750ccfa2ab72a6e}{fill}}(\mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\_type}} f)  \{ \_fill = f; \}}
+\DoxyCodeLine{58     \mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\_type}}   \mbox{\hyperlink{structintelhex_1_1hex__data_a55d464577df26c3dc8dfe3ff144fca08}{size}}();}
+\DoxyCodeLine{59     \mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\_type}}   \mbox{\hyperlink{structintelhex_1_1hex__data_a414d7bf2a539d77b16823e906ac3db5f}{size\_below\_addr}}(\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}});}
+\DoxyCodeLine{60     \mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\_type}}   \mbox{\hyperlink{structintelhex_1_1hex__data_a841244789e656ec0856420150e775f55}{size\_in\_range}}(\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}}, \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}});    \textcolor{comment}{//number of words in [lo, hi)}}
+\DoxyCodeLine{61     \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}}   \mbox{\hyperlink{structintelhex_1_1hex__data_adf1a18ef967a01c07a316ae6051c882d}{max\_addr\_below}}(\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}});}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}}   \mbox{\hyperlink{structintelhex_1_1hex__data_a59841c24d4bc98f0801da038129e624b}{min\_address}}() \textcolor{keyword}{const};  \textcolor{comment}{// Lowest address}}
+\DoxyCodeLine{64     \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}}   \mbox{\hyperlink{structintelhex_1_1hex__data_a394398f1e0c02a8992fbb7fd25d0f933}{max\_address}}() \textcolor{keyword}{const};  \textcolor{comment}{// Highest address}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{bool}    \mbox{\hyperlink{structintelhex_1_1hex__data_a46b63a376917b52b0dcab0aa74ddb58e}{is\_set}}(\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}});}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\_type}}\& \mbox{\hyperlink{structintelhex_1_1hex__data_a68735edd738944c4b9daf098058bab43}{operator[]}}(\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}});   \textcolor{comment}{//Array access operator}}
+\DoxyCodeLine{69     \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\_type}}  \mbox{\hyperlink{structintelhex_1_1hex__data_aa10f473d363c7c3f29e322743ff3465a}{get}}(\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}});     \textcolor{comment}{// Return the value at address}}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_afd6cc12d56f61457f6f16db06cc5d630}{set}}(\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}}, \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\_type}}); \textcolor{comment}{// Set the value at address}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_a9ba09eb40b09c5b040d3f95c60f334f5}{load}}(\textcolor{keyword}{const} std::string\&);   \textcolor{comment}{// Load from a file}}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_ae9c56b8f267616bacae7571835c6aec2}{read}}(std::istream \&);           \textcolor{comment}{// Read data from an input stream}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_aa33dcadbd40b4c202de3103ea7434617}{write}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);           \textcolor{comment}{//Save hex data to a hex file}}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_aa33dcadbd40b4c202de3103ea7434617}{write}}(std::ostream \&);         \textcolor{comment}{//Write all data to an output stream}}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void}    \mbox{\hyperlink{structintelhex_1_1hex__data_aee62956df9a50228a7307bec92c950e0}{tidy}}(\mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\_type}} length);            \textcolor{comment}{// Make things pretty}}
+\DoxyCodeLine{77     \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceintelhex_af9c6ed625eac363125f00a5f5a4565b4}{compare}}(hex\_data\&, hex\_data\&, \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\_type}}, \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}}, \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\_type}});}
+\DoxyCodeLine{80 \}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

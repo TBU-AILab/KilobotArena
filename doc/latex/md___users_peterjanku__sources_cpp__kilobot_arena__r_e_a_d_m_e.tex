@@ -1,0 +1,34 @@
+\hypertarget{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md425}{}\doxysection{Augmented Reality for Kilobots (\+ARK)}\label{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md425}
+\hypertarget{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md426}{}\doxysubsection{Installation}\label{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md426}
+A GUI for running experiments using \mbox{\hyperlink{class_kilobot}{Kilobot}} Smart Arena with four tracking cameras
+
+Ubuntu is the preferred OS for ARK
+
+Kilobot\+Arena is a Qt program, and therefore uses the Qt build tools to generate the make file. There are two ways to do this -\/ in both cases you need a recent version of Qt \href{www.qt.io}{\texttt{ v.\+5.\+6+}} installed -\/ on Ubuntu the version in aptitude should do ({\ttfamily sudo apt-\/get install qtcreator} should install everything from Qt that you need).
+
+You also need a CUDA supporting version of Open\+CV 3 -\/ you\textquotesingle{}ll need to compile this yourself -\/ here\textquotesingle{}s a \href{https://gist.github.com/filitchp/5645d5eebfefe374218fa2cbf89189aa}{\texttt{ guide}} that should work.
+
+Now either use the Qt\+Creator gui you installed in the previous step (click the hammer button to build -\/ it will prompt you to choose), or run {\ttfamily qmake} in the ARK directory to generate the Makefile. There are lots of online guides to help if you have trouble \href{http://doc.qt.io/qtcreator/creator-building-targets.html}{\texttt{ e.\+g.}}
+
+Qt\+Creator will run the Makefile for you -\/ from the command line you\textquotesingle{}ll have to do it yourself. If you get build errors you may need to change the path to Open\+CV in the .pro file (the syntax is quite simple).
+
+You also need to install the calibration program to generate calibrated camera maps\+: \href{https://github.com/DiODeProject/KilobotArenaCalibration}{\texttt{ Kilobot\+Arena\+Calibration}}.\hypertarget{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md427}{}\doxysubsection{User permission}\label{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md427}
+In order to operate the \mbox{\hyperlink{class_kilobot}{Kilobot}}\textquotesingle{}s OHC, the user needs to be part of the dialout group. Therefore, add the user to the group {\ttfamily dialout} with command
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo usermod -\/a -\/G dialout <user-\/name>}
+
+\end{DoxyCode}
+\hypertarget{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md428}{}\doxysubsection{Citation}\label{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md428}
+If you use or adapt ARK in order to generate experimental results, please cite the following paper in any resulting publications\+:
+
+
+\begin{DoxyItemize}
+\item Reina A., Cope A.\+J., Nikolaidis E., Marshall J.\+A.\+R., Sabo C. (2017) ARK\+: Augmented reality for Kilobots. {\itshape IEEE Robotics and Automation Letters} {\bfseries{2, 1755-\/1761}}.
+\end{DoxyItemize}\hypertarget{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md429}{}\doxysubsection{See Also}\label{md___users_peterjanku__sources_cpp__kilobot_arena__r_e_a_d_m_e_autotoc_md429}
+
+\begin{DoxyItemize}
+\item ARK makes use of a redesigned overhead controller\+: \href{https://github.com/DiODeProject/ARK_OHC}{\texttt{ ARK\+\_\+\+OHC}}
+\item \href{http://diode.group.shef.ac.uk/kilobots/index.php/Kilobots}{\texttt{ Kilobot Wiki}} 
+\end{DoxyItemize}

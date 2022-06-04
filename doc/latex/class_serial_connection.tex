@@ -1,0 +1,180 @@
+\hypertarget{class_serial_connection}{}\doxysection{Serial\+Connection Class Reference}
+\label{class_serial_connection}\index{SerialConnection@{SerialConnection}}
+
+
+{\ttfamily \#include $<$serialconn.\+h$>$}
+
+Inheritance diagram for Serial\+Connection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_serial_connection}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_serial_connection_a05229c8b50682dd9146770340f37d67d}{queue\+Command}} (QByte\+Array)
+\item 
+void \mbox{\hyperlink{class_serial_connection_aac6a134cc3cbae71af6a9bb495e78d36}{send\+Queued\+Command}} ()
+\item 
+void \mbox{\hyperlink{class_serial_connection_af6a9f44a1cf4a23e2ac40a32a7a07e8a}{send\+Command}} (QByte\+Array)
+\item 
+void \mbox{\hyperlink{class_serial_connection_a26f996dba1a27a6dc03c1451afbcd14d}{send\+Program}} (QString)
+\item 
+void \mbox{\hyperlink{class_serial_connection_adc9c478519edc7437b6c85882ce1eed9}{open}} ()
+\item 
+void \mbox{\hyperlink{class_serial_connection_a04f1e61782e4761c20f3251145f97474}{close}} ()
+\item 
+void \mbox{\hyperlink{class_serial_connection_acf833346b0459814d85c64b60007e322}{read}} ()
+\item 
+void \mbox{\hyperlink{class_serial_connection_a923dde5831f216eeca1596cbb2bdaaaa}{reset\+Delay}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_serial_connection_a1bffd4a79cd6cf5046692a2edd74ad12}{read\+Text}} (QString)
+\item 
+void \mbox{\hyperlink{class_serial_connection_a0184bb0e47dcdb3719e7e8abeea04b18}{status}} (QString)
+\item 
+void \mbox{\hyperlink{class_serial_connection_a6bd9242caefd3992e0eb79c16f0a59bd}{error}} (QString)
+\item 
+void \mbox{\hyperlink{class_serial_connection_a65e289cee79b5f0bfa4c69cbc5b1624b}{Send\+Msgs\+Queue\+State}} (bool)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_serial_connection_a1a183b871e20472549fd892c917d5916}{Serial\+Connection}} (QObject $\ast$\mbox{\hyperlink{gmock-matchers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}=0, QString=\char`\"{}\char`\"{})
+\item 
+void \mbox{\hyperlink{class_serial_connection_a78a775be3372ef7a51018293e5353bbd}{set\+Port}} (QString)
+\item 
+QString \mbox{\hyperlink{class_serial_connection_a350d5c08089ff9a2033f571350336a3d}{get\+Port}} () const
+\item 
+void \mbox{\hyperlink{class_serial_connection_a4cb1c606e737bde969c7c985c5bbe352}{clear\+Queue}} ()
+\item 
+int \mbox{\hyperlink{class_serial_connection_a1ae1f3fa812663c256f1af3315daaaea}{cmd\+Queue\+Size}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QVector$<$ QString $>$ \mbox{\hyperlink{class_serial_connection_aa4d3b42cf38be3ccb732e546b42906b0}{enumerate}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_serial_connection_a1a183b871e20472549fd892c917d5916}\label{class_serial_connection_a1a183b871e20472549fd892c917d5916}} 
+\index{SerialConnection@{SerialConnection}!SerialConnection@{SerialConnection}}
+\index{SerialConnection@{SerialConnection}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{SerialConnection()}{SerialConnection()}}
+{\footnotesize\ttfamily Serial\+Connection\+::\+Serial\+Connection (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{p = {\ttfamily 0},  }\item[{QString}]{\+\_\+portname = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_serial_connection_a4cb1c606e737bde969c7c985c5bbe352}\label{class_serial_connection_a4cb1c606e737bde969c7c985c5bbe352}} 
+\index{SerialConnection@{SerialConnection}!clearQueue@{clearQueue}}
+\index{clearQueue@{clearQueue}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{clearQueue()}{clearQueue()}}
+{\footnotesize\ttfamily void Serial\+Connection\+::clear\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_serial_connection_a04f1e61782e4761c20f3251145f97474}\label{class_serial_connection_a04f1e61782e4761c20f3251145f97474}} 
+\index{SerialConnection@{SerialConnection}!close@{close}}
+\index{close@{close}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{close}{close}}
+{\footnotesize\ttfamily void Serial\+Connection\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_serial_connection_a1ae1f3fa812663c256f1af3315daaaea}\label{class_serial_connection_a1ae1f3fa812663c256f1af3315daaaea}} 
+\index{SerialConnection@{SerialConnection}!cmdQueueSize@{cmdQueueSize}}
+\index{cmdQueueSize@{cmdQueueSize}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{cmdQueueSize()}{cmdQueueSize()}}
+{\footnotesize\ttfamily int Serial\+Connection\+::cmd\+Queue\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_serial_connection_aa4d3b42cf38be3ccb732e546b42906b0}\label{class_serial_connection_aa4d3b42cf38be3ccb732e546b42906b0}} 
+\index{SerialConnection@{SerialConnection}!enumerate@{enumerate}}
+\index{enumerate@{enumerate}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{enumerate()}{enumerate()}}
+{\footnotesize\ttfamily QVector$<$ QString $>$ Serial\+Connection\+::enumerate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_serial_connection_a6bd9242caefd3992e0eb79c16f0a59bd}\label{class_serial_connection_a6bd9242caefd3992e0eb79c16f0a59bd}} 
+\index{SerialConnection@{SerialConnection}!error@{error}}
+\index{error@{error}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily void Serial\+Connection\+::error (\begin{DoxyParamCaption}\item[{QString}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_serial_connection_a350d5c08089ff9a2033f571350336a3d}\label{class_serial_connection_a350d5c08089ff9a2033f571350336a3d}} 
+\index{SerialConnection@{SerialConnection}!getPort@{getPort}}
+\index{getPort@{getPort}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily QString Serial\+Connection\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_serial_connection_adc9c478519edc7437b6c85882ce1eed9}\label{class_serial_connection_adc9c478519edc7437b6c85882ce1eed9}} 
+\index{SerialConnection@{SerialConnection}!open@{open}}
+\index{open@{open}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{open}{open}}
+{\footnotesize\ttfamily void Serial\+Connection\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_serial_connection_a05229c8b50682dd9146770340f37d67d}\label{class_serial_connection_a05229c8b50682dd9146770340f37d67d}} 
+\index{SerialConnection@{SerialConnection}!queueCommand@{queueCommand}}
+\index{queueCommand@{queueCommand}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{queueCommand}{queueCommand}}
+{\footnotesize\ttfamily void Serial\+Connection\+::queue\+Command (\begin{DoxyParamCaption}\item[{QByte\+Array}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_serial_connection_acf833346b0459814d85c64b60007e322}\label{class_serial_connection_acf833346b0459814d85c64b60007e322}} 
+\index{SerialConnection@{SerialConnection}!read@{read}}
+\index{read@{read}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{read}{read}}
+{\footnotesize\ttfamily void Serial\+Connection\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_serial_connection_a1bffd4a79cd6cf5046692a2edd74ad12}\label{class_serial_connection_a1bffd4a79cd6cf5046692a2edd74ad12}} 
+\index{SerialConnection@{SerialConnection}!readText@{readText}}
+\index{readText@{readText}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{readText}{readText}}
+{\footnotesize\ttfamily void Serial\+Connection\+::read\+Text (\begin{DoxyParamCaption}\item[{QString}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_serial_connection_a923dde5831f216eeca1596cbb2bdaaaa}\label{class_serial_connection_a923dde5831f216eeca1596cbb2bdaaaa}} 
+\index{SerialConnection@{SerialConnection}!resetDelay@{resetDelay}}
+\index{resetDelay@{resetDelay}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{resetDelay}{resetDelay}}
+{\footnotesize\ttfamily void Serial\+Connection\+::reset\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_serial_connection_af6a9f44a1cf4a23e2ac40a32a7a07e8a}\label{class_serial_connection_af6a9f44a1cf4a23e2ac40a32a7a07e8a}} 
+\index{SerialConnection@{SerialConnection}!sendCommand@{sendCommand}}
+\index{sendCommand@{sendCommand}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{sendCommand}{sendCommand}}
+{\footnotesize\ttfamily void Serial\+Connection\+::send\+Command (\begin{DoxyParamCaption}\item[{QByte\+Array}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_serial_connection_a65e289cee79b5f0bfa4c69cbc5b1624b}\label{class_serial_connection_a65e289cee79b5f0bfa4c69cbc5b1624b}} 
+\index{SerialConnection@{SerialConnection}!SendMsgsQueueState@{SendMsgsQueueState}}
+\index{SendMsgsQueueState@{SendMsgsQueueState}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{SendMsgsQueueState}{SendMsgsQueueState}}
+{\footnotesize\ttfamily void Serial\+Connection\+::\+Send\+Msgs\+Queue\+State (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_serial_connection_a26f996dba1a27a6dc03c1451afbcd14d}\label{class_serial_connection_a26f996dba1a27a6dc03c1451afbcd14d}} 
+\index{SerialConnection@{SerialConnection}!sendProgram@{sendProgram}}
+\index{sendProgram@{sendProgram}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{sendProgram}{sendProgram}}
+{\footnotesize\ttfamily void Serial\+Connection\+::send\+Program (\begin{DoxyParamCaption}\item[{QString}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_serial_connection_aac6a134cc3cbae71af6a9bb495e78d36}\label{class_serial_connection_aac6a134cc3cbae71af6a9bb495e78d36}} 
+\index{SerialConnection@{SerialConnection}!sendQueuedCommand@{sendQueuedCommand}}
+\index{sendQueuedCommand@{sendQueuedCommand}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{sendQueuedCommand}{sendQueuedCommand}}
+{\footnotesize\ttfamily void Serial\+Connection\+::send\+Queued\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_serial_connection_a78a775be3372ef7a51018293e5353bbd}\label{class_serial_connection_a78a775be3372ef7a51018293e5353bbd}} 
+\index{SerialConnection@{SerialConnection}!setPort@{setPort}}
+\index{setPort@{setPort}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{setPort()}{setPort()}}
+{\footnotesize\ttfamily void Serial\+Connection\+::set\+Port (\begin{DoxyParamCaption}\item[{QString}]{\+\_\+portname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_serial_connection_a0184bb0e47dcdb3719e7e8abeea04b18}\label{class_serial_connection_a0184bb0e47dcdb3719e7e8abeea04b18}} 
+\index{SerialConnection@{SerialConnection}!status@{status}}
+\index{status@{status}!SerialConnection@{SerialConnection}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily void Serial\+Connection\+::status (\begin{DoxyParamCaption}\item[{QString}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/ohc/\mbox{\hyperlink{serialconn_8h}{serialconn.\+h}}\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/ohc/\mbox{\hyperlink{serialconn_8cpp}{serialconn.\+cpp}}\end{DoxyCompactItemize}

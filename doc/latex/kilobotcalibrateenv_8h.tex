@@ -1,0 +1,94 @@
+\hypertarget{kilobotcalibrateenv_8h}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobotcalibrateenv.h File Reference}
+\label{kilobotcalibrateenv_8h}\index{/Users/peterjanku/SourcesCpp/KilobotArena/kilobotcalibrateenv.h@{/Users/peterjanku/SourcesCpp/KilobotArena/kilobotcalibrateenv.h}}
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QPointF$>$}\newline
+{\ttfamily \#include $<$QVector$>$}\newline
+{\ttfamily \#include \char`\"{}toolchain/kilobotenvironment.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QTime$>$}\newline
+{\ttfamily \#include $<$QColor$>$}\newline
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgproc/imgproc.\+hpp$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_kilobot_calibrate_env}{Kilobot\+Calibrate\+Env}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231d}{command}} \{ \newline
+\mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231dadb45120aafd37a973140edee24708065}{LEFT}} =1
+, \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daec8379af7490bb9eaaf579cf17876f38}{RIGHT}}
+, \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231da679ee5320d66c8322e310daeb2ee99b8}{STOP}}
+, \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231da99b8fb6bac5ae87e5b3295ef619495d1}{STRAIGHT\+\_\+L}}
+, \newline
+\mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daf4e092774dfbe18d19209672a28a111b}{STRAIGHT\+\_\+R}}
+, \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daa74ed47408babf1d78524b6c0ca4068e}{DONE\+\_\+\+MOTION}}
+ \}
+\item 
+enum \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6}{Calibration\+Stage}} \{ \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6af2b2c136c7461067d7700cf85cbc3ea3}{DETECTING\+\_\+\+MOVE}}
+, \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6af7337f0988c9be98bba075351f703542}{EVALUATING\+\_\+\+REV\+\_\+\+SPEED}}
+, \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6aed084301e2e1c26a9331d295efe2c2f9}{EVALUATING\+\_\+\+STRAIGHT\+\_\+\+MOTION}}
+, \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6a9c954bcf443428c80b0f107b3bc48749}{DONE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6}\label{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6}} 
+\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!CalibrationStage@{CalibrationStage}}
+\index{CalibrationStage@{CalibrationStage}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}
+\doxysubsubsection{\texorpdfstring{CalibrationStage}{CalibrationStage}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6}{Calibration\+Stage}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DETECTING\_MOVE@{DETECTING\_MOVE}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!DETECTING\_MOVE@{DETECTING\_MOVE}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6af2b2c136c7461067d7700cf85cbc3ea3}\label{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6af2b2c136c7461067d7700cf85cbc3ea3}} 
+DETECTING\+\_\+\+MOVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EVALUATING\_REV\_SPEED@{EVALUATING\_REV\_SPEED}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!EVALUATING\_REV\_SPEED@{EVALUATING\_REV\_SPEED}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6af7337f0988c9be98bba075351f703542}\label{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6af7337f0988c9be98bba075351f703542}} 
+EVALUATING\+\_\+\+REV\+\_\+\+SPEED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EVALUATING\_STRAIGHT\_MOTION@{EVALUATING\_STRAIGHT\_MOTION}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!EVALUATING\_STRAIGHT\_MOTION@{EVALUATING\_STRAIGHT\_MOTION}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6aed084301e2e1c26a9331d295efe2c2f9}\label{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6aed084301e2e1c26a9331d295efe2c2f9}} 
+EVALUATING\+\_\+\+STRAIGHT\+\_\+\+MOTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DONE@{DONE}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!DONE@{DONE}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6a9c954bcf443428c80b0f107b3bc48749}\label{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6a9c954bcf443428c80b0f107b3bc48749}} 
+DONE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231d}\label{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231d}} 
+\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!command@{command}}
+\index{command@{command}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}
+\doxysubsubsection{\texorpdfstring{command}{command}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231d}{command}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!LEFT@{LEFT}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231dadb45120aafd37a973140edee24708065}\label{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231dadb45120aafd37a973140edee24708065}} 
+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daec8379af7490bb9eaaf579cf17876f38}\label{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daec8379af7490bb9eaaf579cf17876f38}} 
+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOP@{STOP}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!STOP@{STOP}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231da679ee5320d66c8322e310daeb2ee99b8}\label{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231da679ee5320d66c8322e310daeb2ee99b8}} 
+STOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRAIGHT\_L@{STRAIGHT\_L}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!STRAIGHT\_L@{STRAIGHT\_L}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231da99b8fb6bac5ae87e5b3295ef619495d1}\label{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231da99b8fb6bac5ae87e5b3295ef619495d1}} 
+STRAIGHT\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRAIGHT\_R@{STRAIGHT\_R}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!STRAIGHT\_R@{STRAIGHT\_R}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daf4e092774dfbe18d19209672a28a111b}\label{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daf4e092774dfbe18d19209672a28a111b}} 
+STRAIGHT\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DONE\_MOTION@{DONE\_MOTION}!kilobotcalibrateenv.h@{kilobotcalibrateenv.h}}\index{kilobotcalibrateenv.h@{kilobotcalibrateenv.h}!DONE\_MOTION@{DONE\_MOTION}}}\mbox{\Hypertarget{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daa74ed47408babf1d78524b6c0ca4068e}\label{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daa74ed47408babf1d78524b6c0ca4068e}} 
+DONE\+\_\+\+MOTION&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,121 @@
+\hypertarget{kilobotidassignment_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobotidassignment.h}
+\mbox{\hyperlink{kilobotidassignment_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef KILOBOTIDASSIGNMENT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define KILOBOTIDASSIGNMENT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotexperiment_8h}{toolchain/kilobotexperiment.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QElapsedTimer>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QFile>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobot_8h}{toolchain/kilobot.h}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{enum} \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646}{assignStage}} \{}
+\DoxyCodeLine{10     \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a13d000b4d7dc70d90239b7430d1eb6b2}{START}},}
+\DoxyCodeLine{11     \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a67be7a5f47004345047b32fff72a2230}{SEND}},}
+\DoxyCodeLine{12     \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646ab2f0cd22b1963becef8b91d29d567fe8}{TEST}},}
+\DoxyCodeLine{13     \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a8547ec939211e497427e395b924a77f1}{CONFIRM}},}
+\DoxyCodeLine{14     \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a76d44342c42b85edbde0cae33f14c5de}{RETRY}},}
+\DoxyCodeLine{15     \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646a00a900c9df90c74f75004b3dc04f173d}{COMPLETE}},}
+\DoxyCodeLine{16 \};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{enum} \mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61}{assignmethod}} \{}
+\DoxyCodeLine{19     \mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61aecafbc1299672a8c1521cc0d5f1ae986}{BINARY}},}
+\DoxyCodeLine{20     \mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61a6add28f749f6a94df2c1b715a029f5b4}{BASETHREE}},}
+\DoxyCodeLine{21 \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{kilobotidassignment_8h_a49a6472f3f6400d4921fd685822afb10}{baseFourMultipliers}}[6] = \{1,4,16,64,256,1024\};}
+\DoxyCodeLine{24 \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{kilobotidassignment_8h_afca2adaf9c4c3ba2fd718be8d89be155}{binaryMultipliers}}[11] = \{1,2,4,8,16,32,64,128,256,512,1024\};}
+\DoxyCodeLine{25 \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{kilobotidassignment_8h_aa32dffbbf401642f29802c45253a64cf}{baseThreeMultipliers}}[8] = \{1,3,9,27,81,243,729,2187\};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} MM\_TO\_PIXEL = 2000.0/2000.0;}
+\DoxyCodeLine{28 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} PIXEL\_TO\_MM = 2000.0/2000.0;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{//\#define ASSIGNED -\/INT16\_MAX}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define DUPE UINT16\_MAX}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{class_kilo_log}{KiloLog}} \{}
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \textcolor{comment}{// constructors}}
+\DoxyCodeLine{36     \mbox{\hyperlink{class_kilo_log_ad0302b7f06b78d26f15f19c301e58dd7}{KiloLog}}()\{\}}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_kilo_log_af6c85d6201197e614e79b27cba0fd190}{KiloLog}}(\mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\_id}} \textcolor{keywordtype}{id}, QPointF pos, \textcolor{keywordtype}{double} rot, \mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\_colour}} col,\textcolor{keywordtype}{int} numofdigits) :}
+\DoxyCodeLine{38         \mbox{\hyperlink{class_kilo_log_a61b7f58d897a4f9fda342e2780bd5d6d}{id}}(\mbox{\hyperlink{class_kilo_log_a61b7f58d897a4f9fda342e2780bd5d6d}{id}}), \mbox{\hyperlink{class_kilo_log_aae37beef44dde2fca7ca281422bdd761}{position}}(pos), \mbox{\hyperlink{class_kilo_log_a4506b0eec59f66eda9d7a917a92a566f}{orientation}}(rot), \mbox{\hyperlink{class_kilo_log_ab0765f76950eecb96a4c9f6ab59eced5}{colour}}(col)\{}
+\DoxyCodeLine{39         this-\/>\mbox{\hyperlink{class_kilo_log_a4cffcc7849d4f945dbf55397d9761cf9}{digits}}.resize(numofdigits);}
+\DoxyCodeLine{40         this-\/>\mbox{\hyperlink{class_kilo_log_a4cffcc7849d4f945dbf55397d9761cf9}{digits}}.fill(-\/1);}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{// methods}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilo_log_ac44e43a3f50b64326f90ad5e17147e3b}{updateAllValues}}(\mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\_id}} \textcolor{keywordtype}{id}, QPointF pos, \textcolor{keywordtype}{double} rot, \mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\_colour}} col)\{}
+\DoxyCodeLine{45         this-\/>\textcolor{keywordtype}{id} = \mbox{\hyperlink{class_kilo_log_a61b7f58d897a4f9fda342e2780bd5d6d}{id}};}
+\DoxyCodeLine{46         this-\/>\mbox{\hyperlink{class_kilo_log_aae37beef44dde2fca7ca281422bdd761}{position}} = pos;}
+\DoxyCodeLine{47         this-\/>\mbox{\hyperlink{class_kilo_log_a4506b0eec59f66eda9d7a917a92a566f}{orientation}} = rot;}
+\DoxyCodeLine{48         this-\/>\mbox{\hyperlink{class_kilo_log_ab0765f76950eecb96a4c9f6ab59eced5}{colour}} = col;}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilo_log_a0bddb447cf23ac72cbbf2b3138f21f3f}{setPos}}(QPointF pos)\{}
+\DoxyCodeLine{51         this-\/>\mbox{\hyperlink{class_kilo_log_aae37beef44dde2fca7ca281422bdd761}{position}} = pos;}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilo_log_a326d0770872424e94e23b75097cb6163}{setOrientation}}(\textcolor{keywordtype}{double} rot)\{}
+\DoxyCodeLine{54         this-\/>\mbox{\hyperlink{class_kilo_log_a4506b0eec59f66eda9d7a917a92a566f}{orientation}} = rot;}
+\DoxyCodeLine{55     \}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilo_log_aaf742553091d9e819de0397801776704}{setCol}}(\mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\_colour}} col)\{}
+\DoxyCodeLine{57         this-\/>\mbox{\hyperlink{class_kilo_log_ab0765f76950eecb96a4c9f6ab59eced5}{colour}} = col;}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{// variables}}
+\DoxyCodeLine{61     \mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\_id}} \mbox{\hyperlink{class_kilo_log_a61b7f58d897a4f9fda342e2780bd5d6d}{id}};}
+\DoxyCodeLine{62     QPointF \mbox{\hyperlink{class_kilo_log_aae37beef44dde2fca7ca281422bdd761}{position}};}
+\DoxyCodeLine{63     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_kilo_log_a4506b0eec59f66eda9d7a917a92a566f}{orientation}};}
+\DoxyCodeLine{64     \mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\_colour}} \mbox{\hyperlink{class_kilo_log_ab0765f76950eecb96a4c9f6ab59eced5}{colour}};}
+\DoxyCodeLine{65     QVector <int> \mbox{\hyperlink{class_kilo_log_a4cffcc7849d4f945dbf55397d9761cf9}{digits}};}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{class }\mbox{\hyperlink{class_kilobot_i_d_assignment}{KilobotIDAssignment}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_kilobot_experiment}{KilobotExperiment}}}
+\DoxyCodeLine{69 \{}
+\DoxyCodeLine{70     Q\_OBJECT}
+\DoxyCodeLine{71 \textcolor{keyword}{public}:}
+\DoxyCodeLine{72     \mbox{\hyperlink{class_kilobot_i_d_assignment_abae55953a80fb668851773b47045f3d5}{KilobotIDAssignment}}(\mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61}{assignmethod}} method=\mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61aecafbc1299672a8c1521cc0d5f1ae986}{BINARY}});}
+\DoxyCodeLine{73     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_kilobot_i_d_assignment_aeabd2837c7b73c3807318c993fc78e34}{\string~KilobotIDAssignment}}() \{\}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{76         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_i_d_assignment_af4a00614061605e57b9f8208a22a36e3}{initialise}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{77         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_i_d_assignment_a793b504af5892494161fc9796d3ebd6e}{run}}();}
+\DoxyCodeLine{78         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_i_d_assignment_a707235b5d9512c4e49c0e9fdd9f0ce37}{stopExperiment}}();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keyword}{private}:}
+\DoxyCodeLine{81         \textcolor{keywordtype}{void} updateKilobotState(\mbox{\hyperlink{class_kilobot}{Kilobot}} kilobotCopy);}
+\DoxyCodeLine{82         \textcolor{keywordtype}{void} setupInitialKilobotState(\mbox{\hyperlink{class_kilobot}{Kilobot}} kilobotCopy);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{// internal vars}}
+\DoxyCodeLine{85         \mbox{\hyperlink{kilobotidassignment_8h_ae65a69da92d22fdadd5d33bf583e0f61}{assignmethod}} method;}
+\DoxyCodeLine{86         QVector < uint16\_t > tempIDs;}
+\DoxyCodeLine{87         QVector < bool > isAssigned;}
+\DoxyCodeLine{88         \mbox{\hyperlink{kilobotidassignment_8h_a424c4c177287d07efbb9e84ae8cc9646}{assignStage}} stage;}
+\DoxyCodeLine{89         \textcolor{keywordtype}{float} lastTime = 0.0f;}
+\DoxyCodeLine{90         \textcolor{comment}{//int numFound = 0;}}
+\DoxyCodeLine{91         \textcolor{keywordtype}{bool} dupesFound = 0;}
+\DoxyCodeLine{92         \textcolor{keywordtype}{int} numSegments = 0;}
+\DoxyCodeLine{93         \textcolor{keywordtype}{int} numofdigits =0;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keywordtype}{bool} switchSegment = \textcolor{keyword}{true};}
+\DoxyCodeLine{96         QElapsedTimer t;}
+\DoxyCodeLine{97         \textcolor{keywordtype}{int} t\_since;}
+\DoxyCodeLine{98         \textcolor{keywordtype}{int} t\_move;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100         \textcolor{comment}{// log variables}}
+\DoxyCodeLine{101         \textcolor{keywordtype}{bool} saveImages = \textcolor{keyword}{false};}
+\DoxyCodeLine{102         \textcolor{keywordtype}{int} savedImagesCounter = 0;}
+\DoxyCodeLine{103         QFile log\_file;}
+\DoxyCodeLine{104         QString log\_filename\_prefix=\textcolor{stringliteral}{"{}log\_id\_ass"{}};}
+\DoxyCodeLine{105         QTextStream log\_stream;}
+\DoxyCodeLine{106         \textcolor{comment}{//QVector < kilobot\_id >  allKiloIDs;}}
+\DoxyCodeLine{107         QVector <KiloLog> allKilos;}
+\DoxyCodeLine{108         \textcolor{keywordtype}{bool} updatedCol = \textcolor{keyword}{false};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110         \textcolor{comment}{//confirmation stage variables}}
+\DoxyCodeLine{111         \textcolor{keywordtype}{int} increment=0;}
+\DoxyCodeLine{112         \textcolor{keywordtype}{bool} confirmationrequestsent=\textcolor{keyword}{false};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// KILOBOTIDASSIGNMENT\_H}}
+
+\end{DoxyCode}

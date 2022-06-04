@@ -4,7 +4,7 @@
 #include <QObject>
 #include <assert.h>
 #include <math.h>
-#include "kilobot.h"
+#include "toolchain/kilobot.h"
 #include <QList>
 #include <QPushButton>
 #include<QTimer>

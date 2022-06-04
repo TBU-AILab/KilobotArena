@@ -1,0 +1,57 @@
+\hypertarget{userthread_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/userthread.h}
+\mbox{\hyperlink{userthread_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef USERTHREAD\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define USERTHREAD\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QThread>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QTimer>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QSignalMapper>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QLibrary>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{//\#define USEREXPERIMENT mykilobotexperiment //user edit}}
+\DoxyCodeLine{10 \textcolor{comment}{//\#include "{}mykilobotexperiment.h"{} //user edit}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotexperiment_8h}{toolchain/kilobotexperiment.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotidassignment_8h}{kilobotidassignment.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotcalibrate_8h}{kilobotcalibrate.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobottracker_8h}{kilobottracker.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotoverheadcontroller_8h}{kilobotoverheadcontroller.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <QDebug>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// FIXME: Provide more precise class description}}
+\DoxyCodeLine{23 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_user_thread}{UserThread}} : \textcolor{keyword}{public} QThread \{}
+\DoxyCodeLine{24 Q\_OBJECT}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_user_thread_a5b14a669fca9fbf7d82e2722d98cfafd}{UserThread}}(\mbox{\hyperlink{class_kilobot_tracker}{KilobotTracker}} *kbtracker, \mbox{\hyperlink{class_kilobot_overhead_controller}{KilobotOverheadController}} *ohc, QObject *parent = 0) ;}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_kilobot_experiment}{KilobotExperiment}} *\mbox{\hyperlink{class_user_thread_a3b887eb709e73f3aaa279efd9922f594}{getExperimentPointer}}() ;}
+\DoxyCodeLine{28 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_user_thread_a26e1c2ea3dc49057d8f3241c03238152}{chooseInternalExperiments}}(\mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}{experimentType}} expType, \textcolor{keywordtype}{int} opt = 0);}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_user_thread_a01efeb32fa48db1c7ecfb536872ac657}{loadLibrary}}(\textcolor{keyword}{const} QString\& filename);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_user_thread_ad887f520b5ed9630677dd2a3d3b614d7}{exptLoaded}}();}
+\DoxyCodeLine{33 signals:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_user_thread_a05fe89d13b0f6a6cda704063f9d5dc58}{setLibName}}(QString);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_user_thread_ad2b674b5d201a42470238ca0df8c5605}{setGUILayout}}(QWidget *);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_user_thread_ade11befa43d6904a248c459d62fc2798}{connectExpt}}(\textcolor{keywordtype}{int} expType);}
+\DoxyCodeLine{42 \textcolor{keyword}{private}:}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \mbox{\hyperlink{class_kilobot_overhead_controller}{KilobotOverheadController}} *ohc; }
+\DoxyCodeLine{46     \mbox{\hyperlink{class_kilobot_tracker}{KilobotTracker}} *kbtracker;      }
+\DoxyCodeLine{47     QString currExptFilename;       }
+\DoxyCodeLine{48     \mbox{\hyperlink{class_kilobot_experiment}{KilobotExperiment}} *currExpt;    }
+\DoxyCodeLine{50     \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}{experimentType}} currExptType;    }
+\DoxyCodeLine{52     QTimer timer;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     QSignalMapper *mapper = NULL;   }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} run();}
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// USERTHREAD\_H}}
+
+\end{DoxyCode}

@@ -83,11 +83,13 @@ using namespace cv;
 //#include <QColor>
 #include <QDebug>
 
-#include "kilobot.h"
+#include "toolchain/kilobot.h"
 
-// buffers and semaphores
+/**
+ * Image buffer struct. The type of buffered image is determined by MAT_TYPE symbol.
+ */
 struct srcBuffer {
-    MAT_TYPE full_warped_image;
+    MAT_TYPE full_warped_image; /**< One complete image (Usually cv::MAT, but could be cuda::GpuMat or something else) */
 };
 
 #define BUFF_SIZE 2
@@ -149,7 +151,7 @@ struct drawnLine {
     bool transparent;
 };
 
-class acquireThread;
+class AcquireThread;
 class KilobotExperiment;
 
 /*!
@@ -445,9 +447,9 @@ private:
     vector < Mat > Rs;
     Point2f arenaCorners[4];
     bool haveCalibration = false;
-    QTimer tick;
+    QTimer tick; /**< This timer runs periodic trucker task */
 
-    acquireThread * threads = NULL;
+    AcquireThread * threads = NULL;
 
     int time = 0;
     /*!

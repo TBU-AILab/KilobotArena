@@ -1,0 +1,267 @@
+\hypertarget{structintelhex_1_1hex__data}{}\doxysection{intelhex\+::hex\+\_\+data Struct Reference}
+\label{structintelhex_1_1hex__data}\index{intelhex::hex\_data@{intelhex::hex\_data}}
+
+
+{\ttfamily \#include $<$intelhex.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}} $>$ \mbox{\hyperlink{structintelhex_1_1hex__data_a9134369690ee19c1ed22dfe0c08228fe}{data\+\_\+container}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}, \mbox{\hyperlink{structintelhex_1_1hex__data_a9134369690ee19c1ed22dfe0c08228fe}{data\+\_\+container}} $>$ \mbox{\hyperlink{structintelhex_1_1hex__data_abb3aedc79d5cb7323b755648c13ffb22}{container}}
+\item 
+typedef \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{container\+::iterator}} \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{iterator}}
+\item 
+typedef \mbox{\hyperlink{structintelhex_1_1hex__data_a911f7934f56ed5c2f45ccf70460dbb65}{container\+::reverse\+\_\+iterator}} \mbox{\hyperlink{structintelhex_1_1hex__data_a911f7934f56ed5c2f45ccf70460dbb65}{reverse\+\_\+iterator}}
+\item 
+typedef data\+\_\+container\+::size\+\_\+type \mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structintelhex_1_1hex__data_abecf4dcc20721618a956d9676d0d5354}{hex\+\_\+data}} ()
+\item 
+\mbox{\hyperlink{structintelhex_1_1hex__data_a2f92d1a30967551e557c2dd56df5d980}{hex\+\_\+data}} (const std\+::string \&s)
+\item 
+\mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{iterator}} \mbox{\hyperlink{structintelhex_1_1hex__data_ac0c1f2d8332365cf526a4d98f2cd15f8}{begin}} ()
+\item 
+\mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{iterator}} \mbox{\hyperlink{structintelhex_1_1hex__data_a45f7627b822fb4d1434105fa9d22857e}{end}} ()
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_a670879174184c10ff7c0f2e02dd1cded}{compact}} ()
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_a9014b1f32380cd117bfc791f6e472f5f}{clear}} ()
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_a317d72631615756b85ac6fbae71595d7}{erase}} (\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}})
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_a791fb8fd5189c65f00c28d62f849c4bd}{erase}} (\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}} first, \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}} last)
+\item 
+\mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}} \mbox{\hyperlink{structintelhex_1_1hex__data_a7c17385eae24d917d940df43ca0ca026}{fill}} ()
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_aaa03d7ef897c826b0750ccfa2ab72a6e}{fill}} (\mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}} f)
+\item 
+\mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\+\_\+type}} \mbox{\hyperlink{structintelhex_1_1hex__data_a55d464577df26c3dc8dfe3ff144fca08}{size}} ()
+\item 
+\mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\+\_\+type}} \mbox{\hyperlink{structintelhex_1_1hex__data_a414d7bf2a539d77b16823e906ac3db5f}{size\+\_\+below\+\_\+addr}} (\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}})
+\item 
+\mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\+\_\+type}} \mbox{\hyperlink{structintelhex_1_1hex__data_a841244789e656ec0856420150e775f55}{size\+\_\+in\+\_\+range}} (\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}, \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}})
+\item 
+\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}} \mbox{\hyperlink{structintelhex_1_1hex__data_adf1a18ef967a01c07a316ae6051c882d}{max\+\_\+addr\+\_\+below}} (\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}})
+\item 
+\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}} \mbox{\hyperlink{structintelhex_1_1hex__data_a59841c24d4bc98f0801da038129e624b}{min\+\_\+address}} () const
+\item 
+\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}} \mbox{\hyperlink{structintelhex_1_1hex__data_a394398f1e0c02a8992fbb7fd25d0f933}{max\+\_\+address}} () const
+\item 
+bool \mbox{\hyperlink{structintelhex_1_1hex__data_a46b63a376917b52b0dcab0aa74ddb58e}{is\+\_\+set}} (\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}})
+\item 
+\mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}} \& \mbox{\hyperlink{structintelhex_1_1hex__data_a68735edd738944c4b9daf098058bab43}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}})
+\item 
+\mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}} \mbox{\hyperlink{structintelhex_1_1hex__data_aa10f473d363c7c3f29e322743ff3465a}{get}} (\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}})
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_afd6cc12d56f61457f6f16db06cc5d630}{set}} (\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}, \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}})
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_a9ba09eb40b09c5b040d3f95c60f334f5}{load}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_ae9c56b8f267616bacae7571835c6aec2}{read}} (std\+::istream \&)
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_aa33dcadbd40b4c202de3103ea7434617}{write}} (const char $\ast$)
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_a6b22e549d682a55cc002e54392d1ecfc}{write}} (std\+::ostream \&)
+\item 
+void \mbox{\hyperlink{structintelhex_1_1hex__data_aee62956df9a50228a7307bec92c950e0}{tidy}} (\mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{size\+\_\+type}} length)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structintelhex_1_1hex__data_abb3aedc79d5cb7323b755648c13ffb22}\label{structintelhex_1_1hex__data_abb3aedc79d5cb7323b755648c13ffb22}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!container@{container}}
+\index{container@{container}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{container}{container}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}, \mbox{\hyperlink{structintelhex_1_1hex__data_a9134369690ee19c1ed22dfe0c08228fe}{data\+\_\+container}}$>$ \mbox{\hyperlink{structintelhex_1_1hex__data_abb3aedc79d5cb7323b755648c13ffb22}{intelhex\+::hex\+\_\+data\+::container}}}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a9134369690ee19c1ed22dfe0c08228fe}\label{structintelhex_1_1hex__data_a9134369690ee19c1ed22dfe0c08228fe}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!data\_container@{data\_container}}
+\index{data\_container@{data\_container}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{data\_container}{data\_container}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}}$>$ \mbox{\hyperlink{structintelhex_1_1hex__data_a9134369690ee19c1ed22dfe0c08228fe}{intelhex\+::hex\+\_\+data\+::data\+\_\+container}}}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}\label{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!iterator@{iterator}}
+\index{iterator@{iterator}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{container\+::iterator}} \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{intelhex\+::hex\+\_\+data\+::iterator}}}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a911f7934f56ed5c2f45ccf70460dbb65}\label{structintelhex_1_1hex__data_a911f7934f56ed5c2f45ccf70460dbb65}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!reverse\_iterator@{reverse\_iterator}}
+\index{reverse\_iterator@{reverse\_iterator}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{reverse\_iterator}{reverse\_iterator}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structintelhex_1_1hex__data_a911f7934f56ed5c2f45ccf70460dbb65}{container\+::reverse\+\_\+iterator}} \mbox{\hyperlink{structintelhex_1_1hex__data_a911f7934f56ed5c2f45ccf70460dbb65}{intelhex\+::hex\+\_\+data\+::reverse\+\_\+iterator}}}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}\label{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!size\_type@{size\_type}}
+\index{size\_type@{size\_type}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
+{\footnotesize\ttfamily typedef data\+\_\+container\+::size\+\_\+type \mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{intelhex\+::hex\+\_\+data\+::size\+\_\+type}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structintelhex_1_1hex__data_abecf4dcc20721618a956d9676d0d5354}\label{structintelhex_1_1hex__data_abecf4dcc20721618a956d9676d0d5354}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!hex\_data@{hex\_data}}
+\index{hex\_data@{hex\_data}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{hex\_data()}{hex\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily intelhex\+::hex\+\_\+data\+::hex\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a2f92d1a30967551e557c2dd56df5d980}\label{structintelhex_1_1hex__data_a2f92d1a30967551e557c2dd56df5d980}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!hex\_data@{hex\_data}}
+\index{hex\_data@{hex\_data}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{hex\_data()}{hex\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily intelhex\+::hex\+\_\+data\+::hex\+\_\+data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structintelhex_1_1hex__data_ac0c1f2d8332365cf526a4d98f2cd15f8}\label{structintelhex_1_1hex__data_ac0c1f2d8332365cf526a4d98f2cd15f8}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!begin@{begin}}
+\index{begin@{begin}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{iterator}} intelhex\+::hex\+\_\+data\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a9014b1f32380cd117bfc791f6e472f5f}\label{structintelhex_1_1hex__data_a9014b1f32380cd117bfc791f6e472f5f}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!clear@{clear}}
+\index{clear@{clear}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a670879174184c10ff7c0f2e02dd1cded}\label{structintelhex_1_1hex__data_a670879174184c10ff7c0f2e02dd1cded}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!compact@{compact}}
+\index{compact@{compact}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{compact()}{compact()}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::compact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a45f7627b822fb4d1434105fa9d22857e}\label{structintelhex_1_1hex__data_a45f7627b822fb4d1434105fa9d22857e}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!end@{end}}
+\index{end@{end}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structintelhex_1_1hex__data_a8df76babea93b756e67685db60390c90}{iterator}} intelhex\+::hex\+\_\+data\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a791fb8fd5189c65f00c28d62f849c4bd}\label{structintelhex_1_1hex__data_a791fb8fd5189c65f00c28d62f849c4bd}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!erase@{erase}}
+\index{erase@{erase}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{first,  }\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{last }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a317d72631615756b85ac6fbae71595d7}\label{structintelhex_1_1hex__data_a317d72631615756b85ac6fbae71595d7}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!erase@{erase}}
+\index{erase@{erase}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a7c17385eae24d917d940df43ca0ca026}\label{structintelhex_1_1hex__data_a7c17385eae24d917d940df43ca0ca026}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!fill@{fill}}
+\index{fill@{fill}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}} intelhex\+::hex\+\_\+data\+::fill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_aaa03d7ef897c826b0750ccfa2ab72a6e}\label{structintelhex_1_1hex__data_aaa03d7ef897c826b0750ccfa2ab72a6e}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!fill@{fill}}
+\index{fill@{fill}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::fill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}}}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_aa10f473d363c7c3f29e322743ff3465a}\label{structintelhex_1_1hex__data_aa10f473d363c7c3f29e322743ff3465a}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!get@{get}}
+\index{get@{get}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}} intelhex\+::hex\+\_\+data\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a46b63a376917b52b0dcab0aa74ddb58e}\label{structintelhex_1_1hex__data_a46b63a376917b52b0dcab0aa74ddb58e}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!is\_set@{is\_set}}
+\index{is\_set@{is\_set}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{is\_set()}{is\_set()}}
+{\footnotesize\ttfamily bool intelhex\+::hex\+\_\+data\+::is\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a9ba09eb40b09c5b040d3f95c60f334f5}\label{structintelhex_1_1hex__data_a9ba09eb40b09c5b040d3f95c60f334f5}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!load@{load}}
+\index{load@{load}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_adf1a18ef967a01c07a316ae6051c882d}\label{structintelhex_1_1hex__data_adf1a18ef967a01c07a316ae6051c882d}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!max\_addr\_below@{max\_addr\_below}}
+\index{max\_addr\_below@{max\_addr\_below}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{max\_addr\_below()}{max\_addr\_below()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}} intelhex\+::hex\+\_\+data\+::max\+\_\+addr\+\_\+below (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{hi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a394398f1e0c02a8992fbb7fd25d0f933}\label{structintelhex_1_1hex__data_a394398f1e0c02a8992fbb7fd25d0f933}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!max\_address@{max\_address}}
+\index{max\_address@{max\_address}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{max\_address()}{max\_address()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}} intelhex\+::hex\+\_\+data\+::max\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a59841c24d4bc98f0801da038129e624b}\label{structintelhex_1_1hex__data_a59841c24d4bc98f0801da038129e624b}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!min\_address@{min\_address}}
+\index{min\_address@{min\_address}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{min\_address()}{min\_address()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}} intelhex\+::hex\+\_\+data\+::min\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a68735edd738944c4b9daf098058bab43}\label{structintelhex_1_1hex__data_a68735edd738944c4b9daf098058bab43}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}} \& intelhex\+::hex\+\_\+data\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_ae9c56b8f267616bacae7571835c6aec2}\label{structintelhex_1_1hex__data_ae9c56b8f267616bacae7571835c6aec2}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!read@{read}}
+\index{read@{read}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_afd6cc12d56f61457f6f16db06cc5d630}\label{structintelhex_1_1hex__data_afd6cc12d56f61457f6f16db06cc5d630}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!set@{set}}
+\index{set@{set}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{address,  }\item[{\mbox{\hyperlink{namespaceintelhex_a7896541e6d3aef6fac92a627cdfa0e14}{value\+\_\+type}}}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a55d464577df26c3dc8dfe3ff144fca08}\label{structintelhex_1_1hex__data_a55d464577df26c3dc8dfe3ff144fca08}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!size@{size}}
+\index{size@{size}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{hex\+\_\+data\+::size\+\_\+type}} intelhex\+::hex\+\_\+data\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a414d7bf2a539d77b16823e906ac3db5f}\label{structintelhex_1_1hex__data_a414d7bf2a539d77b16823e906ac3db5f}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!size\_below\_addr@{size\_below\_addr}}
+\index{size\_below\_addr@{size\_below\_addr}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{size\_below\_addr()}{size\_below\_addr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{hex\+\_\+data\+::size\+\_\+type}} intelhex\+::hex\+\_\+data\+::size\+\_\+below\+\_\+addr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a841244789e656ec0856420150e775f55}\label{structintelhex_1_1hex__data_a841244789e656ec0856420150e775f55}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!size\_in\_range@{size\_in\_range}}
+\index{size\_in\_range@{size\_in\_range}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{size\_in\_range()}{size\_in\_range()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{hex\+\_\+data\+::size\+\_\+type}} intelhex\+::hex\+\_\+data\+::size\+\_\+in\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{lo,  }\item[{\mbox{\hyperlink{namespaceintelhex_a829a9b689538b5e9d828e04c1a606492}{address\+\_\+type}}}]{hi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_aee62956df9a50228a7307bec92c950e0}\label{structintelhex_1_1hex__data_aee62956df9a50228a7307bec92c950e0}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!tidy@{tidy}}
+\index{tidy@{tidy}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{tidy()}{tidy()}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::tidy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structintelhex_1_1hex__data_aa6cf1bf31154ffb3c67e8d49b560535c}{hex\+\_\+data\+::size\+\_\+type}}}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_aa33dcadbd40b4c202de3103ea7434617}\label{structintelhex_1_1hex__data_aa33dcadbd40b4c202de3103ea7434617}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!write@{write}}
+\index{write@{write}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::write (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structintelhex_1_1hex__data_a6b22e549d682a55cc002e54392d1ecfc}\label{structintelhex_1_1hex__data_a6b22e549d682a55cc002e54392d1ecfc}} 
+\index{intelhex::hex\_data@{intelhex::hex\_data}!write@{write}}
+\index{write@{write}!intelhex::hex\_data@{intelhex::hex\_data}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void intelhex\+::hex\+\_\+data\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/ohc/\mbox{\hyperlink{intelhex_8h}{intelhex.\+h}}\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/ohc/\mbox{\hyperlink{intelhex_8cpp}{intelhex.\+cpp}}\end{DoxyCompactItemize}

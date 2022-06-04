@@ -1,0 +1,33 @@
+\hypertarget{dragzoomqlabel_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/dragzoomqlabel.h}
+\mbox{\hyperlink{dragzoomqlabel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DRAGZOOMQLABEL\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DRAGZOOMQLABEL\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{classdrag_zoom_q_label}{dragZoomQLabel}} : \textcolor{keyword}{public} QLabel}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     Q\_OBJECT}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \mbox{\hyperlink{classdrag_zoom_q_label_a60859b947b4a055c795ea6916d86b014}{dragZoomQLabel}}(QWidget *parent = 0);}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{protected} slots:}
+\DoxyCodeLine{14     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdrag_zoom_q_label_a50669a7c263f51b82b7c70a419584df8}{mousePressEvent}}(QMouseEvent *ev);}
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdrag_zoom_q_label_ada576016a1ba9abab972a719b07ec11d}{mouseMoveEvent}}(QMouseEvent *ev);}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdrag_zoom_q_label_a1fecec32ab045e912ddab1ae8343a82a}{mouseReleaseEvent}}(QMouseEvent *ev);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 signals:}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdrag_zoom_q_label_add2d6edf80e05a23bd5f02f17b48a650}{moving}}(QPoint);}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdrag_zoom_q_label_ac93371c74462a0efe58444341ff7a173}{moveDone}}();}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{classdrag_zoom_q_label_ad737f8fe5abd1c5260d78ad0edb58071}{clicked}}(QPoint);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{private}:}
+\DoxyCodeLine{24     \textcolor{keywordtype}{bool} isDragged = \textcolor{keyword}{false};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DRAGZOOMQLABEL\_H}}
+
+\end{DoxyCode}

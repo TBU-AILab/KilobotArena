@@ -6,7 +6,7 @@
  */
 
 #include "kilobottracker.h"
-#include "kilobotexperiment.h"
+#include "toolchain/kilobotexperiment.h"
 #include <QImage>
 #include <QThread>
 #include <QLineEdit>
@@ -24,24 +24,25 @@
 //#define TESTLEDS
 #define COLDET_V1
 
-QSemaphore srcFree;
-QSemaphore srcUsed;
-srcBuffer srcBuff[BUFF_SIZE];
+//TODO: Maybe should be reimplemented as separate class
+QSemaphore srcFree; /**< Free space in buffer */
+QSemaphore srcUsed; /**< Number of available source images (amount of images in buffer) */
+srcBuffer srcBuff[BUFF_SIZE]; /**< Circular buffer of source images  */
 QSemaphore srcStop;
 QSemaphore camUsage;
 
 
 /*!
- * \brief The acquireThread class
+ * \brief The AcquireThread class
  * This thread acquires input data from a source, applies the local warps
  * to the data, and then places the data in a circular buffer for use by
  * the main thread, which operates on a QTimer to allow UI responsivity
  */
-class acquireThread : public QThread
+class AcquireThread : public QThread
 {
 public:
 
-    ~acquireThread() {
+    ~AcquireThread() {
         // shut down cam
         camUsage.acquire();
         if (cap.isOpened()) cap.release();
@@ -331,6 +332,11 @@ void KilobotTracker::LOOPstartstop(int expType)
     this->m_runtimeIdentificationTimer = 0;
 
 }
+
+
+/**
+ * One loop of the tracker. It is run by KilobotTracker::tick.
+ */
 void KilobotTracker::LOOPiterate()
 {
 
@@ -2571,7 +2577,7 @@ void KilobotTracker::THREADSlaunch()
 
     if (srcStop.available()) srcStop.acquire();
     if (!this->threads) {
-        this->threads = new acquireThread;
+        this->threads = new AcquireThread;
     }
     this->threads->keepRunning = true;
     this->threads->index = 0;

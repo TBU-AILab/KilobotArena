@@ -1,0 +1,191 @@
+\hypertarget{kilobottracker_8h}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobottracker.h File Reference}
+\label{kilobottracker_8h}\index{/Users/peterjanku/SourcesCpp/KilobotArena/kilobottracker.h@{/Users/peterjanku/SourcesCpp/KilobotArena/kilobottracker.h}}
+{\ttfamily \#include $<$ios$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/video/video.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgproc/imgproc.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/videostab/videostab.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/features2d/features2d.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/stitching/stitcher.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/core/cuda.\+hpp$>$}\newline
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QPoint$>$}\newline
+{\ttfamily \#include $<$QPixmap$>$}\newline
+{\ttfamily \#include $<$QSemaphore$>$}\newline
+{\ttfamily \#include $<$QTimer$>$}\newline
+{\ttfamily \#include $<$QElapsed\+Timer$>$}\newline
+{\ttfamily \#include $<$QTime$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include \char`\"{}toolchain/kilobot.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsrc_buffer}{src\+Buffer}}
+\item 
+struct \mbox{\hyperlink{structindex_pair}{index\+Pair}}
+\item 
+struct \mbox{\hyperlink{structkilo_light}{kilo\+Light}}
+\item 
+struct \mbox{\hyperlink{structdrawn_circle}{drawn\+Circle}}
+\item 
+struct \mbox{\hyperlink{structdrawn_line}{drawn\+Line}}
+\item 
+class \mbox{\hyperlink{class_kilobot_tracker}{Kilobot\+Tracker}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_kilobot_tracker}{Kilobot\+Tracker}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{kilobottracker_8h_a91f8f19790ba871e05bce6fa4d4d7318}{USE\+\_\+\+CUDA}}~true
+\item 
+\#define \mbox{\hyperlink{kilobottracker_8h_ac8b5de4ce26103dd0313f31622db1dfb}{MAT\+\_\+\+TYPE}}~cuda\+::\+Gpu\+Mat
+\item 
+\#define \mbox{\hyperlink{kilobottracker_8h_af1c57abdcb5a3401e8f7151b35ff4ad8}{CV\+\_\+\+NS}}~cv\+::cuda\+::
+\item 
+\#define \mbox{\hyperlink{kilobottracker_8h_a6c7cd32e1bac137f05e4a752b4ad10af}{BUFF\+\_\+\+SIZE}}~2
+\item 
+\#define \mbox{\hyperlink{kilobottracker_8h_aa28ce514073243f20b2ad63bd15348bc}{IM\+\_\+\+WIDTH}}~2048
+\item 
+\#define \mbox{\hyperlink{kilobottracker_8h_a3aad60d733afca4a443a5cc9506b22af}{IM\+\_\+\+HEIGHT}}~1536
+\item 
+\#define \mbox{\hyperlink{kilobottracker_8h_ad4f24fa30082fd81530b2025b162f7dc}{IDENTIFY\+\_\+\+TIMEOUT}}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115}{src\+Data\+Type}} \{ \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115a2fe34064fc47ee403438f534678f104d}{IMAGES}}
+, \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115a0e1e918a80f84992ae08463f076d5dc8}{VIDEO}}
+, \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115ada31f516cdf218b68b790fb31e8a6956}{CAMERA}}
+ \}
+\item 
+enum \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56}{tracker\+Type}} \{ \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56ace7ab759f3c61783d330fed6e160f2a7}{NO\+\_\+\+TRACK}}
+, \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56afcbc6d873375c3429a65f35b8fd6834a}{CIRCLES\+\_\+\+NAIVE}}
+, \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56aeb95bef4b68912dacf8f11c64bf337cd}{CIRCLES\+\_\+\+LOCAL}}
+, \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56a14cbf8257a07205853487d035108c187}{MY\+\_\+\+HAPPY\+\_\+\+OTHER\+\_\+\+TRACKER}}
+ \}
+\item 
+enum \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}{experiment\+Type}} \{ \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca3b53675250beaefa566e7ff804d9f5d6}{IDENTIFY}}
+, \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca4f73689d55b70c63c31472aa6f115111}{ID\+\_\+\+ASSIGNMENT}}
+, \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca03940d78fb7ee5fc71b49ca87cfdfb1c}{CALIBRATION}}
+, \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8cadd165898b2521416620b9f979c9ecd8a}{USER\+\_\+\+EXP}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{kilobottracker_8h_a6c7cd32e1bac137f05e4a752b4ad10af}\label{kilobottracker_8h_a6c7cd32e1bac137f05e4a752b4ad10af}} 
+\index{kilobottracker.h@{kilobottracker.h}!BUFF\_SIZE@{BUFF\_SIZE}}
+\index{BUFF\_SIZE@{BUFF\_SIZE}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{BUFF\_SIZE}{BUFF\_SIZE}}
+{\footnotesize\ttfamily \#define BUFF\+\_\+\+SIZE~2}
+
+\mbox{\Hypertarget{kilobottracker_8h_af1c57abdcb5a3401e8f7151b35ff4ad8}\label{kilobottracker_8h_af1c57abdcb5a3401e8f7151b35ff4ad8}} 
+\index{kilobottracker.h@{kilobottracker.h}!CV\_NS@{CV\_NS}}
+\index{CV\_NS@{CV\_NS}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{CV\_NS}{CV\_NS}}
+{\footnotesize\ttfamily \#define CV\+\_\+\+NS~cv\+::cuda\+::}
+
+\mbox{\Hypertarget{kilobottracker_8h_ad4f24fa30082fd81530b2025b162f7dc}\label{kilobottracker_8h_ad4f24fa30082fd81530b2025b162f7dc}} 
+\index{kilobottracker.h@{kilobottracker.h}!IDENTIFY\_TIMEOUT@{IDENTIFY\_TIMEOUT}}
+\index{IDENTIFY\_TIMEOUT@{IDENTIFY\_TIMEOUT}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{IDENTIFY\_TIMEOUT}{IDENTIFY\_TIMEOUT}}
+{\footnotesize\ttfamily \#define IDENTIFY\+\_\+\+TIMEOUT~10}
+
+\mbox{\Hypertarget{kilobottracker_8h_a3aad60d733afca4a443a5cc9506b22af}\label{kilobottracker_8h_a3aad60d733afca4a443a5cc9506b22af}} 
+\index{kilobottracker.h@{kilobottracker.h}!IM\_HEIGHT@{IM\_HEIGHT}}
+\index{IM\_HEIGHT@{IM\_HEIGHT}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{IM\_HEIGHT}{IM\_HEIGHT}}
+{\footnotesize\ttfamily \#define IM\+\_\+\+HEIGHT~1536}
+
+\mbox{\Hypertarget{kilobottracker_8h_aa28ce514073243f20b2ad63bd15348bc}\label{kilobottracker_8h_aa28ce514073243f20b2ad63bd15348bc}} 
+\index{kilobottracker.h@{kilobottracker.h}!IM\_WIDTH@{IM\_WIDTH}}
+\index{IM\_WIDTH@{IM\_WIDTH}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{IM\_WIDTH}{IM\_WIDTH}}
+{\footnotesize\ttfamily \#define IM\+\_\+\+WIDTH~2048}
+
+\mbox{\Hypertarget{kilobottracker_8h_ac8b5de4ce26103dd0313f31622db1dfb}\label{kilobottracker_8h_ac8b5de4ce26103dd0313f31622db1dfb}} 
+\index{kilobottracker.h@{kilobottracker.h}!MAT\_TYPE@{MAT\_TYPE}}
+\index{MAT\_TYPE@{MAT\_TYPE}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{MAT\_TYPE}{MAT\_TYPE}}
+{\footnotesize\ttfamily \#define MAT\+\_\+\+TYPE~cuda\+::\+Gpu\+Mat}
+
+\mbox{\Hypertarget{kilobottracker_8h_a91f8f19790ba871e05bce6fa4d4d7318}\label{kilobottracker_8h_a91f8f19790ba871e05bce6fa4d4d7318}} 
+\index{kilobottracker.h@{kilobottracker.h}!USE\_CUDA@{USE\_CUDA}}
+\index{USE\_CUDA@{USE\_CUDA}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{USE\_CUDA}{USE\_CUDA}}
+{\footnotesize\ttfamily \#define USE\+\_\+\+CUDA~true}
+
+\mbox{\hyperlink{kilobottracker_8h}{Kilobottracker.\+h}}
+
+Created on\+: 3 Oct 2016 Author\+: Alex Cope 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}\label{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}} 
+\index{kilobottracker.h@{kilobottracker.h}!experimentType@{experimentType}}
+\index{experimentType@{experimentType}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{experimentType}{experimentType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8c}{experiment\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDENTIFY@{IDENTIFY}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!IDENTIFY@{IDENTIFY}}}\mbox{\Hypertarget{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca3b53675250beaefa566e7ff804d9f5d6}\label{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca3b53675250beaefa566e7ff804d9f5d6}} 
+IDENTIFY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ID\_ASSIGNMENT@{ID\_ASSIGNMENT}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!ID\_ASSIGNMENT@{ID\_ASSIGNMENT}}}\mbox{\Hypertarget{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca4f73689d55b70c63c31472aa6f115111}\label{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca4f73689d55b70c63c31472aa6f115111}} 
+ID\+\_\+\+ASSIGNMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALIBRATION@{CALIBRATION}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!CALIBRATION@{CALIBRATION}}}\mbox{\Hypertarget{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca03940d78fb7ee5fc71b49ca87cfdfb1c}\label{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8ca03940d78fb7ee5fc71b49ca87cfdfb1c}} 
+CALIBRATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USER\_EXP@{USER\_EXP}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!USER\_EXP@{USER\_EXP}}}\mbox{\Hypertarget{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8cadd165898b2521416620b9f979c9ecd8a}\label{kilobottracker_8h_a4715ba063ff65229c32f02e805f2be8cadd165898b2521416620b9f979c9ecd8a}} 
+USER\+\_\+\+EXP&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115}\label{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115}} 
+\index{kilobottracker.h@{kilobottracker.h}!srcDataType@{srcDataType}}
+\index{srcDataType@{srcDataType}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{srcDataType}{srcDataType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115}{src\+Data\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IMAGES@{IMAGES}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!IMAGES@{IMAGES}}}\mbox{\Hypertarget{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115a2fe34064fc47ee403438f534678f104d}\label{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115a2fe34064fc47ee403438f534678f104d}} 
+IMAGES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VIDEO@{VIDEO}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!VIDEO@{VIDEO}}}\mbox{\Hypertarget{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115a0e1e918a80f84992ae08463f076d5dc8}\label{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115a0e1e918a80f84992ae08463f076d5dc8}} 
+VIDEO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAMERA@{CAMERA}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!CAMERA@{CAMERA}}}\mbox{\Hypertarget{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115ada31f516cdf218b68b790fb31e8a6956}\label{kilobottracker_8h_a69869f320e5764e92019d0f7625e1115ada31f516cdf218b68b790fb31e8a6956}} 
+CAMERA&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56}\label{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56}} 
+\index{kilobottracker.h@{kilobottracker.h}!trackerType@{trackerType}}
+\index{trackerType@{trackerType}!kilobottracker.h@{kilobottracker.h}}
+\doxysubsubsection{\texorpdfstring{trackerType}{trackerType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56}{tracker\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_TRACK@{NO\_TRACK}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!NO\_TRACK@{NO\_TRACK}}}\mbox{\Hypertarget{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56ace7ab759f3c61783d330fed6e160f2a7}\label{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56ace7ab759f3c61783d330fed6e160f2a7}} 
+NO\+\_\+\+TRACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CIRCLES\_NAIVE@{CIRCLES\_NAIVE}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!CIRCLES\_NAIVE@{CIRCLES\_NAIVE}}}\mbox{\Hypertarget{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56afcbc6d873375c3429a65f35b8fd6834a}\label{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56afcbc6d873375c3429a65f35b8fd6834a}} 
+CIRCLES\+\_\+\+NAIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CIRCLES\_LOCAL@{CIRCLES\_LOCAL}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!CIRCLES\_LOCAL@{CIRCLES\_LOCAL}}}\mbox{\Hypertarget{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56aeb95bef4b68912dacf8f11c64bf337cd}\label{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56aeb95bef4b68912dacf8f11c64bf337cd}} 
+CIRCLES\+\_\+\+LOCAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MY\_HAPPY\_OTHER\_TRACKER@{MY\_HAPPY\_OTHER\_TRACKER}!kilobottracker.h@{kilobottracker.h}}\index{kilobottracker.h@{kilobottracker.h}!MY\_HAPPY\_OTHER\_TRACKER@{MY\_HAPPY\_OTHER\_TRACKER}}}\mbox{\Hypertarget{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56a14cbf8257a07205853487d035108c187}\label{kilobottracker_8h_a523d41827bc34c2ff910616ed38cef56a14cbf8257a07205853487d035108c187}} 
+MY\+\_\+\+HAPPY\+\_\+\+OTHER\+\_\+\+TRACKER&\\
+\hline
+
+\end{DoxyEnumFields}

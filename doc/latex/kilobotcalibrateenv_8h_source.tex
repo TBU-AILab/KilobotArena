@@ -1,0 +1,86 @@
+\hypertarget{kilobotcalibrateenv_8h_source}{}\doxysection{/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/kilobotcalibrateenv.h}
+\mbox{\hyperlink{kilobotcalibrateenv_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MYKILOBOTENVIRONMENT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MYKILOBOTENVIRONMENT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QPointF>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QVector>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotenvironment_8h}{toolchain/kilobotenvironment.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QTime>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <QColor>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <opencv2/core/core.hpp>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <opencv2/highgui/highgui.hpp>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <opencv2/imgproc/imgproc.hpp>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{//enum command \{}}
+\DoxyCodeLine{16 \textcolor{comment}{//    STRAIGHT\_L,}}
+\DoxyCodeLine{17 \textcolor{comment}{//    LEFT,}}
+\DoxyCodeLine{18 \textcolor{comment}{//    RIGHT,}}
+\DoxyCodeLine{19 \textcolor{comment}{//    STOP,}}
+\DoxyCodeLine{20 \textcolor{comment}{//    LIGHT,}}
+\DoxyCodeLine{21 \textcolor{comment}{//    STRAIGHT\_R,}}
+\DoxyCodeLine{22 \textcolor{comment}{//    DONE\_MOTION}}
+\DoxyCodeLine{23 \textcolor{comment}{//\};}}
+\DoxyCodeLine{24 \textcolor{keyword}{enum} \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231d}{command}} \{}
+\DoxyCodeLine{25     \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231dadb45120aafd37a973140edee24708065}{LEFT}}=1,}
+\DoxyCodeLine{26     \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daec8379af7490bb9eaaf579cf17876f38}{RIGHT}},}
+\DoxyCodeLine{27     \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231da679ee5320d66c8322e310daeb2ee99b8}{STOP}},}
+\DoxyCodeLine{28     \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231da99b8fb6bac5ae87e5b3295ef619495d1}{STRAIGHT\_L}},}
+\DoxyCodeLine{29     \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daf4e092774dfbe18d19209672a28a111b}{STRAIGHT\_R}},}
+\DoxyCodeLine{30     \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231daa74ed47408babf1d78524b6c0ca4068e}{DONE\_MOTION}}}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{enum} \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6}{CalibrationStage}}\{}
+\DoxyCodeLine{34     \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6af2b2c136c7461067d7700cf85cbc3ea3}{DETECTING\_MOVE}},}
+\DoxyCodeLine{35     \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6af7337f0988c9be98bba075351f703542}{EVALUATING\_REV\_SPEED}},}
+\DoxyCodeLine{36     \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6aed084301e2e1c26a9331d295efe2c2f9}{EVALUATING\_STRAIGHT\_MOTION}},}
+\DoxyCodeLine{37     \mbox{\hyperlink{kilobotcalibrateenv_8h_a141c46c4fa8ff6f15e2ad763a5c139b6a9c954bcf443428c80b0f107b3bc48749}{DONE}}}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{class_kilobot_calibrate_env}{KilobotCalibrateEnv}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_kilobot_environment}{KilobotEnvironment}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43     Q\_OBJECT}
+\DoxyCodeLine{44 \textcolor{keyword}{public}:}
+\DoxyCodeLine{45     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_kilobot_calibrate_env_ab11e448d3a0bd12bb1d91ceef507565e}{KilobotCalibrateEnv}}(QObject *parent = 0);}
+\DoxyCodeLine{46     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_kilobot_calibrate_env_a170c8ee5289b74d37ccd726f1e5b1f42}{rotDone}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{47     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_kilobot_calibrate_env_ac22a98c55e8514524041ebc75f8246e6}{strDone}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_calibrate_env_a8f4cd2c1e8092f34d6d65a4cfba08690}{setKilobotRadius}}(\textcolor{keywordtype}{double} kilobot\_radius)\{ this-\/>\mbox{\hyperlink{class_kilobot_calibrate_env_a610b32086935b55b81575d8086ea7b46}{kilobotRadius}} = kilobot\_radius; \}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_kilobot_calibrate_env_a610b32086935b55b81575d8086ea7b46}{kilobotRadius}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     QVector < command >  \mbox{\hyperlink{class_kilobot_calibrate_env_a8c2cd5d6160b8b13d8d27024ac5dcd5f}{commandLog}};}
+\DoxyCodeLine{52     QVector < QPointF >  \mbox{\hyperlink{class_kilobot_calibrate_env_a5b836549668ade3ba55c054da883a106}{velocityLog}};}
+\DoxyCodeLine{53     QVector < QVector < QPointF > >  \mbox{\hyperlink{class_kilobot_calibrate_env_afe7478a33dda38090a78d593c42f68ae}{posLog}};}
+\DoxyCodeLine{54     QVector < QVector < int > > \mbox{\hyperlink{class_kilobot_calibrate_env_a5d17430e5f9026896252d85173ee3b6a}{posLogTimes}};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 signals:}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_calibrate_env_ac2e520365014bbce39c1960db6d6acbc}{drawLine}}(std::vector<cv::Point> pos, QColor col, \textcolor{keywordtype}{int} thickness, std::string text, \textcolor{keywordtype}{bool} transparent);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_calibrate_env_a9c0d4d8383e726a223f02eae01ce4c10}{update}}();}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_calibrate_env_a3c7101580add4d453f723d54897f998c}{updateVirtualSensor}}(\mbox{\hyperlink{class_kilobot}{Kilobot}} kilobot);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{private}:}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{bool} evaluateSpeed(\textcolor{keywordtype}{int} step, \textcolor{keywordtype}{int} timeInterval, \textcolor{keywordtype}{double} robotRadius, \textcolor{keywordtype}{int} \&speed, \textcolor{keywordtype}{int} index, \mbox{\hyperlink{kilobotcalibrateenv_8h_a9e0992eae3950adccaf4847fbff4231d}{command}} motionType);}
+\DoxyCodeLine{66     \textcolor{keywordtype}{double} euclideanDist(\textcolor{keyword}{const} cv::Point\& a, \textcolor{keyword}{const} cv::Point\& b);}
+\DoxyCodeLine{67 \textcolor{comment}{//    void rotateVect(QPointF\& vector2d, double angleInDeg);}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} sendCalibMessage(\mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\_id}} kID);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     QVector < bool > isInit;}
+\DoxyCodeLine{71     QVector < QTime > times;}
+\DoxyCodeLine{72     QVector < int > noGoodSpeedCounter;}
+\DoxyCodeLine{73     QVector < QPoint > left\_right;}
+\DoxyCodeLine{74     QVector < CalibrationStage > calibrationStage;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{int} stage = 0;}
+\DoxyCodeLine{77     \textcolor{keywordtype}{int} num\_done = 0;}
+\DoxyCodeLine{78     \textcolor{keywordtype}{int} num\_kilobots = 0;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MYKILOBOTENVIRONMENT\_H}}
+
+\end{DoxyCode}

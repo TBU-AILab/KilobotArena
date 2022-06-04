@@ -1,0 +1,591 @@
+\hypertarget{class_kilobot_tracker}{}\doxysection{Kilobot\+Tracker Class Reference}
+\label{class_kilobot_tracker}\index{KilobotTracker@{KilobotTracker}}
+
+
+The \mbox{\hyperlink{class_kilobot_tracker}{Kilobot\+Tracker}} class.  
+
+
+
+
+{\ttfamily \#include $<$kilobottracker.\+h$>$}
+
+Inheritance diagram for Kilobot\+Tracker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_kilobot_tracker}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a7dcabe716c187806537a614bedd38111}{LOOPstartstop}} (int stage)
+\begin{DoxyCompactList}\small\item\em start\+Loop This slot is the target of the timeout on the QTimer tick, and fetches warped images from the thread buffers and stitches them \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a6b074fa6378f1896d5ad4ae7b5623a71}{LOOPiterate}} ()
+\begin{DoxyCompactList}\small\item\em iterate\+Tracker Use the existing feature matches to stitch the images and track the kilobots \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a073e9a11d9ca05afb39364f4426f69dc}{SETUPload\+Calibration}} ()
+\begin{DoxyCompactList}\small\item\em load\+Calibration Load the calibration matrices from an Open\+CV File\+Storage format \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_tracker_add0f8bc09487bf46a44f2b403335baf8}{SETUPfind\+Kilobots}} ()
+\begin{DoxyCompactList}\small\item\em find\+Kilobots Find the locations of Kilobots in the stitched image \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_tracker_ad2b465ec7e5b8cda4bb7d60b02c2eddf}{identify\+Kilobots}} ()
+\begin{DoxyCompactList}\small\item\em identify\+Kilobots Find out what IDs the Kilobots have \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a45f3b52fe56dd453708ddedd3d669bac}{draw\+Circle}} (QPointF pos, float r, QColor col, int thickness=2, std\+::string text=\char`\"{}\char`\"{}, bool transparent=false)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_af882bf241a6a96f75bc8dbf5bce790eb}{draw\+Line}} (std\+::vector$<$ cv\+::\+Point $>$ pos, QColor col, int thickness=2, std\+::string text=\char`\"{}\char`\"{}, bool transparent=false)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a45d0eb19ab8581b341c56c06914aeede}{clear\+Drawings}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a95156f9a1ae1990da84948f71b89761e}{draw\+Circle\+On\+Recorded\+Image}} (QPointF pos, float r, QColor col, int thickness=2, std\+::string text=\char`\"{}\char`\"{})
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a0b39683c90645ebf5f5c1a693a9c3c6d}{clear\+Drawings\+On\+Recorded\+Image}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_ab9a4422b9f4d213227bdccc2d0762266}{save\+Image}} (QString file)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a09f4599f1c06d61abce4acd721f6752e}{save\+Video\+Frames}} (QString file, unsigned int numofframes)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_ac65a2b32327d6af29a380467dc6bdb79}{set\+Source\+Type}} (bool val)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a9c1b9abff28e448859c30a61f922d904}{set\+Kb\+Min}} (int val)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a7381eae4946632339f893afaf1e2ee3a}{set\+Kb\+Max}} (int val)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a1594c73c327bdc61616b2de29472a8fa}{set\+Canny\+Thresh}} (int val)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_abfd44326612b1c39cc2a1175f81f9cf8}{set\+Hough\+Acc}} (int val)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_ab09c029645d35c9b6bab5c2ad8e0cb9e}{set\+Height\+XSlider}} (int val)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_ab5ea9b391bd9516587c1cd69337b5032}{set\+Height\+YSlider}} (int val)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a0cc4f44526baaf70189a55a7d7dc4758}{manuallyassign\+ID}} (QPoint position)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a95d6edd070f9b0a0ef3f3c04ed09b898}{set\+Video\+Dir}} (QString dir)
+\begin{DoxyCompactList}\small\item\em set\+Video\+Dir \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a14107750dfe6b260301c1fe115a5e8c5}{update\+Kilobot\+States}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a7c585a8db2d42f9fd4388e0da24a6402}{get\+Initial\+Kilobot\+States}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a2deed064ea035cb9d9f8012e1c1d8963}{set\+Tracking\+Type}} (int t\+\_\+type)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a6b30061f2ae833dc53f5662d012c5943}{update\+Experiment\+Broadcasting\+State}} (bool Broadcasting\+State)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a2abc5181ee91714cddf2348b36e3ed7f}{show\+Ids}} (bool toggle)
+\begin{DoxyCompactList}\small\item\em show\+Ids \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a275a77bd2cd66fb5b5a88db27a2d2702}{detectred}} (bool toggle)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a08a995e41bdb294f3e3b0cd1ebc8b383}{detectgreen}} (bool toggle)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a0f24268c1c436dfd58d737724c2d186a}{detectblue}} (bool toggle)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a6ae3a099ffad6bb8cc529e0c7eda19bc}{manual\+IDassignment}} (bool toggle)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a47e3fc4dec5a66dc640bdf4e1b4a4295}{enable\+Runtime\+Identification}} (bool toggle)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_aa671e7eeb2960efa2862880f25a136b6}{max\+IDto\+Try}} (QString max\+Id\+Str)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a531c42e02ac4eddaf45e2bcecf75ba7a}{set\+Manual\+ID}} (QString man\+ID)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a2ffdf1845cf3d5923c36ccee3edb8c2e}{set\+Flipangle}} (double angle)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a8d658556b55241a1bcc36203f01bcef1}{Refresh\+Displayed\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Refresh\+Displayed\+Image Refresh the displayed image on the GUI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a34bcaf1ebafe7de68949d53de9769c7f}{error\+Message}} (QString)
+\begin{DoxyCompactList}\small\item\em error\+Message Qt signal to update the UI message QLabel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_tracker_abb27478d2eea0a5e69c88d8aae0fe8fb}{set\+Stitched\+Image}} (QPixmap)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a20445867b1115e3c1419ecc36552af8d}{identify\+Kilo}} (uint8\+\_\+t)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_aedf43e3cc9c4ac2bc110e78eb08a0c7b}{broadcast\+Message}} (\mbox{\hyperlink{structkilobot__broadcast}{kilobot\+\_\+broadcast}})
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a87cec6a11aa912b717652342d0a990c2}{clear\+Msg\+Queue}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_ae8a89772e3da889690baaeac2eba0f7b}{start\+Experiment}} (bool)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_ac3549b575a12dc07cc7119864e43a215}{stop\+Experiment}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_abf69a4aac9ecba4290d370e0e37cb7fd}{toggle\+Exp\+Button}} (int)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_af74ef91eb26f556ff62d3e17fc8928bf}{activate\+Exp\+Buttons}} (int)
+\item 
+void \mbox{\hyperlink{class_kilobot_tracker_a5f00c9fe37df5e84d8baef8d2ba60962}{set\+Runtime\+Identification\+Lock}} (bool)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_kilobot_tracker_a05d0dc4c6713a422df1872c4e78febb8}{Kilobot\+Tracker}} (QPoint small\+Image\+Size=QPoint(300, 300), QObject $\ast$parent=0)
+\item 
+\mbox{\hyperlink{class_kilobot_tracker_afcfc53e172f4fc75bde96cbf2408c7ee}{$\sim$\+Kilobot\+Tracker}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_kilobot_experiment}{Kilobot\+Experiment}} $\ast$ \mbox{\hyperlink{class_kilobot_tracker_ac3ee1af9cc09960d343864024779f5d3}{expt}}
+\item 
+int \mbox{\hyperlink{class_kilobot_tracker_acd6a7eb6c33635addc7da18c9c890553}{kb\+Min\+Size}} = 11
+\item 
+int \mbox{\hyperlink{class_kilobot_tracker_af44263d3b5b1eee2aa3bae3d047f5127}{kb\+Max\+Size}} = 22
+\item 
+int \mbox{\hyperlink{class_kilobot_tracker_a4ad470bf947d23a3835d91d93ed4a209}{hough\+Acc}} = 27
+\item 
+int \mbox{\hyperlink{class_kilobot_tracker_aa65ac3f6351b1e884db50dd3bf0618f9}{canny\+Thresh}} = 40
+\item 
+int \mbox{\hyperlink{class_kilobot_tracker_a2bc1e34af8e3024229ecde80ab905735}{max\+IDto\+Check}} = 100
+\item 
+uint \mbox{\hyperlink{class_kilobot_tracker_a9cdc0c66db4ad4c9b92d66e9d167b4ec}{manual\+ID}}
+\item 
+int \mbox{\hyperlink{class_kilobot_tracker_a41879399228f4dd5bc029588157bad14}{height\+\_\+x\+\_\+adj}} = 10
+\item 
+int \mbox{\hyperlink{class_kilobot_tracker_a43110eed41dc8d604130bc41f0c2a5d6}{height\+\_\+y\+\_\+adj}} = 10
+\item 
+float \mbox{\hyperlink{class_kilobot_tracker_a302bd68c77c006e158fe72bd1b42ea36}{red\+LThreshold}} = 0.\+75
+\item 
+float \mbox{\hyperlink{class_kilobot_tracker_adca5ae38d7544adf678850e570772692}{red\+HThreshold}} = 0.\+0
+\item 
+float \mbox{\hyperlink{class_kilobot_tracker_a4dc2a64d03150ae1404820bcabfa2a14}{green\+LThreshold}} = 0.\+56
+\item 
+float \mbox{\hyperlink{class_kilobot_tracker_a7daa3cf75ebfe43ccb2d1e3c94c5ac1e}{green\+HThreshold}} = 0.\+75
+\item 
+float \mbox{\hyperlink{class_kilobot_tracker_a9c965874d11490c9f5ed878ac44a10a7}{blue\+LThreshold}} = 0.\+65
+\item 
+float \mbox{\hyperlink{class_kilobot_tracker_aef97f2adb10a60596b288b5094239cd2}{blue\+HThreshold}} = 0.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_kilobot_tracker}{Kilobot\+Tracker}} class. 
+
+This class contains the code that tracks Kilobots in the live camera or offline video feeds. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_kilobot_tracker_a05d0dc4c6713a422df1872c4e78febb8}\label{class_kilobot_tracker_a05d0dc4c6713a422df1872c4e78febb8}} 
+\index{KilobotTracker@{KilobotTracker}!KilobotTracker@{KilobotTracker}}
+\index{KilobotTracker@{KilobotTracker}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{KilobotTracker()}{KilobotTracker()}}
+{\footnotesize\ttfamily Kilobot\+Tracker\+::\+Kilobot\+Tracker (\begin{DoxyParamCaption}\item[{QPoint}]{small\+Image\+Size = {\ttfamily QPoint(300,300)},  }\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_afcfc53e172f4fc75bde96cbf2408c7ee}\label{class_kilobot_tracker_afcfc53e172f4fc75bde96cbf2408c7ee}} 
+\index{KilobotTracker@{KilobotTracker}!````~KilobotTracker@{$\sim$KilobotTracker}}
+\index{````~KilobotTracker@{$\sim$KilobotTracker}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{$\sim$KilobotTracker()}{~KilobotTracker()}}
+{\footnotesize\ttfamily Kilobot\+Tracker\+::$\sim$\+Kilobot\+Tracker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_kilobot_tracker_af74ef91eb26f556ff62d3e17fc8928bf}\label{class_kilobot_tracker_af74ef91eb26f556ff62d3e17fc8928bf}} 
+\index{KilobotTracker@{KilobotTracker}!activateExpButtons@{activateExpButtons}}
+\index{activateExpButtons@{activateExpButtons}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{activateExpButtons}{activateExpButtons}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::activate\+Exp\+Buttons (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_aedf43e3cc9c4ac2bc110e78eb08a0c7b}\label{class_kilobot_tracker_aedf43e3cc9c4ac2bc110e78eb08a0c7b}} 
+\index{KilobotTracker@{KilobotTracker}!broadcastMessage@{broadcastMessage}}
+\index{broadcastMessage@{broadcastMessage}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{broadcastMessage}{broadcastMessage}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::broadcast\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structkilobot__broadcast}{kilobot\+\_\+broadcast}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a45d0eb19ab8581b341c56c06914aeede}\label{class_kilobot_tracker_a45d0eb19ab8581b341c56c06914aeede}} 
+\index{KilobotTracker@{KilobotTracker}!clearDrawings@{clearDrawings}}
+\index{clearDrawings@{clearDrawings}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{clearDrawings}{clearDrawings}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::clear\+Drawings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a0b39683c90645ebf5f5c1a693a9c3c6d}\label{class_kilobot_tracker_a0b39683c90645ebf5f5c1a693a9c3c6d}} 
+\index{KilobotTracker@{KilobotTracker}!clearDrawingsOnRecordedImage@{clearDrawingsOnRecordedImage}}
+\index{clearDrawingsOnRecordedImage@{clearDrawingsOnRecordedImage}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{clearDrawingsOnRecordedImage}{clearDrawingsOnRecordedImage}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::clear\+Drawings\+On\+Recorded\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a87cec6a11aa912b717652342d0a990c2}\label{class_kilobot_tracker_a87cec6a11aa912b717652342d0a990c2}} 
+\index{KilobotTracker@{KilobotTracker}!clearMsgQueue@{clearMsgQueue}}
+\index{clearMsgQueue@{clearMsgQueue}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{clearMsgQueue}{clearMsgQueue}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::clear\+Msg\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a0f24268c1c436dfd58d737724c2d186a}\label{class_kilobot_tracker_a0f24268c1c436dfd58d737724c2d186a}} 
+\index{KilobotTracker@{KilobotTracker}!detectblue@{detectblue}}
+\index{detectblue@{detectblue}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{detectblue}{detectblue}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::detectblue (\begin{DoxyParamCaption}\item[{bool}]{toggle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a08a995e41bdb294f3e3b0cd1ebc8b383}\label{class_kilobot_tracker_a08a995e41bdb294f3e3b0cd1ebc8b383}} 
+\index{KilobotTracker@{KilobotTracker}!detectgreen@{detectgreen}}
+\index{detectgreen@{detectgreen}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{detectgreen}{detectgreen}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::detectgreen (\begin{DoxyParamCaption}\item[{bool}]{toggle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a275a77bd2cd66fb5b5a88db27a2d2702}\label{class_kilobot_tracker_a275a77bd2cd66fb5b5a88db27a2d2702}} 
+\index{KilobotTracker@{KilobotTracker}!detectred@{detectred}}
+\index{detectred@{detectred}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{detectred}{detectred}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::detectred (\begin{DoxyParamCaption}\item[{bool}]{toggle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a45f3b52fe56dd453708ddedd3d669bac}\label{class_kilobot_tracker_a45f3b52fe56dd453708ddedd3d669bac}} 
+\index{KilobotTracker@{KilobotTracker}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{drawCircle}{drawCircle}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::draw\+Circle (\begin{DoxyParamCaption}\item[{QPointF}]{pos,  }\item[{float}]{r,  }\item[{QColor}]{col,  }\item[{int}]{thickness = {\ttfamily 2},  }\item[{std\+::string}]{text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{transparent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a95156f9a1ae1990da84948f71b89761e}\label{class_kilobot_tracker_a95156f9a1ae1990da84948f71b89761e}} 
+\index{KilobotTracker@{KilobotTracker}!drawCircleOnRecordedImage@{drawCircleOnRecordedImage}}
+\index{drawCircleOnRecordedImage@{drawCircleOnRecordedImage}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{drawCircleOnRecordedImage}{drawCircleOnRecordedImage}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::draw\+Circle\+On\+Recorded\+Image (\begin{DoxyParamCaption}\item[{QPointF}]{pos,  }\item[{float}]{r,  }\item[{QColor}]{col,  }\item[{int}]{thickness = {\ttfamily 2},  }\item[{std\+::string}]{text = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_af882bf241a6a96f75bc8dbf5bce790eb}\label{class_kilobot_tracker_af882bf241a6a96f75bc8dbf5bce790eb}} 
+\index{KilobotTracker@{KilobotTracker}!drawLine@{drawLine}}
+\index{drawLine@{drawLine}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{drawLine}{drawLine}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::draw\+Line (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Point $>$}]{pos,  }\item[{QColor}]{col,  }\item[{int}]{thickness = {\ttfamily 2},  }\item[{std\+::string}]{text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{transparent = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a47e3fc4dec5a66dc640bdf4e1b4a4295}\label{class_kilobot_tracker_a47e3fc4dec5a66dc640bdf4e1b4a4295}} 
+\index{KilobotTracker@{KilobotTracker}!enableRuntimeIdentification@{enableRuntimeIdentification}}
+\index{enableRuntimeIdentification@{enableRuntimeIdentification}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{enableRuntimeIdentification}{enableRuntimeIdentification}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::enable\+Runtime\+Identification (\begin{DoxyParamCaption}\item[{bool}]{toggle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a34bcaf1ebafe7de68949d53de9769c7f}\label{class_kilobot_tracker_a34bcaf1ebafe7de68949d53de9769c7f}} 
+\index{KilobotTracker@{KilobotTracker}!errorMessage@{errorMessage}}
+\index{errorMessage@{errorMessage}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{errorMessage}{errorMessage}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::error\+Message (\begin{DoxyParamCaption}\item[{QString}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+error\+Message Qt signal to update the UI message QLabel 
+
+\mbox{\Hypertarget{class_kilobot_tracker_a7c585a8db2d42f9fd4388e0da24a6402}\label{class_kilobot_tracker_a7c585a8db2d42f9fd4388e0da24a6402}} 
+\index{KilobotTracker@{KilobotTracker}!getInitialKilobotStates@{getInitialKilobotStates}}
+\index{getInitialKilobotStates@{getInitialKilobotStates}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{getInitialKilobotStates}{getInitialKilobotStates}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::get\+Initial\+Kilobot\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a20445867b1115e3c1419ecc36552af8d}\label{class_kilobot_tracker_a20445867b1115e3c1419ecc36552af8d}} 
+\index{KilobotTracker@{KilobotTracker}!identifyKilo@{identifyKilo}}
+\index{identifyKilo@{identifyKilo}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{identifyKilo}{identifyKilo}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::identify\+Kilo (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_ad2b465ec7e5b8cda4bb7d60b02c2eddf}\label{class_kilobot_tracker_ad2b465ec7e5b8cda4bb7d60b02c2eddf}} 
+\index{KilobotTracker@{KilobotTracker}!identifyKilobots@{identifyKilobots}}
+\index{identifyKilobots@{identifyKilobots}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{identifyKilobots}{identifyKilobots}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::identify\+Kilobots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+identify\+Kilobots Find out what IDs the Kilobots have 
+
+\mbox{\Hypertarget{class_kilobot_tracker_a6b074fa6378f1896d5ad4ae7b5623a71}\label{class_kilobot_tracker_a6b074fa6378f1896d5ad4ae7b5623a71}} 
+\index{KilobotTracker@{KilobotTracker}!LOOPiterate@{LOOPiterate}}
+\index{LOOPiterate@{LOOPiterate}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{LOOPiterate}{LOOPiterate}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::\+LOOPiterate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+iterate\+Tracker Use the existing feature matches to stitch the images and track the kilobots 
+
+One loop of the tracker. It is run by Kilobot\+Tracker\+::tick. determine if executing the runtime-\/identification (RTI)\mbox{\Hypertarget{class_kilobot_tracker_a7dcabe716c187806537a614bedd38111}\label{class_kilobot_tracker_a7dcabe716c187806537a614bedd38111}} 
+\index{KilobotTracker@{KilobotTracker}!LOOPstartstop@{LOOPstartstop}}
+\index{LOOPstartstop@{LOOPstartstop}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{LOOPstartstop}{LOOPstartstop}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::\+LOOPstartstop (\begin{DoxyParamCaption}\item[{int}]{stage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+start\+Loop This slot is the target of the timeout on the QTimer tick, and fetches warped images from the thread buffers and stitches them 
+
+@\+Salah\+: check if the compensator and blender is ever used\mbox{\Hypertarget{class_kilobot_tracker_a6ae3a099ffad6bb8cc529e0c7eda19bc}\label{class_kilobot_tracker_a6ae3a099ffad6bb8cc529e0c7eda19bc}} 
+\index{KilobotTracker@{KilobotTracker}!manualIDassignment@{manualIDassignment}}
+\index{manualIDassignment@{manualIDassignment}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{manualIDassignment}{manualIDassignment}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::manual\+IDassignment (\begin{DoxyParamCaption}\item[{bool}]{toggle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a0cc4f44526baaf70189a55a7d7dc4758}\label{class_kilobot_tracker_a0cc4f44526baaf70189a55a7d7dc4758}} 
+\index{KilobotTracker@{KilobotTracker}!manuallyassignID@{manuallyassignID}}
+\index{manuallyassignID@{manuallyassignID}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{manuallyassignID}{manuallyassignID}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::manuallyassign\+ID (\begin{DoxyParamCaption}\item[{QPoint}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_aa671e7eeb2960efa2862880f25a136b6}\label{class_kilobot_tracker_aa671e7eeb2960efa2862880f25a136b6}} 
+\index{KilobotTracker@{KilobotTracker}!maxIDtoTry@{maxIDtoTry}}
+\index{maxIDtoTry@{maxIDtoTry}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{maxIDtoTry}{maxIDtoTry}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::max\+IDto\+Try (\begin{DoxyParamCaption}\item[{QString}]{max\+Id\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a8d658556b55241a1bcc36203f01bcef1}\label{class_kilobot_tracker_a8d658556b55241a1bcc36203f01bcef1}} 
+\index{KilobotTracker@{KilobotTracker}!RefreshDisplayedImage@{RefreshDisplayedImage}}
+\index{RefreshDisplayedImage@{RefreshDisplayedImage}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{RefreshDisplayedImage}{RefreshDisplayedImage}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::\+Refresh\+Displayed\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Refresh\+Displayed\+Image Refresh the displayed image on the GUI. 
+
+\mbox{\Hypertarget{class_kilobot_tracker_ab9a4422b9f4d213227bdccc2d0762266}\label{class_kilobot_tracker_ab9a4422b9f4d213227bdccc2d0762266}} 
+\index{KilobotTracker@{KilobotTracker}!saveImage@{saveImage}}
+\index{saveImage@{saveImage}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{saveImage}{saveImage}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::save\+Image (\begin{DoxyParamCaption}\item[{QString}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a09f4599f1c06d61abce4acd721f6752e}\label{class_kilobot_tracker_a09f4599f1c06d61abce4acd721f6752e}} 
+\index{KilobotTracker@{KilobotTracker}!saveVideoFrames@{saveVideoFrames}}
+\index{saveVideoFrames@{saveVideoFrames}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{saveVideoFrames}{saveVideoFrames}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::save\+Video\+Frames (\begin{DoxyParamCaption}\item[{QString}]{file,  }\item[{unsigned int}]{numofframes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a1594c73c327bdc61616b2de29472a8fa}\label{class_kilobot_tracker_a1594c73c327bdc61616b2de29472a8fa}} 
+\index{KilobotTracker@{KilobotTracker}!setCannyThresh@{setCannyThresh}}
+\index{setCannyThresh@{setCannyThresh}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setCannyThresh}{setCannyThresh}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Canny\+Thresh (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a2ffdf1845cf3d5923c36ccee3edb8c2e}\label{class_kilobot_tracker_a2ffdf1845cf3d5923c36ccee3edb8c2e}} 
+\index{KilobotTracker@{KilobotTracker}!setFlipangle@{setFlipangle}}
+\index{setFlipangle@{setFlipangle}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setFlipangle}{setFlipangle}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Flipangle (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_ab09c029645d35c9b6bab5c2ad8e0cb9e}\label{class_kilobot_tracker_ab09c029645d35c9b6bab5c2ad8e0cb9e}} 
+\index{KilobotTracker@{KilobotTracker}!setHeightXSlider@{setHeightXSlider}}
+\index{setHeightXSlider@{setHeightXSlider}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setHeightXSlider}{setHeightXSlider}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Height\+XSlider (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_ab5ea9b391bd9516587c1cd69337b5032}\label{class_kilobot_tracker_ab5ea9b391bd9516587c1cd69337b5032}} 
+\index{KilobotTracker@{KilobotTracker}!setHeightYSlider@{setHeightYSlider}}
+\index{setHeightYSlider@{setHeightYSlider}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setHeightYSlider}{setHeightYSlider}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Height\+YSlider (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_abfd44326612b1c39cc2a1175f81f9cf8}\label{class_kilobot_tracker_abfd44326612b1c39cc2a1175f81f9cf8}} 
+\index{KilobotTracker@{KilobotTracker}!setHoughAcc@{setHoughAcc}}
+\index{setHoughAcc@{setHoughAcc}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setHoughAcc}{setHoughAcc}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Hough\+Acc (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a7381eae4946632339f893afaf1e2ee3a}\label{class_kilobot_tracker_a7381eae4946632339f893afaf1e2ee3a}} 
+\index{KilobotTracker@{KilobotTracker}!setKbMax@{setKbMax}}
+\index{setKbMax@{setKbMax}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setKbMax}{setKbMax}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Kb\+Max (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a9c1b9abff28e448859c30a61f922d904}\label{class_kilobot_tracker_a9c1b9abff28e448859c30a61f922d904}} 
+\index{KilobotTracker@{KilobotTracker}!setKbMin@{setKbMin}}
+\index{setKbMin@{setKbMin}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setKbMin}{setKbMin}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Kb\+Min (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a531c42e02ac4eddaf45e2bcecf75ba7a}\label{class_kilobot_tracker_a531c42e02ac4eddaf45e2bcecf75ba7a}} 
+\index{KilobotTracker@{KilobotTracker}!setManualID@{setManualID}}
+\index{setManualID@{setManualID}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setManualID}{setManualID}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Manual\+ID (\begin{DoxyParamCaption}\item[{QString}]{man\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a5f00c9fe37df5e84d8baef8d2ba60962}\label{class_kilobot_tracker_a5f00c9fe37df5e84d8baef8d2ba60962}} 
+\index{KilobotTracker@{KilobotTracker}!setRuntimeIdentificationLock@{setRuntimeIdentificationLock}}
+\index{setRuntimeIdentificationLock@{setRuntimeIdentificationLock}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setRuntimeIdentificationLock}{setRuntimeIdentificationLock}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Runtime\+Identification\+Lock (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_ac65a2b32327d6af29a380467dc6bdb79}\label{class_kilobot_tracker_ac65a2b32327d6af29a380467dc6bdb79}} 
+\index{KilobotTracker@{KilobotTracker}!setSourceType@{setSourceType}}
+\index{setSourceType@{setSourceType}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setSourceType}{setSourceType}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Source\+Type (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_abb27478d2eea0a5e69c88d8aae0fe8fb}\label{class_kilobot_tracker_abb27478d2eea0a5e69c88d8aae0fe8fb}} 
+\index{KilobotTracker@{KilobotTracker}!setStitchedImage@{setStitchedImage}}
+\index{setStitchedImage@{setStitchedImage}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setStitchedImage}{setStitchedImage}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Stitched\+Image (\begin{DoxyParamCaption}\item[{QPixmap}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a2deed064ea035cb9d9f8012e1c1d8963}\label{class_kilobot_tracker_a2deed064ea035cb9d9f8012e1c1d8963}} 
+\index{KilobotTracker@{KilobotTracker}!setTrackingType@{setTrackingType}}
+\index{setTrackingType@{setTrackingType}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setTrackingType}{setTrackingType}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Tracking\+Type (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_add0f8bc09487bf46a44f2b403335baf8}\label{class_kilobot_tracker_add0f8bc09487bf46a44f2b403335baf8}} 
+\index{KilobotTracker@{KilobotTracker}!SETUPfindKilobots@{SETUPfindKilobots}}
+\index{SETUPfindKilobots@{SETUPfindKilobots}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{SETUPfindKilobots}{SETUPfindKilobots}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::\+SETUPfind\+Kilobots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+find\+Kilobots Find the locations of Kilobots in the stitched image 
+
+\mbox{\Hypertarget{class_kilobot_tracker_a073e9a11d9ca05afb39364f4426f69dc}\label{class_kilobot_tracker_a073e9a11d9ca05afb39364f4426f69dc}} 
+\index{KilobotTracker@{KilobotTracker}!SETUPloadCalibration@{SETUPloadCalibration}}
+\index{SETUPloadCalibration@{SETUPloadCalibration}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{SETUPloadCalibration}{SETUPloadCalibration}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::\+SETUPload\+Calibration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+load\+Calibration Load the calibration matrices from an Open\+CV File\+Storage format 
+
+\mbox{\Hypertarget{class_kilobot_tracker_a95d6edd070f9b0a0ef3f3c04ed09b898}\label{class_kilobot_tracker_a95d6edd070f9b0a0ef3f3c04ed09b898}} 
+\index{KilobotTracker@{KilobotTracker}!setVideoDir@{setVideoDir}}
+\index{setVideoDir@{setVideoDir}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{setVideoDir}{setVideoDir}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::set\+Video\+Dir (\begin{DoxyParamCaption}\item[{QString}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+
+
+set\+Video\+Dir 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Set the path to video files for tracking \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_kilobot_tracker_a2abc5181ee91714cddf2348b36e3ed7f}\label{class_kilobot_tracker_a2abc5181ee91714cddf2348b36e3ed7f}} 
+\index{KilobotTracker@{KilobotTracker}!showIds@{showIds}}
+\index{showIds@{showIds}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{showIds}{showIds}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::show\+Ids (\begin{DoxyParamCaption}\item[{bool}]{toggle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+
+
+show\+Ids 
+
+
+\begin{DoxyParams}{Parameters}
+{\em toggle} & \\
+\hline
+\end{DoxyParams}
+Accessor to allow drawing of Kilo\+Bot IDs \mbox{\Hypertarget{class_kilobot_tracker_ae8a89772e3da889690baaeac2eba0f7b}\label{class_kilobot_tracker_ae8a89772e3da889690baaeac2eba0f7b}} 
+\index{KilobotTracker@{KilobotTracker}!startExperiment@{startExperiment}}
+\index{startExperiment@{startExperiment}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{startExperiment}{startExperiment}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::start\+Experiment (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_ac3549b575a12dc07cc7119864e43a215}\label{class_kilobot_tracker_ac3549b575a12dc07cc7119864e43a215}} 
+\index{KilobotTracker@{KilobotTracker}!stopExperiment@{stopExperiment}}
+\index{stopExperiment@{stopExperiment}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{stopExperiment}{stopExperiment}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::stop\+Experiment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_abf69a4aac9ecba4290d370e0e37cb7fd}\label{class_kilobot_tracker_abf69a4aac9ecba4290d370e0e37cb7fd}} 
+\index{KilobotTracker@{KilobotTracker}!toggleExpButton@{toggleExpButton}}
+\index{toggleExpButton@{toggleExpButton}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{toggleExpButton}{toggleExpButton}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::toggle\+Exp\+Button (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a6b30061f2ae833dc53f5662d012c5943}\label{class_kilobot_tracker_a6b30061f2ae833dc53f5662d012c5943}} 
+\index{KilobotTracker@{KilobotTracker}!updateExperimentBroadcastingState@{updateExperimentBroadcastingState}}
+\index{updateExperimentBroadcastingState@{updateExperimentBroadcastingState}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{updateExperimentBroadcastingState}{updateExperimentBroadcastingState}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::update\+Experiment\+Broadcasting\+State (\begin{DoxyParamCaption}\item[{bool}]{Broadcasting\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a14107750dfe6b260301c1fe115a5e8c5}\label{class_kilobot_tracker_a14107750dfe6b260301c1fe115a5e8c5}} 
+\index{KilobotTracker@{KilobotTracker}!updateKilobotStates@{updateKilobotStates}}
+\index{updateKilobotStates@{updateKilobotStates}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{updateKilobotStates}{updateKilobotStates}}
+{\footnotesize\ttfamily void Kilobot\+Tracker\+::update\+Kilobot\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_kilobot_tracker_aef97f2adb10a60596b288b5094239cd2}\label{class_kilobot_tracker_aef97f2adb10a60596b288b5094239cd2}} 
+\index{KilobotTracker@{KilobotTracker}!blueHThreshold@{blueHThreshold}}
+\index{blueHThreshold@{blueHThreshold}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{blueHThreshold}{blueHThreshold}}
+{\footnotesize\ttfamily float Kilobot\+Tracker\+::blue\+HThreshold = 0.\+0}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a9c965874d11490c9f5ed878ac44a10a7}\label{class_kilobot_tracker_a9c965874d11490c9f5ed878ac44a10a7}} 
+\index{KilobotTracker@{KilobotTracker}!blueLThreshold@{blueLThreshold}}
+\index{blueLThreshold@{blueLThreshold}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{blueLThreshold}{blueLThreshold}}
+{\footnotesize\ttfamily float Kilobot\+Tracker\+::blue\+LThreshold = 0.\+65}
+
+\mbox{\Hypertarget{class_kilobot_tracker_aa65ac3f6351b1e884db50dd3bf0618f9}\label{class_kilobot_tracker_aa65ac3f6351b1e884db50dd3bf0618f9}} 
+\index{KilobotTracker@{KilobotTracker}!cannyThresh@{cannyThresh}}
+\index{cannyThresh@{cannyThresh}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{cannyThresh}{cannyThresh}}
+{\footnotesize\ttfamily int Kilobot\+Tracker\+::canny\+Thresh = 40}
+
+\mbox{\Hypertarget{class_kilobot_tracker_ac3ee1af9cc09960d343864024779f5d3}\label{class_kilobot_tracker_ac3ee1af9cc09960d343864024779f5d3}} 
+\index{KilobotTracker@{KilobotTracker}!expt@{expt}}
+\index{expt@{expt}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{expt}{expt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_kilobot_experiment}{Kilobot\+Experiment}}$\ast$ Kilobot\+Tracker\+::expt}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a7daa3cf75ebfe43ccb2d1e3c94c5ac1e}\label{class_kilobot_tracker_a7daa3cf75ebfe43ccb2d1e3c94c5ac1e}} 
+\index{KilobotTracker@{KilobotTracker}!greenHThreshold@{greenHThreshold}}
+\index{greenHThreshold@{greenHThreshold}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{greenHThreshold}{greenHThreshold}}
+{\footnotesize\ttfamily float Kilobot\+Tracker\+::green\+HThreshold = 0.\+75}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a4dc2a64d03150ae1404820bcabfa2a14}\label{class_kilobot_tracker_a4dc2a64d03150ae1404820bcabfa2a14}} 
+\index{KilobotTracker@{KilobotTracker}!greenLThreshold@{greenLThreshold}}
+\index{greenLThreshold@{greenLThreshold}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{greenLThreshold}{greenLThreshold}}
+{\footnotesize\ttfamily float Kilobot\+Tracker\+::green\+LThreshold = 0.\+56}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a41879399228f4dd5bc029588157bad14}\label{class_kilobot_tracker_a41879399228f4dd5bc029588157bad14}} 
+\index{KilobotTracker@{KilobotTracker}!height\_x\_adj@{height\_x\_adj}}
+\index{height\_x\_adj@{height\_x\_adj}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{height\_x\_adj}{height\_x\_adj}}
+{\footnotesize\ttfamily int Kilobot\+Tracker\+::height\+\_\+x\+\_\+adj = 10}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a43110eed41dc8d604130bc41f0c2a5d6}\label{class_kilobot_tracker_a43110eed41dc8d604130bc41f0c2a5d6}} 
+\index{KilobotTracker@{KilobotTracker}!height\_y\_adj@{height\_y\_adj}}
+\index{height\_y\_adj@{height\_y\_adj}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{height\_y\_adj}{height\_y\_adj}}
+{\footnotesize\ttfamily int Kilobot\+Tracker\+::height\+\_\+y\+\_\+adj = 10}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a4ad470bf947d23a3835d91d93ed4a209}\label{class_kilobot_tracker_a4ad470bf947d23a3835d91d93ed4a209}} 
+\index{KilobotTracker@{KilobotTracker}!houghAcc@{houghAcc}}
+\index{houghAcc@{houghAcc}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{houghAcc}{houghAcc}}
+{\footnotesize\ttfamily int Kilobot\+Tracker\+::hough\+Acc = 27}
+
+\mbox{\Hypertarget{class_kilobot_tracker_af44263d3b5b1eee2aa3bae3d047f5127}\label{class_kilobot_tracker_af44263d3b5b1eee2aa3bae3d047f5127}} 
+\index{KilobotTracker@{KilobotTracker}!kbMaxSize@{kbMaxSize}}
+\index{kbMaxSize@{kbMaxSize}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{kbMaxSize}{kbMaxSize}}
+{\footnotesize\ttfamily int Kilobot\+Tracker\+::kb\+Max\+Size = 22}
+
+\mbox{\Hypertarget{class_kilobot_tracker_acd6a7eb6c33635addc7da18c9c890553}\label{class_kilobot_tracker_acd6a7eb6c33635addc7da18c9c890553}} 
+\index{KilobotTracker@{KilobotTracker}!kbMinSize@{kbMinSize}}
+\index{kbMinSize@{kbMinSize}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{kbMinSize}{kbMinSize}}
+{\footnotesize\ttfamily int Kilobot\+Tracker\+::kb\+Min\+Size = 11}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a9cdc0c66db4ad4c9b92d66e9d167b4ec}\label{class_kilobot_tracker_a9cdc0c66db4ad4c9b92d66e9d167b4ec}} 
+\index{KilobotTracker@{KilobotTracker}!manualID@{manualID}}
+\index{manualID@{manualID}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{manualID}{manualID}}
+{\footnotesize\ttfamily uint Kilobot\+Tracker\+::manual\+ID}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a2bc1e34af8e3024229ecde80ab905735}\label{class_kilobot_tracker_a2bc1e34af8e3024229ecde80ab905735}} 
+\index{KilobotTracker@{KilobotTracker}!maxIDtoCheck@{maxIDtoCheck}}
+\index{maxIDtoCheck@{maxIDtoCheck}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{maxIDtoCheck}{maxIDtoCheck}}
+{\footnotesize\ttfamily int Kilobot\+Tracker\+::max\+IDto\+Check = 100}
+
+\mbox{\Hypertarget{class_kilobot_tracker_adca5ae38d7544adf678850e570772692}\label{class_kilobot_tracker_adca5ae38d7544adf678850e570772692}} 
+\index{KilobotTracker@{KilobotTracker}!redHThreshold@{redHThreshold}}
+\index{redHThreshold@{redHThreshold}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{redHThreshold}{redHThreshold}}
+{\footnotesize\ttfamily float Kilobot\+Tracker\+::red\+HThreshold = 0.\+0}
+
+\mbox{\Hypertarget{class_kilobot_tracker_a302bd68c77c006e158fe72bd1b42ea36}\label{class_kilobot_tracker_a302bd68c77c006e158fe72bd1b42ea36}} 
+\index{KilobotTracker@{KilobotTracker}!redLThreshold@{redLThreshold}}
+\index{redLThreshold@{redLThreshold}!KilobotTracker@{KilobotTracker}}
+\doxysubsubsection{\texorpdfstring{redLThreshold}{redLThreshold}}
+{\footnotesize\ttfamily float Kilobot\+Tracker\+::red\+LThreshold = 0.\+75}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/\mbox{\hyperlink{kilobottracker_8h}{kilobottracker.\+h}}\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/\mbox{\hyperlink{kilobottracker_8cpp}{kilobottracker.\+cpp}}\end{DoxyCompactItemize}

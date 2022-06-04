@@ -1,0 +1,104 @@
+\hypertarget{kilobotexperiment_8h_source}{}\doxysection{kilobotexperiment.\+h}
+\label{kilobotexperiment_8h_source}\index{/Users/peterjanku/SourcesCpp/KilobotArena/toolchain/kilobotexperiment.h@{/Users/peterjanku/SourcesCpp/KilobotArena/toolchain/kilobotexperiment.h}}
+\mbox{\hyperlink{kilobotexperiment_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef KILOBOTEXPERIMENT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define KILOBOTEXPERIMENT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QDebug>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QLayout>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobotenvironment_8h}{kilobotenvironment.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{kilobot_8h}{kilobot.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <QColor>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <opencv2/core/core.hpp>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_kilobot_experiment}{KilobotExperiment}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     Q\_OBJECT}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_kilobot_experiment_a6f01bc03edf71f07bd121ed5717fc513}{KilobotExperiment}}() \{\}}
+\DoxyCodeLine{17     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_kilobot_experiment_a7c812fa4a0ee309919628d990d80d76b}{\string~KilobotExperiment}}()}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_kilobot_experiment_a74ad953b3997811b57d9e45f79f1c93f}{serviceInterval}} = 100; \textcolor{comment}{// ms}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{virtual} QWidget * \mbox{\hyperlink{class_kilobot_experiment_a5aed39899d0b5279631390bf9e04578d}{createGUI}}() \{\textcolor{keywordflow}{return} NULL;\}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 signals:}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a52d4d4c639ff26a90b0f9fd3fda59aa6}{updateKilobotStates}}();}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a9af0858fe48c5570c79768b65ca912f6}{getInitialKilobotStates}}();}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_ac4a56cc7730910837a26696cb87fdd66}{experimentComplete}}();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a1313e1527fc2b99e1a01a28e87df276a}{saveImage}}(QString);}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a1c1f32950e244c1c87f25d0b0006df30}{saveVideoFrames}}(QString,\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int});}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a3e66bf1b4887400ebe9063c762d2e3f0}{signalKilobot}}(\mbox{\hyperlink{structkilobot__message}{kilobot\_message}});}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a194f42044aba491b64dc9ee9f459c814}{broadcastMessage}}(\mbox{\hyperlink{structkilobot__broadcast}{kilobot\_broadcast}});}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a79c769a8ab1653d762b5cd0ff739e2be}{setTrackingType}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_aa2c5182f1fdfb604a469c23ab610ad00}{sendBroadcastingState}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{comment}{// drawing}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a8b3027234b7a6504edd2cff6d5deb796}{drawCircle}}(QPointF pos, \textcolor{keywordtype}{float} r, QColor col, \textcolor{keywordtype}{int} thickness, std::string text, \textcolor{keywordtype}{bool} transparent=\textcolor{keyword}{false});}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_aff0ed78458d646c5bddb37a9628c8157}{drawLine}}(std::vector<cv::Point> pos, QColor col, \textcolor{keywordtype}{int} thickness, std::string text, \textcolor{keywordtype}{bool} transparent);}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a217b91dfb778a50d9a1f52c1ffa6ae4a}{clearDrawings}}();}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_ac66762ad0f6112d60fdc4dbebfaa0e44}{drawCircleOnRecordedImage}}(QPointF pos, \textcolor{keywordtype}{float} r, QColor col, \textcolor{keywordtype}{int} thickness, std::string text);}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a39786f332b978aff9a04d56808af2eb5}{clearDrawingsOnRecordedImage}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a44b426a454d32fc7ea2c9b952e88e14a}{initialise}}(\textcolor{keywordtype}{bool}) = 0;}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a03bdc4030e09fd0fd89fa46bd8b6498a}{stopExperiment}}() \{\}}
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_aa6fbb3f8fe56eaac268264d040fe8d27}{run}}() \{\}}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_afa9db851b14b2363c1afc7075117161a}{setRuntimeIdentificationLock}}(\textcolor{keywordtype}{bool} lock) \{this-\/>\mbox{\hyperlink{class_kilobot_experiment_aa5bb35c7c12e4863be4794a90fc54026}{runtimeIdentificationLock}} = lock;\}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_aa8f0b4888e5e4ee50a75ca68e82d6786}{GetMsgsQueueState}}(\textcolor{keywordtype}{bool} state)\{ \mbox{\hyperlink{class_kilobot_experiment_ac972a3ba2c2a7943f8e0096526985329}{ThereIsMsgsToSend}}=state;\}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a657bacdae085e0bfd79ae28ec4e979b2}{updateStateRequiredCode}}(\mbox{\hyperlink{class_kilobot}{Kilobot}}* kilobot, \mbox{\hyperlink{class_kilobot}{Kilobot}} kilobotCopy)}
+\DoxyCodeLine{59     \{}
+\DoxyCodeLine{60         \textcolor{comment}{//qDebug() << "{}pre set state 2"{};}}
+\DoxyCodeLine{61         \textcolor{comment}{// store pointer for connecting}}
+\DoxyCodeLine{62         this-\/>currKilobot = kilobot;}
+\DoxyCodeLine{63         \mbox{\hyperlink{class_kilobot_experiment_a6fa9408634cf63adffeecd54e08fe80c}{updateKilobotState}}(kilobotCopy);}
+\DoxyCodeLine{64     \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a127225308081a41f51f7124c0f71f965}{setupInitialStateRequiredCode}}(\mbox{\hyperlink{class_kilobot}{Kilobot}}* kilobot, \mbox{\hyperlink{class_kilobot}{Kilobot}} kilobotCopy)}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75         \textcolor{comment}{//qDebug() << "{}pre set state"{};}}
+\DoxyCodeLine{76         \textcolor{comment}{// store pointer for connecting}}
+\DoxyCodeLine{77         this-\/>currKilobot = kilobot;}
+\DoxyCodeLine{78         \textcolor{comment}{// switch the signal from setup to standard}}
+\DoxyCodeLine{79         kilobot-\/>disconnect(SIGNAL(sendUpdateToExperiment(\mbox{\hyperlink{class_kilobot}{Kilobot}}*,\mbox{\hyperlink{class_kilobot}{Kilobot}})));}
+\DoxyCodeLine{80         connect(kilobot,SIGNAL(sendUpdateToExperiment(\mbox{\hyperlink{class_kilobot}{Kilobot}}*,\mbox{\hyperlink{class_kilobot}{Kilobot}})), \textcolor{keyword}{this}, SLOT(\mbox{\hyperlink{class_kilobot_experiment_a657bacdae085e0bfd79ae28ec4e979b2}{updateStateRequiredCode}}(\mbox{\hyperlink{class_kilobot}{Kilobot}}*,\mbox{\hyperlink{class_kilobot}{Kilobot}})));}
+\DoxyCodeLine{81         \mbox{\hyperlink{class_kilobot_experiment_a1c12923e0554cb2c0b2736522b833b3b}{setupInitialKilobotState}}(kilobotCopy);}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_acd1a2e959ff20963d084af066e7b9c7f}{signalKilobotExpt}}(\mbox{\hyperlink{structkilobot__message}{kilobot\_message}} msg)}
+\DoxyCodeLine{85     \{}
+\DoxyCodeLine{86         emit \mbox{\hyperlink{class_kilobot_experiment_a3e66bf1b4887400ebe9063c762d2e3f0}{signalKilobot}}(msg);}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{90     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_kilobot_experiment_abea4a83a161e402ccdbca8645b12351f}{time}};}
+\DoxyCodeLine{91     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_kilobot_experiment_aa5bb35c7c12e4863be4794a90fc54026}{runtimeIdentificationLock}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{92     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_kilobot_experiment_ac972a3ba2c2a7943f8e0096526985329}{ThereIsMsgsToSend}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a08d02eb2f1364c72418f563f920f053e}{setCurrentKilobotEnvironment}}(\mbox{\hyperlink{class_kilobot_environment}{KilobotEnvironment}} * environment) \{}
+\DoxyCodeLine{95         \textcolor{keywordflow}{if} (currKilobot != NULL \&\& environment != NULL) \{}
+\DoxyCodeLine{96             QObject::disconnect(currKilobot,SIGNAL(sendUpdateToHardware(\mbox{\hyperlink{class_kilobot}{Kilobot}})), 0, 0);}
+\DoxyCodeLine{97             QObject::connect(currKilobot,SIGNAL(sendUpdateToHardware(\mbox{\hyperlink{class_kilobot}{Kilobot}})), environment, SLOT(updateVirtualSensor(\mbox{\hyperlink{class_kilobot}{Kilobot}})));}
+\DoxyCodeLine{98         \}}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a6fa9408634cf63adffeecd54e08fe80c}{updateKilobotState}}(\mbox{\hyperlink{class_kilobot}{Kilobot}}) \{\} \textcolor{comment}{// provided in derived class to implement experiment logic for Kilobot state updates}}
+\DoxyCodeLine{102     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kilobot_experiment_a1c12923e0554cb2c0b2736522b833b3b}{setupInitialKilobotState}}(\mbox{\hyperlink{class_kilobot}{Kilobot}}) \{\}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keyword}{private}:}
+\DoxyCodeLine{105     \mbox{\hyperlink{class_kilobot}{Kilobot}} * currKilobot = NULL;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// KILOBOTEXPERIMENT\_H}}
+
+\end{DoxyCode}

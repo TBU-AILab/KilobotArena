@@ -11,9 +11,6 @@ void dragZoomQLabel::mousePressEvent(QMouseEvent *ev)
 {
 
     if (ev->button() == Qt::LeftButton) {
-        this->isDragged = true;
-        this->setMouseTracking(true);
-        emit moving(QPoint(ev->localPos().x(),ev->localPos().y()));
         ev->accept();
     }
 
@@ -21,10 +18,8 @@ void dragZoomQLabel::mousePressEvent(QMouseEvent *ev)
 
 void dragZoomQLabel::mouseMoveEvent(QMouseEvent *ev)
 {
-
-    if (this->isDragged) {
-        emit moving(QPoint(ev->localPos().x(),ev->localPos().y()));
-    }
+    this->isDragged = true;
+    emit moving(QPoint(ev->localPos().x(),ev->localPos().y()));
     ev->accept();
 
 }
@@ -32,10 +27,14 @@ void dragZoomQLabel::mouseMoveEvent(QMouseEvent *ev)
 void dragZoomQLabel::mouseReleaseEvent(QMouseEvent *ev)
 {
 
+
     if (ev->button() == Qt::LeftButton) {
-        this->isDragged = false;
-        emit this->moveDone();
-        this->setMouseTracking(false);
+        if (this->isDragged){
+            this->isDragged = false;
+            emit this->moveDone();
+        }else{
+            emit this->clicked(QPoint(ev->localPos().x(),ev->localPos().y()));
+        }
         ev->accept();
     }
 

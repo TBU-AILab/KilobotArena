@@ -18,6 +18,7 @@ protected slots:
 signals:
     void moving(QPoint);
     void moveDone();
+    void clicked(QPoint);
 
 private:
     bool isDragged = false;

@@ -1,0 +1,53 @@
+\hypertarget{packet_8h_source}{}\doxysection{packet.\+h}
+\label{packet_8h_source}\index{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/packet.h@{/Users/peterjanku/SourcesCpp/KilobotArena/ohc/packet.h}}
+\mbox{\hyperlink{packet_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// 01010101}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PAGE\_SIZE 128}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define PACKET\_HEADER 0x55}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define PACKET\_SIZE   PAGE\_SIZE+4}}
+\DoxyCodeLine{5 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{6     \mbox{\hyperlink{packet_8h_abc6126af1d45847bc59afa0aa3216b04a16d8c37a6fa23920d43f84da10d2da3c}{PACKET\_STOP}},}
+\DoxyCodeLine{7     \mbox{\hyperlink{packet_8h_abc6126af1d45847bc59afa0aa3216b04a443050f9948affe281a3d750663510c5}{PACKET\_LEDTOGGLE}},}
+\DoxyCodeLine{8     \mbox{\hyperlink{packet_8h_abc6126af1d45847bc59afa0aa3216b04a88e577e15d3e242145ae569904acabe6}{PACKET\_FORWARDMSG}},}
+\DoxyCodeLine{9     \mbox{\hyperlink{packet_8h_abc6126af1d45847bc59afa0aa3216b04aa12ba511d6ae52e07b572f5e611d5b89}{PACKET\_FORWARDRAWMSG}},}
+\DoxyCodeLine{10     \mbox{\hyperlink{packet_8h_abc6126af1d45847bc59afa0aa3216b04a4f34da9f6e8bc0e4176b67eb378b4748}{PACKET\_BOOTPAGE}}}
+\DoxyCodeLine{11 \};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{14     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557ca50d1448013c6f17125caee18aa418af7}{NORMAL}} = 0,}
+\DoxyCodeLine{15     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557ca171ede81b49deebf3e342cdf41c62182}{GPS}},}
+\DoxyCodeLine{16     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557caaa5259d84d06214a7b0503d636790465}{SPECIAL}} = 0x80,}
+\DoxyCodeLine{17     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557caee429d2b18e984f9be3d8a35ab58f77f}{BOOT}} = 0x80,}
+\DoxyCodeLine{18     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557cad1f024f68dbdcc052efa3fff9f564d4f}{BOOTPGM\_PAGE}},}
+\DoxyCodeLine{19     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557ca39aac30af5c2c5326c4f1760738013f0}{BOOTPGM\_SIZE}},}
+\DoxyCodeLine{20     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557ca589b7d94a3d91d145720e2fed0eb3a05}{RESET}},}
+\DoxyCodeLine{21     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557cad6137abebe4fdc59e2f0f2c84bdbe3fa}{SLEEP}},}
+\DoxyCodeLine{22     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557ca9204d962c01740d01d1ea40b219a0472}{WAKEUP}},}
+\DoxyCodeLine{23     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557caea7debd6c1f7cf2d27b8774acac4109f}{CHARGE}},}
+\DoxyCodeLine{24     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557ca9889316c6fd4ad6218289003f5d63291}{VOLTAGE}},}
+\DoxyCodeLine{25     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557ca439c688a4e9ed31638d5922a50680a8e}{RUN}},}
+\DoxyCodeLine{26     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557cafdcaa8000ddd111efee21298a5e68c47}{READUID}},}
+\DoxyCodeLine{27     \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557ca8f0fcd9890ac7f49b178f78e2d60ed57}{CALIB}}}
+\DoxyCodeLine{28 \} \mbox{\hyperlink{packet_8h_a78b97fef55da786a15a849fd9d7e557c}{message\_type\_t}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{31     \mbox{\hyperlink{packet_8h_adc29c2ff13d900c2f185ee95427fb06ca1693e42d2928e7604dfc963f5fe17e4b}{CALIB\_SAVE}},}
+\DoxyCodeLine{32     \mbox{\hyperlink{packet_8h_adc29c2ff13d900c2f185ee95427fb06ca28878c69f78ea6d59a299188fbd863e8}{CALIB\_UID}},}
+\DoxyCodeLine{33     \mbox{\hyperlink{packet_8h_adc29c2ff13d900c2f185ee95427fb06ca2867a987c08d194ea7dfb5c342554110}{CALIB\_TURN\_LEFT}},}
+\DoxyCodeLine{34     \mbox{\hyperlink{packet_8h_adc29c2ff13d900c2f185ee95427fb06caa687dcbfd345cdaf6f4863f1662bc38c}{CALIB\_TURN\_RIGHT}},}
+\DoxyCodeLine{35     \mbox{\hyperlink{packet_8h_adc29c2ff13d900c2f185ee95427fb06cacde0ed9883b2485ac3bc4e9254d0b9e6}{CALIB\_STRAIGHT}}}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#pragma pack(1)}}
+\DoxyCodeLine{39 \textcolor{keyword}{typedef}  \textcolor{keyword}{struct  }\mbox{\hyperlink{packet_8h_ad09246453a4dabd919c7541484046a87}{\_\_attribute\_\_}}((\_\_packed\_\_)) \{}
+\DoxyCodeLine{40     uint8\_t mode;}
+\DoxyCodeLine{41     uint16\_t uid;}
+\DoxyCodeLine{42     uint8\_t turn\_left;}
+\DoxyCodeLine{43     uint8\_t turn\_right;}
+\DoxyCodeLine{44     uint8\_t straight\_left;}
+\DoxyCodeLine{45     uint8\_t straight\_right;}
+\DoxyCodeLine{46     uint16\_t unused;}
+\DoxyCodeLine{47 \} \mbox{\hyperlink{packet_8h_af5b2fcdb9c3db201e3bd3764ce069d04}{calibmsg\_t}};}
+
+\end{DoxyCode}

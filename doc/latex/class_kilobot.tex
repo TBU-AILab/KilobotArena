@@ -1,0 +1,188 @@
+\hypertarget{class_kilobot}{}\doxysection{Kilobot Class Reference}
+\label{class_kilobot}\index{Kilobot@{Kilobot}}
+
+
+{\ttfamily \#include $<$kilobot.\+h$>$}
+
+Inheritance diagram for Kilobot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_kilobot}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_kilobot_afa7f9eb8140ed4ce9f8bddf79f8d7ecc}{send\+Update\+To\+Hardware}} (\mbox{\hyperlink{class_kilobot}{Kilobot}})
+\item 
+void \mbox{\hyperlink{class_kilobot_a54cbec5d74f4db73f8b5bb4dc3ca03da}{send\+Update\+To\+Experiment}} (\mbox{\hyperlink{class_kilobot}{Kilobot}} $\ast$, \mbox{\hyperlink{class_kilobot}{Kilobot}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_kilobot_a898d0b4b0960eb53077127f608dc2b1e}{Kilobot}} (\mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\+\_\+id}} identifier, QPointF position, QPointF velocity, \mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\+\_\+colour}} colour\+Values)
+\item 
+\mbox{\hyperlink{class_kilobot_ae81b23e309de92ac3980282bb47484b8}{Kilobot}} ()
+\item 
+\mbox{\hyperlink{class_kilobot_ae7d78bd9c705039d419f1fbcf8b44465}{$\sim$\+Kilobot}} ()
+\item 
+\mbox{\hyperlink{class_kilobot_a50f7983bd39f2ebca45bb898e2f52f18}{Kilobot}} (const \mbox{\hyperlink{class_kilobot}{Kilobot}} \&other)
+\item 
+\mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\+\_\+id}} \mbox{\hyperlink{class_kilobot_a338105da2e8c82c44e272351a904b6cf}{get\+ID}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_ab8469021f60c879b58bf0bb549afc84e}{set\+ID}} (\mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\+\_\+id}})
+\item 
+QPointF \mbox{\hyperlink{class_kilobot_ac0841f5c540bb6b265cf4ade7a02261a}{get\+Position}} ()
+\item 
+QPointF \mbox{\hyperlink{class_kilobot_ab3e523e14d8dc9c89bc3dd91fa002741}{get\+Velocity}} ()
+\item 
+\mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\+\_\+colour}} \mbox{\hyperlink{class_kilobot_a508f8dcbafaa9cf2dec6dcc2bf631c1e}{get\+Led\+Colour}} ()
+\item 
+void \mbox{\hyperlink{class_kilobot_ad0478f7f653de09cd20c99ed64d261c4}{update\+State}} (QPointF position, QPointF velocity, \mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\+\_\+colour}} colour\+Values)
+\item 
+void \mbox{\hyperlink{class_kilobot_aaf03cead4b32ad917de63f31334fc81f}{update\+Hardware}} ()
+\begin{DoxyCompactList}\small\item\em update\+Hardware Copy the \mbox{\hyperlink{class_kilobot}{Kilobot}} (for thread safety) and signal the environment to update the hardware using that copy \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kilobot_a67ecef49336cb57362d385006c7cab2c}{update\+Experiment}} ()
+\begin{DoxyCompactList}\small\item\em update\+Experiment Copy the \mbox{\hyperlink{class_kilobot}{Kilobot}} (for thread safety) and signal the experiment to update the hardware using that copy, as well as a pointer for remapping signal / slot connections (should NOT be de-\/referenced) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_kilobot_a0f6237160baf302b82a3abce906b94e3}{light\+Threshold}} = 230
+\item 
+\mbox{\hyperlink{class_colour_buffer}{Colour\+Buffer}} \mbox{\hyperlink{class_kilobot_aedecb3ef5949f5a30ad20e4073c7819a}{col\+Buffer}} = \mbox{\hyperlink{class_colour_buffer}{Colour\+Buffer}}(5)
+\item 
+\mbox{\hyperlink{class_orientation_buffer}{Orientation\+Buffer}} \mbox{\hyperlink{class_kilobot_adf030f29b6d009267943b29a1f78824a}{velocity\+Buffer}} = \mbox{\hyperlink{class_orientation_buffer}{Orientation\+Buffer}}(5)
+\item 
+\mbox{\hyperlink{class_position_buffer}{Position\+Buffer}} \mbox{\hyperlink{class_kilobot_aac31e6f70b8584129a9552582cf419ad}{pos\+Buffer}} = \mbox{\hyperlink{class_position_buffer}{Position\+Buffer}}(6)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_kilobot_a898d0b4b0960eb53077127f608dc2b1e}\label{class_kilobot_a898d0b4b0960eb53077127f608dc2b1e}} 
+\index{Kilobot@{Kilobot}!Kilobot@{Kilobot}}
+\index{Kilobot@{Kilobot}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{Kilobot()}{Kilobot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Kilobot\+::\+Kilobot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\+\_\+id}}}]{identifier,  }\item[{QPointF}]{position,  }\item[{QPointF}]{velocity,  }\item[{\mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\+\_\+colour}}}]{colour\+Values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_kilobot_ae81b23e309de92ac3980282bb47484b8}\label{class_kilobot_ae81b23e309de92ac3980282bb47484b8}} 
+\index{Kilobot@{Kilobot}!Kilobot@{Kilobot}}
+\index{Kilobot@{Kilobot}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{Kilobot()}{Kilobot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Kilobot\+::\+Kilobot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_kilobot_ae7d78bd9c705039d419f1fbcf8b44465}\label{class_kilobot_ae7d78bd9c705039d419f1fbcf8b44465}} 
+\index{Kilobot@{Kilobot}!````~Kilobot@{$\sim$Kilobot}}
+\index{````~Kilobot@{$\sim$Kilobot}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{$\sim$Kilobot()}{~Kilobot()}}
+{\footnotesize\ttfamily Kilobot\+::$\sim$\+Kilobot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_kilobot_a50f7983bd39f2ebca45bb898e2f52f18}\label{class_kilobot_a50f7983bd39f2ebca45bb898e2f52f18}} 
+\index{Kilobot@{Kilobot}!Kilobot@{Kilobot}}
+\index{Kilobot@{Kilobot}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{Kilobot()}{Kilobot()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Kilobot\+::\+Kilobot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_kilobot}{Kilobot}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_kilobot_a338105da2e8c82c44e272351a904b6cf}\label{class_kilobot_a338105da2e8c82c44e272351a904b6cf}} 
+\index{Kilobot@{Kilobot}!getID@{getID}}
+\index{getID@{getID}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\+\_\+id}} Kilobot\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_kilobot_a508f8dcbafaa9cf2dec6dcc2bf631c1e}\label{class_kilobot_a508f8dcbafaa9cf2dec6dcc2bf631c1e}} 
+\index{Kilobot@{Kilobot}!getLedColour@{getLedColour}}
+\index{getLedColour@{getLedColour}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{getLedColour()}{getLedColour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\+\_\+colour}} Kilobot\+::get\+Led\+Colour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_kilobot_ac0841f5c540bb6b265cf4ade7a02261a}\label{class_kilobot_ac0841f5c540bb6b265cf4ade7a02261a}} 
+\index{Kilobot@{Kilobot}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily QPointF Kilobot\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_kilobot_ab3e523e14d8dc9c89bc3dd91fa002741}\label{class_kilobot_ab3e523e14d8dc9c89bc3dd91fa002741}} 
+\index{Kilobot@{Kilobot}!getVelocity@{getVelocity}}
+\index{getVelocity@{getVelocity}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{getVelocity()}{getVelocity()}}
+{\footnotesize\ttfamily QPointF Kilobot\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_kilobot_a54cbec5d74f4db73f8b5bb4dc3ca03da}\label{class_kilobot_a54cbec5d74f4db73f8b5bb4dc3ca03da}} 
+\index{Kilobot@{Kilobot}!sendUpdateToExperiment@{sendUpdateToExperiment}}
+\index{sendUpdateToExperiment@{sendUpdateToExperiment}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{sendUpdateToExperiment}{sendUpdateToExperiment}}
+{\footnotesize\ttfamily void Kilobot\+::send\+Update\+To\+Experiment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}} $\ast$}]{,  }\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_afa7f9eb8140ed4ce9f8bddf79f8d7ecc}\label{class_kilobot_afa7f9eb8140ed4ce9f8bddf79f8d7ecc}} 
+\index{Kilobot@{Kilobot}!sendUpdateToHardware@{sendUpdateToHardware}}
+\index{sendUpdateToHardware@{sendUpdateToHardware}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{sendUpdateToHardware}{sendUpdateToHardware}}
+{\footnotesize\ttfamily void Kilobot\+::send\+Update\+To\+Hardware (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kilobot}{Kilobot}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_kilobot_ab8469021f60c879b58bf0bb549afc84e}\label{class_kilobot_ab8469021f60c879b58bf0bb549afc84e}} 
+\index{Kilobot@{Kilobot}!setID@{setID}}
+\index{setID@{setID}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{setID()}{setID()}}
+{\footnotesize\ttfamily void Kilobot\+::set\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{kilobot_8h_aef2863aa72a857dc635deef586ffe05f}{kilobot\+\_\+id}}}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_kilobot_a67ecef49336cb57362d385006c7cab2c}\label{class_kilobot_a67ecef49336cb57362d385006c7cab2c}} 
+\index{Kilobot@{Kilobot}!updateExperiment@{updateExperiment}}
+\index{updateExperiment@{updateExperiment}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{updateExperiment()}{updateExperiment()}}
+{\footnotesize\ttfamily void Kilobot\+::update\+Experiment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+update\+Experiment Copy the \mbox{\hyperlink{class_kilobot}{Kilobot}} (for thread safety) and signal the experiment to update the hardware using that copy, as well as a pointer for remapping signal / slot connections (should NOT be de-\/referenced) 
+
+\mbox{\Hypertarget{class_kilobot_aaf03cead4b32ad917de63f31334fc81f}\label{class_kilobot_aaf03cead4b32ad917de63f31334fc81f}} 
+\index{Kilobot@{Kilobot}!updateHardware@{updateHardware}}
+\index{updateHardware@{updateHardware}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{updateHardware()}{updateHardware()}}
+{\footnotesize\ttfamily void Kilobot\+::update\+Hardware (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+update\+Hardware Copy the \mbox{\hyperlink{class_kilobot}{Kilobot}} (for thread safety) and signal the environment to update the hardware using that copy 
+
+\mbox{\Hypertarget{class_kilobot_ad0478f7f653de09cd20c99ed64d261c4}\label{class_kilobot_ad0478f7f653de09cd20c99ed64d261c4}} 
+\index{Kilobot@{Kilobot}!updateState@{updateState}}
+\index{updateState@{updateState}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{updateState()}{updateState()}}
+{\footnotesize\ttfamily void Kilobot\+::update\+State (\begin{DoxyParamCaption}\item[{QPointF}]{position,  }\item[{QPointF}]{velocity,  }\item[{\mbox{\hyperlink{kilobot_8h_a5ae27081b74f814ca7bfc5182aa9f283}{kilobot\+\_\+colour}}}]{colour\+Values }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_kilobot_aedecb3ef5949f5a30ad20e4073c7819a}\label{class_kilobot_aedecb3ef5949f5a30ad20e4073c7819a}} 
+\index{Kilobot@{Kilobot}!colBuffer@{colBuffer}}
+\index{colBuffer@{colBuffer}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{colBuffer}{colBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_colour_buffer}{Colour\+Buffer}} Kilobot\+::col\+Buffer = \mbox{\hyperlink{class_colour_buffer}{Colour\+Buffer}}(5)}
+
+\mbox{\Hypertarget{class_kilobot_a0f6237160baf302b82a3abce906b94e3}\label{class_kilobot_a0f6237160baf302b82a3abce906b94e3}} 
+\index{Kilobot@{Kilobot}!lightThreshold@{lightThreshold}}
+\index{lightThreshold@{lightThreshold}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{lightThreshold}{lightThreshold}}
+{\footnotesize\ttfamily int Kilobot\+::light\+Threshold = 230}
+
+\mbox{\Hypertarget{class_kilobot_aac31e6f70b8584129a9552582cf419ad}\label{class_kilobot_aac31e6f70b8584129a9552582cf419ad}} 
+\index{Kilobot@{Kilobot}!posBuffer@{posBuffer}}
+\index{posBuffer@{posBuffer}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{posBuffer}{posBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position_buffer}{Position\+Buffer}} Kilobot\+::pos\+Buffer = \mbox{\hyperlink{class_position_buffer}{Position\+Buffer}}(6)}
+
+\mbox{\Hypertarget{class_kilobot_adf030f29b6d009267943b29a1f78824a}\label{class_kilobot_adf030f29b6d009267943b29a1f78824a}} 
+\index{Kilobot@{Kilobot}!velocityBuffer@{velocityBuffer}}
+\index{velocityBuffer@{velocityBuffer}!Kilobot@{Kilobot}}
+\doxysubsubsection{\texorpdfstring{velocityBuffer}{velocityBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_orientation_buffer}{Orientation\+Buffer}} Kilobot\+::velocity\+Buffer = \mbox{\hyperlink{class_orientation_buffer}{Orientation\+Buffer}}(5)}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/toolchain/\mbox{\hyperlink{kilobot_8h}{kilobot.\+h}}\item 
+/\+Users/peterjanku/\+Sources\+Cpp/\+Kilobot\+Arena/toolchain/\mbox{\hyperlink{kilobot_8cpp}{kilobot.\+cpp}}\end{DoxyCompactItemize}
